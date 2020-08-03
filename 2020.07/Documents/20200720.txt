@@ -1,0 +1,28 @@
+파이썬 설치 및 경로 설정
+	
+path 설정 할 때 python 폴더 와 python\scripts 폴더 추가
+
+cmd 활용 python 연산 및 조건문 반복문 구구단 
+
+
+(잔재미코딩)
+Git -- 버전관리
+
+Zim
+
+github 가입
+
+git config --global --edit 
+git config --global user.name "<이름>"
+git config --global user.email "<email>"
+git config --list
+git init ----- 초기화, 새로운 저장소 
+git status
+
+git add <file> ----- git에 file 추가
+git commit -m "<내용>" ------ 첫번째 commit에 <내용> 추가
+git log ----------- commit 내용 확인
+
+git remote add origin <"서버 주소"> ====== 서버 주소를 git에 등록
+
+git push origin master ====== 원격저장소(Github)에 반영
