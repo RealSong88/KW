@@ -11,7 +11,7 @@ myfriends_set = set(myfriends_list)
 print(myfriends_set)
 print("%d명이다. " % len(myfriends_set))
 
-new_myf_list = sorted(set(myfriends_set))
+new_myf_list = sorted(myfriends_set)
 print(new_myf_list)
 # for i in myfriends.keys():
 #     temp = myfriends[i].split(",")
@@ -30,7 +30,7 @@ for k in new_myf_list:
         if k in myfriends[j]: # myfriends의 value 값에서 new_myf_list 의 k 값이 있다면 temp에 그 key값을 저장
             temp = temp+','+j
         # print(j)
-    text = text + "{} = {}\n".format(k,temp)
+    text = text + "{} = {}\n".format(k,temp[1:])
 
 
 print(text)
