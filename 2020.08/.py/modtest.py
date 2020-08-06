@@ -1,4 +1,24 @@
-import mod2
+class Calculator:
+    def __init__(self):
+        self.result = 0
 
-result = mod2.add(3, 4)
-print(result)
+    def add(self, num):
+        self.result += num
+        return self.result
+
+    def sub(self, num):
+        self.result -= num
+        return self.result
+
+cal1 = Calculator()
+cal2 = Calculator()
+
+
+print(cal1.add(3))
+print(cal1.add(4))
+
+print(cal2.add(5))
+print(cal2.add(6))
+
+print(cal1.sub(4))
+print(cal2.sub(7))
