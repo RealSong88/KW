@@ -13,7 +13,7 @@ class ReadDirData:
         with os.scandir(self.dir_path) as entries:
             for entry in entries:
                 # print(entry.name)
-                self.files_path.append("{}/{}".format(self.dir_path, entry.name))
+                self.files_path.append(f"{self.dir_path}/{entry.name}")
                 # print(files_path)
 
     def read_data(self):

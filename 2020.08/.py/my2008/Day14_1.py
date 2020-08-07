@@ -4,8 +4,8 @@
 #     print(__name__)
 #     print(id(num_one))
 #     print(num_one)
-#
-#
+
+
 
 
 # chr 함수 ord 함수 활용
@@ -17,7 +17,7 @@
 #
 # print(i)
 # print(total)
-
+# print(" ".join(total))
 #
 # print(chr(112)) # 'p'
 # print(chr(112 - 32)) # 'P'
@@ -33,8 +33,8 @@
 #
 #
 # progression(10)
-
-# 258p
+#
+# # 258p
 # def argsfunc(*args):
 #     i = 0
 #     for x in args:
@@ -45,7 +45,7 @@
 # argsfunc(1, 2, (3, 4, 5))
 # argsfunc(1, [7, 55], "test", {'a': 1, 'b': 100})
 #
-#
+
 # a = 1
 # b = {3, 6, 9}
 # c = {'x': 0, 'y': 99}
@@ -61,7 +61,7 @@
 #
 # # 키워드 인수 형태
 # dictsfunc(a=1, b=2, c=3)
-# # 사전 형태
+# 사전 형태
 # dictsfunc(**{'a': 1 , 'b': 2, 'c': 3})
 
 

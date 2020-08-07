@@ -1,0 +1,94 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-07T14:33:51+09:00
+
+====== git ======
+Created 금요일 07 8월 2020
+
+github 가입
+
+git config --global --edit 
+git config --global user.name "<이름>"
+git config --global user.email "<email>"
+git config --list
+git init ----- 초기화, 새로운 저장소 
+git status
+
+git add <file> ----- git에 file 추가
+git commit -m "<내용>" ------ 첫번째 commit에 <내용> 추가
+git log ----------- commit 내용 확인
+
+git remote add origin <"서버 주소"> ====== 서버 주소를 git에 등록
+
+git push origin master ====== 원격저장소(Github)에 반영 
+한번하면 다음부턴 
+git push
+
+git-------------------------------
+변경내역을 관리하는 프로그램
+
+새로운 저장소 생성 e:\myrepo1
+
+git init 후 파일을 생성하면 git에 추가목록이생김(git status 로 확인)
+
+git add ==> git commit ==> git push (변경내역)
+
+git add .  ========= 현재 디렉토리의 모든파일
+ex)add는 오늘 하루종일 수정중인 파일 , commit 은 오늘 하루 완성변경본을 파일 내 저장소에 보관, push 원격보관소에 보관
+
+git commit --amend -m "<내용>" ============ 커밋한 내용을 덮어쓴다.
+
+git add 후 취소 하려면
+git reset
+
+git remote add origin <깃허브 저장소 주소.git> =====원격서버(깃허브)의 주소를 git에 등록
+
+git push origin master == 원격저장소에 반영
+
+git clone <깃허브 저장소 주소.git> ===  깃허브에서 내컴퓨터로 깃을 복사(커맨드창에서 해당폴더에 있어야함)
+
+
+branch
+git checkout -b feature_x ====== feature_x 라는 가지로 생성해서 이동
+
+git checkout master ========= master로 이동
+
+branch 삭제
+git branch -d <branch 이름>
+
+commit 취소
+
+
+git reset HEAD~1 =========== 첫번째 commit 은 리셋이안됨..
+git reset --hard ========== 커밋이후 파일 수정본을 원래 커밋상태로 돌아옴
+각자의 branch 에서 변경내역을 add commit push 할 수 있다.
+
+git pull ======== 원격저장소에 있는 최종본을  내 저장소에 반영
+
+c:\users\RealSong 이동 
+.gitconfig 에서
+===================== 
+[core]
+	editor = notepad
+=====================
+git config --local --edit ======= 원격저장소 주소 볼 수 있음, 주소 지우고 다시 등록 가능
+
+dir /s------ 현재폴더 안에 모든 폴더 표시
+dir /s *.py---------- 현재폴더안에 모든 .py 파일 표시
+
+윈도우키 + 자격 증명 관리자 === 깃 푸쉬나 풀 오류시 windows 자격 증명 ==> 일반 자격증명 제거 후 재시도
+
+
+GIt
+
+문서 생성
+문서 추가
+문서 추가 제거 --- git rm -cached <파일이름> 
+커밋 푸쉬 
+
+클론 -- git clone <원격주소> <폴더>
+원하는 폴더에 원격주소에 있는 git을 복제한다.
+
+풀
+머지(merge) 같은파일이면, 충돌 다른 파일이면 추가
+로컬저장소의 버전과 원격저장소의 버전이 같아야 푸쉬할수있음

@@ -13,12 +13,7 @@ print("%d명이다. " % len(myfriends_set))
 
 new_myf_list = sorted(myfriends_set)
 print(new_myf_list)
-# for i in myfriends.keys():
-#     temp = myfriends[i].split(",")
-#     for j in temp:
-#
-#     print(myfriends[i])
-#     print(temp)
+
 
 text = ""
 
