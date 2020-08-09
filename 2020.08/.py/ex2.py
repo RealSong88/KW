@@ -1,4 +1,5 @@
 import random
+from random import randint
 car = 0
 
 car = random.randrange(1, 11)
@@ -22,3 +23,13 @@ while True:
 
 
 print(winner)
+
+# win = []
+#
+# while len(win) != 4 :
+#     dice = randint(1, 6)
+#     while dice in win:
+#         dice = randint(1, 6)
+#     win.append(dice)
+#
+# print(win)

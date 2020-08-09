@@ -1,8 +1,11 @@
-PI = 3.141592
+from random import randint
 
-class Math:
-    def solv(self, r):
-        return PI * (r ** 2)
+answer = []
 
-def add(a, b):
-    return a+b
+while len(answer) != 4:
+    new_number = randint(0, 9)
+    if new_number not in answer:
+        answer.append(new_number)
+
+
+print(answer)

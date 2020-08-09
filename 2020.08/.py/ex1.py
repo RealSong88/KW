@@ -1,36 +1,47 @@
-class Smartphone:
-    """
-    Smartphone Class
-    """
+# Q1 ================================
 
-    def __init__(self, brand, details):
-        self._brand = brand
-        self._details = details
+# class Calculator:
+#     def __init__(self):
+#         self.value = 0
+#
+#     def add(self, val):
+#         self.value += val
+#
+# class UpgradeCalculator(Calculator):
+#     def minus(self, val):
+#         self.value -= val
+#
+# cal = UpgradeCalculator()
+# cal.add(10)
+# cal.minus(7)
+#
+# print(cal.value)
 
-    def __str__(self):
-        return f'str : {self._brand} - {self._details}'
+# Q2 =====================
 
-    def __repr__(self):
-        return f'repr : {self._brand} - {self._details}'
+# class Calculator:
+#     def __init__(self):
+#         self.value = 0
+#
+#     def add(self, val):
+#         self.value += val
+#
+# class MaxLimitCalculator(Calculator):
+#     def add(self, val):
+#         self.value += val
+#         if self.value > 100 :
+#             self.value = 100
+#         # return self.value
+#
+# cal = MaxLimitCalculator()
+# cal.add(50)
+# cal.add(60)
+# print(cal.value)
 
-    def detail_info(self):
-        print(f'Current Id : {id(self)}')
-        print(f'Smartphone Detail Info : {self._brand} {self._details.get("price")}')
+# Q3 ========================
+# all([1, 2, abs(-3)-3]) 리스트안에 하나라도 False 이면 False를 반환
 
-Smartphone1 = Smartphone('Iphone', {'color': 'White', 'price': 10000})
-Smartphone2 = Smartphone('Galaxy', {'color': 'Black', 'price': 8000})
-Smartphone3 = Smartphone('Blackberry', {'color': 'Silver', 'price': 6000})
+# chr(ord('a') == 'a' ord함수는 아스키코드값 반환 chr함수는 아스키코드숫자를 문자로 변환 True
 
-Smartphone2.detail_info()
 
-print(Smartphone2._brand)
-print(Smartphone2._details)
 
-# print(Smartphone1.__class__, Smartphone2.__class__)
-# # 부모는 같음
-# print(id(Smartphone1.__class__) == id(Smartphone3.__class__))
-
-a = 472
-b = 385
-
-print()
