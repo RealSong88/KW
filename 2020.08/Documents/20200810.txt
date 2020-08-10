@@ -1,0 +1,55 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+===========================오전1===========================
+
+NCS 애플리케이션 설계 (38p ~ 39p, 51p ~ 52p, 56p ~ )
+
+
+===========================오전2===========================
+
+파이썬 GUI 프로그래밍
+
+프로젝트에 맞는 환경구성
+파이썬의 버전과 패키지의 버전이 맞아야 함
+PyQt4 는 3.8버전이 없어서 파이썬 버전을 3.5버전으로 
+===========================오전3===========================
+
+venv 설정
+가상환경 종료
+E:\RealSong\PycharmProjects\xyzGUI\venv\Scripts>deactivate.bat
+가상환경 실행
+E:\RealSong\PycharmProjects\xyzGUI\venv\Scripts>activate.bat
+===========================오전4===========================
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget
+
+class MyApp(QWidget):
+
+		def __init__(self):
+			super().__init__()
+			self.initUI()
+
+
+		def initUI(self):
+			self.setWindowTitle('My first Application')
+			self.move(300, 300)
+			self.resize(400, 200)
+			self.show()
+
+
+if __name__ == '__main__':
+	app = QApplication(sys.argv)
+	ex = MyApp()
+	sys.exit(app.exec_())
+===========================오후1===========================
+
+파이썬 패키지에 대한 공부
+
+===========================오후2===========================
+
+PyQt5 기본 기능 구현
+
+===========================오후3===========================
+
+도서관 프로그램 클래스화

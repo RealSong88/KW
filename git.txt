@@ -92,3 +92,6 @@ GIt
 풀
 머지(merge) 같은파일이면, 충돌 다른 파일이면 추가
 로컬저장소의 버전과 원격저장소의 버전이 같아야 푸쉬할수있음
+
+git pull 안먹힐 때 참고 사이트
+https://insapporo2016.tistory.com/53
