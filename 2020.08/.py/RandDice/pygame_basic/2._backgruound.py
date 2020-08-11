@@ -10,7 +10,7 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption(("My Game"))
 
 # 배경이미지 불러오기
-background = pygame.image.load("C:/RealSong/PycharmProjects/RandDice/pygame_basic/background.png")
+background = pygame.image.load("E:/RealSong/PycharmProjects/RandDice/pygame_basic/background.png")
 
 running = True # 게임이 진행중인가
 
