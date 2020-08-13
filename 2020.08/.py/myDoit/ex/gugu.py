@@ -5,6 +5,8 @@ def GuGu(n):
         result.append(i * n)
         i += 1
     return result
+
+
 def thr_fif_sum(n):
     i = 1
     sum = 0
@@ -15,7 +17,10 @@ def thr_fif_sum(n):
             sum += i
         i += 1
     return sum
+
+
 print(thr_fif_sum(1000))
+
 
 def thr_fif_sum2(n):
     i = 1
@@ -27,10 +32,12 @@ def thr_fif_sum2(n):
         i += 1
     return sum
 
+
 print(thr_fif_sum2(1000))
 
+
 def getTotalPage(m, n):
-    if m % n == 0 :
+    if m % n == 0:
         return m / n
     else:
         return m // n + 1
@@ -38,8 +45,3 @@ def getTotalPage(m, n):
 
 print(getTotalPage(5, 10))
 print(getTotalPage(17, 5))
-
-
-
-
-

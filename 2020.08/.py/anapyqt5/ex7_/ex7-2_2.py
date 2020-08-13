@@ -31,9 +31,9 @@ class MyApp(QWidget):
         dial.valueChanged.connect(lcd.display)
 
         # self.btn1.setIcon(QIcon('save.png'))
-        self.btn1.toggled.connect(self.myToggled)
-        # self.btn1.pressed.connect(self.myPressed)
-        # self.btn1.released.connect(self.myReleased)
+        self.btn1.clicked.connect(self.myclicked)
+        self.btn1.pressed.connect(self.myPressed)
+        self.btn1.released.connect(self.myReleased)
 
         btn2.released.connect(self.myReleased)
 

@@ -34,12 +34,11 @@ class MyApp(QWidget):
         self.show()
 
     def resizeBig(self):
-        print(self)
         self.resize(400, 500)
 
     def resizeSmall(self):
-        print(self)
         self.resize(200, 250)
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

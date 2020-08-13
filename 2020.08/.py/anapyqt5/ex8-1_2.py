@@ -31,7 +31,7 @@ class MyApp(QWidget):
             qp.setPen(pen)
             rand_x = 100 * np.random.randn()
             rand_y = 100 * np.random.randn()
-            qp.drawPoint(self.width() / 2 + rand_x, self.height() / 2 + rand_y)
+            qp.drawPoint(int(self.width() / 2 + rand_x), int(self.height() / 2 + rand_y))
 
 
 if __name__ == "__main__":

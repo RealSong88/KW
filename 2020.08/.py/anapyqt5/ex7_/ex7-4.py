@@ -29,6 +29,8 @@ class MyApp(QWidget):
         self.label.setText(text)
         self.label.adjustSize()
 
+        print('x: {0}, y: {1}'.format(x, y))
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     ex = MyApp()
