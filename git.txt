@@ -72,13 +72,26 @@ c:\users\RealSong 이동
 	editor = notepad
 =====================
 git config --local --edit ======= 원격저장소 주소 볼 수 있음, 주소 지우고 다시 등록 가능
+이곳에 
+[alias]
+	lo = log --all --decorate --oneline --graph
+작성하면 git lo 에 명령내용을 설정할 수 있다.
 
 dir /s------ 현재폴더 안에 모든 폴더 표시
 dir /s *.py---------- 현재폴더안에 모든 .py 파일 표시
 
 윈도우키 + 자격 증명 관리자 === 깃 푸쉬나 풀 오류시 windows 자격 증명 ==> 일반 자격증명 제거 후 재시도
 
+================================================
+깃로그 한 줄로 보기
+git log --all --decorate --oneline --graph
 
+​push하지 않은 마지막 commit 취소
+git reset HEAD~1
+
+​cmd 창에서 한글깨짐이 있는 경우 cmd에서 아래 명령을 실행
+set LC_ALL=ko_KR.UTF-8
+==================================================
 GIt
 
 문서 생성
@@ -95,3 +108,19 @@ GIt
 
 git pull 안먹힐 때 참고 사이트
 https://insapporo2016.tistory.com/53
+
+branch
+branch 통합하기의 방법
+merge, rebase
+fast-forward 병합
+git branch 만들기
+
+alias 로 단축명령어 설정
+자주사용하는 명령어를 alias 로 설정하면 간단하게 사용 가능
+https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-Git-Alias
+
+브랜치 병합(merge)하기
+마스터와 브랜치 병합시 HEAD를 마스터로 이동 후
+git merge <해당 브랜치>
+
+-  단축어

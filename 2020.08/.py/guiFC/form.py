@@ -2,6 +2,7 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
 
+# qtDesigner로 화면 구성
 CalUI = '_uiFiles/calculator.ui'
 
 
@@ -10,6 +11,7 @@ class MainDialog(QDialog):
         QDialog.__init__(self, None)
         uic.loadUi(CalUI, self)
 
+        # gui의 button 을 작동하는 함수와 연결시킨다. 람다식으로 함수 간결화
         self.num_pushButton_1.clicked.connect(
             lambda state, button=self.num_pushButton_1: self.numClicked(state, button))
         self.num_pushButton_2.clicked.connect(
@@ -40,11 +42,12 @@ class MainDialog(QDialog):
         self.sign_pushButton_4.clicked.connect(
             lambda state, button=self.sign_pushButton_4: self.numClicked(state, button))
 
-        self.p_open_pushButton.clicked.connect(self.delete)
-        self.p_close_pushButton.clicked.connect(self.delete)
-        self.dot_pushButton.clicked.connect(self.delete)
-        self.per_pushButton.clicked.connect(self.delete)
+        # self.p_open_pushButton.clicked.connect(self.delete)
+        # self.p_close_pushButton.clicked.connect(self.delete)
+        # self.dot_pushButton.clicked.connect(self.delete)
+        # self.per_pushButton.clicked.connect(self.delete)
 
+        self.del_pushButton.clicked.connect(self.delete)
         self.result_pushButton.clicked.connect(self.makeResult)
         self.reset_pushButton.clicked.connect(self.reset)
 
