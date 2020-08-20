@@ -1,0 +1,73 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-08-20T11:41:43+09:00
+
+====== 리눅스 ======
+Created 목요일 20 8월 2020
+
+첫 설치할 때 root 권한은 비활성화 되서
+접근할 수 있는 계정을 생성한다
+터미널에서 jpg 파일 열기
+
+wsl2 설치하면 윈도우 폴더를 제어할 수있다
+(기본적으로 서브 운영체제이기 때문에 c 와 e에 모든권한이있다.)
+
+$ xdg-open <filename>.jpg
+
+터미널에서 api 설치 명령어
+$ sudo apt-get install <filename>
+
+$ wget -O <filename> <down받을경로>
+
+$ pwd ======= 현재경로
+
+$ cd ~ ======= 로그인된 사용자 폴더로 이동
+
+$ histroy ======== 사용된 명령어 리스트
+
+	1  python --version
+	2  python3 --version
+	3  dir
+	4  ls -al
+	5  python3
+	6  pwd
+	7  cd ..
+	8  pwd
+	9  cd /
+   10  cd /home
+   11  cd /song
+   12  pwd
+   13  cd song
+   14  pwd
+   15  cd /
+   16  ls
+   17  ls -al
+   18  cd /home
+   19  ls
+   20  ls -al
+   21  cd ~
+   22  cd
+   23  pwd
+   24  cd/
+   25  cd /
+   26  cd ~
+   27  pwd
+   28  cd /
+   29  cd ~
+   30  clear
+   31  ls -al
+   32  ls
+   33  ls -l
+   34  cd /e
+   35  cd e
+   36  dir
+   37  echo create wsl2.. > wsl.txt
+   38  dir
+   39  ls -al
+   40  ls
+   41  ls -l
+   42  python3 myweb.py
+   43  echo hello > index.html
+   44  python3 myweb.py
+   45  histroy
+   46  history
