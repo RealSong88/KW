@@ -6,7 +6,7 @@ class Game:
     def __init__(self):
         self.persons = 0
         self.start_life = 0
-        self.map_size = 6
+        self.map_size = 16
         # self.users 에 User 객체가 들어가 있다.
         self.users = []
         self.land = []

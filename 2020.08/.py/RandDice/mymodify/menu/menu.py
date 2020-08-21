@@ -19,14 +19,13 @@ class Menu:
         count = 0
         flag = False
         while True:
+            print("현재 땅 상태 - {}".format(new_game.land))
             idx = count % new_game.persons
 
             count = count + 1
 
             # new_game에 리스트형태로 보관중인 현재 플레이중인 유저 값 가져오기
             now_play_user = new_game.users[idx]
-
-
             flag = now_play_user.dice(new_game, count)
 
             # 누군가가 목숨이 다 했을경우 게임종료
