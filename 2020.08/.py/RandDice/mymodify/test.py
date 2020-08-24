@@ -1,71 +1,69 @@
 import sys
 from PyQt5.QtWidgets import *
+from PyQt5 import uic
+from mymodify.dice.user import User
+from mymodify.menu import menu
+from random import randint
 from PyQt5.QtGui import *
+from PyQt5 import QtCore
 
-class LogInDialog(QDialog):
+# qtDesigner로 화면 구성
+
+CalUI = '_guiFiles/frame_test2.ui'
+
+
+class MainDialog(QDialog):
     def __init__(self):
-        super().__init__()
+        super(MainDialog, self).__init__()
+        QDialog.__init__(self, None)
+        uic.loadUi(CalUI, self)
         self.setupUI()
-
-        self.id = None
-        self.password = None
+        self.setFixedSize(800, 800)
+        self.player1_idx = 0
+        self.player2_idx = 0
 
     def setupUI(self):
-        self.setGeometry(1100, 200, 300, 100)
-        self.setWindowTitle("Sign In")
-        self.setWindowIcon(QIcon('icon.png'))
 
-        label1 = QLabel("ID: ")
-        label2 = QLabel("Password: ")
+        self.btn1.clicked.connect(self.dice_1)
+        self.btn2.clicked.connect(self.dice_2)
+        self.land1 = (
+            (610, 470, 40, 40), (510, 470, 40, 40), (410, 470, 40, 40), (310, 470, 40, 40), (210, 470, 40, 40),
+            (110, 470, 40, 40),
+            (110, 370, 40, 40), (110, 270, 40, 40), (110, 170, 40, 40), (110, 70, 40, 40),
+            (210, 70, 40, 40), (310, 70, 40, 40), (410, 70, 40, 40), (510, 70, 40, 40), (610, 70, 40, 40),
+            (610, 170, 40, 40), (610, 270, 40, 40), (610, 370, 40, 40)
+        )
 
-        self.lineEdit1 = QLineEdit()
-        self.lineEdit2 = QLineEdit()
-        self.pushButton1= QPushButton("Sign In")
-        self.pushButton1.clicked.connect(self.pushButtonClicked)
+        self.land2 = (
+            (650, 510, 40, 40), (550, 510, 40, 40), (450, 510, 40, 40), (350, 510, 40, 40), (250, 510, 40, 40),
+            (150, 510, 40, 40),
+            (150, 410, 40, 40), (150, 310, 40, 40), (150, 210, 40, 40), (150, 110, 40, 40),
+            (250, 110, 40, 40), (350, 110, 40, 40), (450, 110, 40, 40), (550, 110, 40, 40), (650, 110, 40, 40),
+            (650, 210, 40, 40), (650, 310, 40, 40), (650, 410, 40, 40)
+        )
 
-        layout = QGridLayout()
-        layout.addWidget(label1, 0, 0)
-        layout.addWidget(self.lineEdit1, 0, 1)
-        layout.addWidget(self.pushButton1, 0, 2)
-        layout.addWidget(label2, 1, 0)
-        layout.addWidget(self.lineEdit2, 1, 1)
+    def dice_1(self):
+        result = randint(1, 6)
+        print(result)
+        self.player1_idx += result
+        if self.player1_idx > 17:
+            self.player1_idx -= len(self.land1)
+        self.player1.setGeometry(self.land1[self.player1_idx][0], self.land1[self.player1_idx][1],
+                                 self.land1[self.player1_idx][2], self.land1[self.player1_idx][3])
 
-        self.setLayout(layout)
+    def dice_2(self):
+        result = randint(1, 6)
+        print(result)
+        self.player2_idx += result
 
-    def pushButtonClicked(self):
-        self.id = self.lineEdit1.text()
-        self.password = self.lineEdit2.text()
-        self.close()
+        if self.player2_idx > 17:
+            self.player2_idx -= len(self.land2)
+        self.player2.setGeometry(self.land2[self.player2_idx][0], self.land2[self.player2_idx][1],
+                                 self.land2[self.player2_idx][2], self.land2[self.player2_idx][3])
 
-class MyWindow(QWidget):
-    def __init__(self):
-        super().__init__()
-        self.setupUI()
 
-    def setupUI(self):
-        self.setGeometry(800, 200, 300, 300)
-        self.setWindowTitle("PyStock v0.1")
-        self.setWindowIcon(QIcon('icon.png'))
-
-        self.pushButton = QPushButton("Sign In")
-        self.pushButton.clicked.connect(self.pushButtonClicked)
-        self.label = QLabel()
-
-        layout = QVBoxLayout()
-        layout.addWidget(self.pushButton)
-        layout.addWidget(self.label)
-
-        self.setLayout(layout)
-
-    def pushButtonClicked(self):
-        dlg = LogInDialog()
-        dlg.exec_()
-        id = dlg.id
-        password = dlg.password
-        self.label.setText("id: %s password: %s" % (id, password))
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     app = QApplication(sys.argv)
-    window = MyWindow()
-    window.show()
+    mainDialog = MainDialog()
+    mainDialog.show()
     app.exec_()

@@ -24,10 +24,10 @@ class MainDialog(QDialog):
         return result
 
 if __name__ == "__main__":
-    # app = QApplication(sys.argv)
-    # mainDialog = MainDialog()
-    # mainDialog.show()
-    # app.exec_()
+    app = QApplication(sys.argv)
+    mainDialog = MainDialog()
+    mainDialog.show()
+    app.exec_()
 
     while True:
         input_start = input("사용하실 메뉴를 골라주세요.\n1.시작하기\n2.불러오기\n3.나가기\n")
