@@ -32,6 +32,15 @@ $ grep <찾고싶은 단어> <이름.txt> === 텍스트안에 찾고싶은 단�
 pipeline
 $ ls --help | grep <단어> === ls의 문서에서 단어 표시
 
+IO Redirection
+Input, Output, 방향을 바꾼다.
+$ ls -l > result.txt  ==== ls -l 의 실행내용을 텍스트파일로 저장 
+'>'는 Standard Output을 Redirection 함
+1> 는 standard output (1은 생략 가능, 화면에 출력)
+2> (에러에대한 redirection)
+$ rm result2.txt 2> error.log
+
+
 $ histroy ======== 사용된 명령어 리스트
 
 

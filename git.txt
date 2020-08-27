@@ -124,3 +124,7 @@ https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-Git-Alias
 git merge <해당 브랜치>
 
 -  단축어
+
+github 협업시
+master version 올리고 p1이 branch를 올리면 p2가 github에 p2 branch를 업데이트하려면
+git pull로 p2의 git에 가져온뒤 p2 branch를 업데이트한다. (아니면 업데이트 X)
