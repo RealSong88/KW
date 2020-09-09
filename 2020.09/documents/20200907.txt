@@ -1,0 +1,58 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+===========================오전1===========================
+
+linux
+$ !! == 직전에 입력한 명령어 재실행
+
+$ groupadd <name> === 그룹 name 을 생성한다.
+
+$ sudo usermod -a -G group명 {user} == user를 group에 추가시킨다.
+ex) sudo usermod -a -G developer realsong == realsong사용자를 developer 그룹에 추가
+
+
+chown(=change owner)
+$ sudo chown <user> <file or dir> == 파일이나 디렉토리의 owner권한을 user에게 넘긴다.
+$ sudo chown owner:group명 <file or dir> == 파일이나 디렉토리에 그룹권한을 owner 에서 group명 에게 넘긴다.
+ex)
+$ sudo chwon root:developer .  === 현재폴더 .의 그룹권한인 root에서 developer로 변경한다.
+
+리눅스 group의 관한 참고 사이트
+https://webdir.tistory.com/134
+
+$ tail <file> == file의 마지막 라인을 터미널에 출력
+
+$ ping <domain name> == domain name의 ip 어드레스를 확인
+ex) ping google.com
+
+domain name == 핸드폰 연락처에서 이름
+ip address == 핸드폰 연락처에서 번호
+
+
+$ ip addr ===  ip 주소확인
+웹브라우져에서 https://ipinfo.io/ip 접속 == 접속된  ip address 확인
+
+리눅스쉘에서는 
+$ curl ipinfo.io/ip
+
+curl 과 ip addr의 차이점
+curl - 외부에서 확인하는 ip이기 때문에 라우터의 ip address 
+ip addr - 라우터에서 pc or notebook or .. 등(내부망)의 private address(사설 ip) 
+
+===========================오후1=========================== 
+
+random_dice 요구사항 작성..
+===========================오후2===========================
+
+웹브라우져 소프트웨어
+-firefox
+-chrome
+-리눅스에서 elinks
+
+웹서버의 소프트웨어
+- apache
+- nginx
+- IIS
+
+===========================오후3===========================

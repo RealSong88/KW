@@ -5,6 +5,8 @@ Creation-Date: 2020-08-07T14:33:51+09:00
 ====== git ======
 Created 금요일 07 8월 2020
 
+추후에 커밋 할 때는 개발용 소스 정리 후 커밋
+
 github 가입
 
 git config --global --edit 

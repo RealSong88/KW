@@ -2,16 +2,25 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.6
 Creation-Date: 2020-08-20T11:41:43+09:00
 
-====== 리눅스 ======
+====== Linux ======
 Created 목요일 20 8월 2020
 
 첫 설치할 때 root 권한은 비활성화 되서
 접근할 수 있는 계정을 생성한다
-터미널에서 jpg 파일 열기
+
+
 
 wsl2 설치하면 윈도우 폴더를 제어할 수있다
 (기본적으로 서브 운영체제이기 때문에 c 와 e에 모든권한이있다.)
 
+명령줄 행 지우기
+ctrl + u
+명령줄 단어 지우기
+ctrl + w
+
+$ !! == 직전에 입력한 명령어 재실행
+
+터미널에서 jpg 파일 열기
 $ xdg-open <filename>.jpg
 
 터미널에서 api 설치 명령어
@@ -40,6 +49,39 @@ $ ls -l > result.txt  ==== ls -l 의 실행내용을 텍스트파일로 저장
 2> (에러에대한 redirection)
 $ rm result2.txt 2> error.log
 
+$ head -n1 < 원본파일 > ex.txt === ex.txt에 원본파일의 첫줄을 전달한다.
+
+linux - shell script (명령어 모음)
+
+touch a.log ==== a.log 란 파일을 생성
+
+nano backup
+
+chmod +x backup == backup에게 실행기능을 추가한다.
+
+
+background로 돌리는 명령어
+ctrl + z  ==프로그램 실행중에 background로 돌림
+jobs == 현재 background 에서 실행중인 프로그램
+fg %2 ===  2번프로그램을 background에서 포워드그라운드로
+kill -9 %2 === 보다 강력하게 2번프로그램을 종료시킴
+ls -alR / > result.txt 2> error.log & ========= &를 추가하면 바로 
+background에서 프로세스중...
+
+사용자 추가
+sudo useradd -m <사용자명>  == sudo 권한이 없음
+사용자 암호업데이트
+sudo passwd <사용자명> == 사용자에게 접속가능
+추가된 사용자 sudo 권한 부여
+sudo usermod -a -G sudo <사용자명>
+
+권한 변경
+참고사이트 - https://en.wikipedia.org/wiki/Chmod#Octal_modes or #Special_modes
+access mod - user(=owner) group other 순서로 구성되있음
+chmod o는 other
+		 u는 owner
+ex) chmod o+r <해당파일이나 폴더> === other 사용자에게 해당파일이나 폴더에 read권한을 줌
+ex2) chomod u-w <해당파일이나 폴더> === owner 사용자에게 write 권한을 뺌
 
 $ histroy ======== 사용된 명령어 리스트
 
@@ -91,3 +133,9 @@ $ histroy ======== 사용된 명령어 리스트
    44  python3 myweb.py
    45  histroy
    46  history
+  225 touch a.log b.log c.log
+  226  ls -l
+  227  mkdir bak
+  241  chmod +x backup
+  259  ls /bin
+
