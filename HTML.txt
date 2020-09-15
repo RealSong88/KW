@@ -1,0 +1,54 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-14T15:00:40+09:00
+
+====== Html ======
+Created 월요일 14 9월 2020
+
+HTTP의 특징
+- 연결을 유지하지 않는 프로토콜
+- 많은 요청을 처리하기 위해서 연결 상태를 유지하지 않는 비연결성 프로토콜
+
+HTML
+참고사이트)https://poiemaweb.com/
+- 텍스트문자이지만, 마크업 언어이다.
+기본적으로 문법에 맞게 소스를 작성하면, font 크기, 두께, 등을 웹 브라우져가 해석한다.
+
+<!DOCTYPE html> === html5를 의미한다.
+
+
+<head></head> === 페이지(웹브라우저)의 정보가 담겨있다.
+<body></body> === 사용자에게 보여지는 내용
+
+시맨틱 웹 (ex. header, nav, aside, section, article, footer, strong, em)
+-시맨틱 웹이란 웹에 존재하는 수많은 웹페이지들에 메타데이터(Metadata)를 부여하여, 기존의 잡다한 데이터 집합이었던 웹페이지를 ‘의미’와 ‘관련성’을 가지는 거대한 데이터베이스로 구축하고자 하는 발상이다.
+semantic tag
+- 시맨틱 태그란 브라우저, 검색엔진, 개발자 모두에게 콘텐츠의 의미를 명확히 설명하는 역할을 한다. 시맨틱 태그에 의해 컴퓨터가 HTML 요소의 의미를 보다 명확히 해석하고 그 데이터를 활용할 수 있는 시맨틱 웹이 실현될 수 있다.
+참고사이트)https://poiemaweb.com/html5-semantic-web
+
+
+
+script tag(= js)
+document === 이 문서 자체
+
+meta tag
+- 페이지에대한 정보
+- 실제 브라우저에서는 보이지 않지만 이 페이지의 정보를 넣는다. 검색엔진에서 크롤링시 메타데이터 수집
+-description, keywords, author, 기타 메타데이터를 정의하면 브ㅡ라우저, 검색엔진등에 의해 사용된다.
+ex)
+<meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript">
+-SEO(검색엔진 최적화)를 위해 검색엔진이 사용할 keywords을 정의한다.
+<meta name="description" content="Web tutorials on HTML and CSS">
+-웹페이지의 설명을 정의한다
+<meta name="author" content="John Doe">
+-웹페이지의 저자을 명기한다.
+<meta http-equiv="refresh" content="30">
+-웹페이지를 30초 마다 Refresh한다.
+
+텍스트에 관련된 태크
+참조 사이트)https://poiemaweb.com/html5-tag-text
+strong tag
+- b tag와 동일하게 bold체를 지정한다. 하지만 semantic(의미론적) 중요성의 의미를 갖는다.
+
+em tag
+-emphasized(강조, 중요한) text를 지정한다. i tag와 동일하게 Italic체로 표현되고 semantic(의미론적) 중요성 의미를 갖는다.
