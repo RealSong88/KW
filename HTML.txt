@@ -52,3 +52,11 @@ strong tag
 
 em tag
 -emphasized(강조, 중요한) text를 지정한다. i tag와 동일하게 Italic체로 표현되고 semantic(의미론적) 중요성 의미를 갖는다.
+
+
+a tag
+- href 어트리뷰트와 함께 사용되어 링크를 만든다(ex. 텍스트, 이미지)
+- target 어트리뷰트 사용하여 현재 창 또는 새 창으로 이동한다. _self 는 기본값이므로 작성안해도 디폴트값으로 입력
+
+iframe tag
+- 프레임 중에서 문서 본문에 액자처럼 삽입하는 것을 말한다.

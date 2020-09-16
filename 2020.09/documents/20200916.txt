@@ -1,0 +1,130 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-16T08:50:36+09:00
+
+===========================오전1===========================
+
+NCS - 데이터베이스 (24p ~ 29p)
+
+데이터 베이스 관리의 핵심
+- 자료의 중복성 제거, 무결성 확보, 일관성 유지, 유용성 보장
+
+데이터베이스 종류 (27p 표 참고)
+파일시스템 - 데이터베이스 전 단계의 관리시스템
+
+계층형 데이터베이스 관리시스템(HDBMS) - 트리형 구조. 데이터를 상하 종속 적인 관계로 계층화하여 관리. 접근속도가 빠르지만 변화하는 데이터 구조에 유연하게 대응하기가 어려움.
+
+망형 데이터베이스 관리시스템(NDBMS) - 데이터의 구조를 네트워크상의 망상 형태로 논리적으로 표현한 데이터 모델트리구조나 계층형 데이터베이스보다 유연하지만 설계가 복잡하다.
+
+관계형 데이터베이스 관리시스템(RDBMS : Relational Database Management System)
+- 보편화된 시스템 가장 광범위하게 쓰임. 데이터 구조에대한 유연성이 좋아 유지 관리가 용이. 테이블의 구조(스키마)를 정의하고 테이블 간의 관계를 정의하여 데이터를 관리 (ex. Oracle, MySQL, Maria DB 등...)
+
+
+데이터베이스 관리시스템(DBMS)특징
+- 데이터 무결성
+- 데이터 일관성
+- 데이터 회복성
+- 데이터 보안성
+- 데이터 효율성
+
+오픈소스 DBMS와 상용 DBMS의 차이점
+- 기능적으로 다른 점은 없으나 보안이나 신뢰도면에서 1%라도 차이가 있기 때문에 기업들은 상용 DBMS를 사용한다. 오픈소시 기반은 최근 사용 비중이 증가 되고있다.
+ 
+시간 비용 사람
+===========================오전2===========================
+
+HTML
+
+form 태그 (myEx4.html)
+
+input 태그
+- form 태그 중에서 가장 중요한 태그로 사용자로부터 데이터를 입력 받기 위해 사용된다. 
+- form 태그 내에 존재하여야 입력 데이터를 전송할 수 있으나 ajax 사용시 form 태그 내에 존재하지 않아도 된다.
+- 서버에 전송되는 데이터는 name 어트리뷰트를 키로, value 어트리뷰트를 값으로하여 key=value의 형태로 전송된다.
+
+(myEx5.html ,속성이 많음. https://poiemaweb.com/html5-tag-forms)
+- hidden : 감추어진 입력 form 생성
+- checkbox: name속성을 넣고, 여러가지 체크시 리스트 값으로 전달
+- radiobox: name속성을 넣고, radiobox중에 한가지 값만 전달
+
+select 태그 (myEx6.html 참조)
+- 복수개의 리스트에서 복수개의 아이템을 선택할 때 사용한다
+- 서버에 전송되는 데이터는 select 요소의 name 어트리뷰트를 키로, option 요소의 value 어트리뷰트를 값으로 하여 key=value의 형태로 전송된다.
+
+textarea 태그 - 여러줄의 글자를 입력할 때 사용
+
+button 태그 
+- button 태그는 클릭할 수 있는 버튼을 생성한다. <input type="button">과 유사하지만 input 태그는 빈 태그인 반면 button 태그는 그렇지 않다. 따라서 button 요소에는 텍스트나 이미지 같은 콘텐츠를 사용
+- input태그에서 속성 button 보단 button 태그를 사용하는게 좋다.
+- type 어트리뷰트는 반드시 지정하는 것이 바람직하며 어트리뷰트값으로 button, reset, submit를 지정할 수 있다.
+
+iframe 태그
+- 외부의 페이지를 그대로 가져옴
+- 예전에 많이사용되었으나 저작권 침해 관련으로 유튜브 이외에서 잘 사용되지않음
+
+===========================오전3===========================
+CSS
+웹페이지의 레이아웃
+
+body 태그는 기본적으로 margin 8 값을 가짐
+div 태그는 margin 이나 border padding 값이 없다
+
+레이아웃의
+block - header, footer 기본 기능
+inline - div, img
+===========================오전4===========================
+
+위치 속성 (https://www.w3schools.com/css/css_positioning.asp)
+static - 자기공간을 가짐
+relative - 자기공간을 가지고 어디든 위치할 수있음
+fixed - 위치만 가지고있다.
+absolute - 드롭다운형식
+sticky -
+
+float
+- img태그에 쓰이며, left, right, none 이있음
+ex)
+img{
+	float: right;
+	}
+	
+	clear 및 clearfix
+	https://www.w3schools.com/css/css_float_clear.asp
+	
+	
+https://www.w3schools.com/html/html_layout.asp 
+- 예제에 float  clear가 다있음
+===========================오후1=========================== 
+HTML Layout
+
+CSS Flexbox (최신브라우저나 모바일에서만 사용가능하여 호환성이 떨어짐)
+
+
+===========================오후2===========================
+9월21까지 이미지파일 HTML형식으로 만들기
+
+box-sizing - 요소의 너비와 높이를 계산하는 방법을 지정한다.
+ex) box-sizing: content-box;
+or
+box-sizing: border-box;	
+
+
+===========================오후3===========================
+
+wsl2
+
+tmux - 리눅스 창 생성하기
+$ tmux
+ ctrl + b // shift + 5 ==== 리눅스 창이 가로방향으로 생김 
+ ctrl + b // shift + ' ==== 리눅스 창이 새로방향으로 생김
+ ctrl + b // 방향키 ==== 방향키 방향으로 새로만든 리눅스창 이동
+
+파이선 서버에서 예외문을 사용하는 이유 (simplehttp3.py 기준으로)
+- 해당파일이 없거나 디렉토리를 요청할 시 try 하는게 경로의 바이너리 파일을 읽는 것이기 때문에 예외문을 이용해서 서버가 중단되지 않게 하기 위함이다.
+ 
+python
+정규식 import re
+
+ex) req_path = re.sub(r'^/', '', self.path) # 첫번째에 '/'가 있으면 ''으로 바꾼다.
+
+

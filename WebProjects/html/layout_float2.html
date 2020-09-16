@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <tilte>3대 운동</tilte> -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header{
+            background-color: #666;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px
+        }
+        nav{
+            float: left;
+            width: 30%;
+            height: 300px;
+            background: grey;
+            padding: 20px;
+        }
+        nav ol {
+            list-style-type: disc;
+            padding: 0;
+        }
+        article{
+            float: left;
+            padding: 20px;
+            width: 70%;
+            background-color: whitesmoke;
+            height: 300px;
+        } 
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        footer{
+            background-color: #777;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        @media (max-width: 600px){
+            nav, article {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+    </head>
+    <body>
+        <header>
+        <h2>3대 운동으로 layout</h2>
+        </header>
+        <section>
+            <nav>
+                <ol>
+                    <li>스쿼트</li>
+                    <li>벤치프레스</li>
+                    <li>데드리프트</li>
+                </ol>        
+            </nav>
+        
+        <article>
+           <h1>스쿼트</h1> 
+           <p>스쿼트(영어: squat)는 웨이트 트레이닝의 가장 대표적인 운동 중 하나이다. 데드리프트, 벤치 프레스와 함께 웨이트 트레이닝의 'Big 3'로도 불리며, 중량을 겨루는 스포츠인 파워리프팅 중 하나이다. 바벨 또는 덤벨을 들고 무릎 관절을 굽혔다 펴는 행동을 반복함으로써, 하반신의 대퇴사두근과 하퇴삼두근, 대둔근, 중전근 등의 근육을 성장시키는 운동으로, 하체의 근육량 증가에 커다란 효과가 있다.</p>            
+            <p>잘못된 자세 또는 무리한 중량으로 행할 경우 무릎 부상의 위험이 큰 운동이기도 하다. 무릎을 구부릴 때는 무릎이 앞으로 돌출되어 무게중심이 앞으로 쏠리지 않도록 주의해야 하며, 허리를 구부리지 말고 엉덩이를 뒤로 뺀 자세로 시행해야 한다.</p>
+        </article>
+        </section>
+        <footer>
+            <p>Footer</p>
+        </footer>
+    </body>
+</html>
