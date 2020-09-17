@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Document</title>
+    <style>
+        .masonry {
+  margin: 48px -2px;
+  padding-left: 0;
+  list-style: none;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.masonry li {
+  flex-basis: calc(100% / 3);
+  height: 200px;
+  display: flex;
+}
+
+.masonry li div {
+  display: relative;
+  flex: 1;
+  margin: 2px;
+  text-align: center;
+  display: flex;
+  background-color: #C9F4FF;
+}
+
+.masonry li:nth-child(1) div,
+.masonry li:nth-child(7) div {
+  display: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: calc(200% - 4px);              /*  twice the height  */
+  background-color: #FFB4FF;
+}
+
+.masonry li:nth-child(4),
+.masonry li:nth-child(8) {
+  flex-basis: 100%;                      /*  100% width to force wrap  */
+}
+
+.masonry li:nth-child(4) div,
+.masonry li:nth-child(8) div {
+  background-color: #B9EDA8;
+}
+
+.masonry li:nth-child(4) div {
+  margin-left: calc((100% / 3) + 2px);   /*  pushed to left  */
+}
+
+.masonry li:nth-child(8) div {
+  margin-right: calc((100% / 3) + 2px);  /*  pushed to right  */
+}
+    </style>
+</head>
+<body>
+    <ul class="masonry">
+        <li><div>1&nbsp;</div></li>
+        <li><div>2&nbsp;</div></li>
+        <li><div>3&nbsp;</div></li>
+        <li><div>4&nbsp;</div></li>
+        <li><div>5&nbsp;</div></li>
+        <li><div>6&nbsp;</div></li>
+        <li><div>7&nbsp;</div></li>
+        <li><div>8&nbsp;</div></li>
+    </ul>
+</body>
+</html>

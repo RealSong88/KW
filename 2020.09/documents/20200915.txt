@@ -52,7 +52,7 @@ href 어트리뷰트(attribute = 속성)
 ===========================오전3===========================
 
 파이썬을 활용하여 ubuntu에서 서버열기
-http.server, socketserver 를 임포트 한다.
+http.server, socketserver 를 임포트 한다. python2 버전
 
 html, css, javascript 를 배우는 이유
 웹애플리케이션을 만드는 능력
