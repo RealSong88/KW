@@ -1,0 +1,137 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+===========================오전1===========================
+
+NCS - 관계형 데이터베이스 활용(30p ~ 33p)
+ERD	
+https://aquerytool.com/
+
+데이터베이스 : 여러 사람들의 데이터를 모아서 관리하는 것
+
+엔티티
+ - 사물 또는 사건으로 정의되며 개체라고도 한다.
+
+데이터베이스정규화
+-무결성을 확보하고 중복성을 배제하여 테이블에 정확한 데이터가 들어가도록 하는데 목적이 있다. 중복성을 없애면 저장공간을 최소화하고 시스템의 속도도 빠르게 할 수 있다.
+
+스키마 - 논리모델, 물리모델
+
+
+===========================오전2===========================
+span 태그 - 인라인 속성을 가짐.
+
+CSS
+셀렉터
+https://poiemaweb.com/css3-selector
+
+html 에서는 속성을 attribute 라고 함
+CSS 에서는 속성을 property
+
+id 셀렉터
+- id 어트리뷰트 값은 중복될 수 없는 유일한 값
+
+class 셀렉터
+- class 어트리뷰트 값은 중복될 수 있다. 
+ex)
+<p class="text-center text-large text-blue">center</p> === 셀렉터 세가지가 적용되었다.
+
+attribute 셀렉터
+- html의 attribute도 선택자로 지정할 수 있다.
+ex)
+<style>
+a[href] { color: red; }
+</style> === a태그안에 href(링크)에 글자 색을 레드로 변경
+
+복합 셀렉터
+-후손 셀렉터
+-자식 셀렉터
+-형제 셀렉터, 일반 형제 셀렉터
+
+가상 클래스 셀렉터
+-링크 셀렉터, 동적셀렉터
+-UI 요소 상태 셀렉터 : input type 에서 주로 사용
+-구조 가상 클래스 셀렉터
+-부정 셀렉터
+-정합성 체크 셀렉터 : ^ - 시작, $ - 끝
+ex)<style>
+	input[type="text"]:valid {
+	  background-color: greenyellow;
+	}
+
+	input[type="text"]:invalid {
+	  background-color: red;
+	} 
+  <label>핸드폰 번호 형식
+	<input type="text" value="010-1111-2222"
+	  pattern="^\d{3}-\d{3,4}-\d{4}$" required>
+  </label>
+===========================오전3===========================
+
+가상 요소 셀렉터
+
+CSS 프로퍼티 값의 단위 https://poiemaweb.com/css3-units
+
+크기단위 
+-px : 절대값. 화소 단위, 디바이스 해상도에 따라 상대적 크기를 갖음
+-em : 상대값. em은 배수(倍數) 단위로 상대 단위, 1em은 요소에 지정된 사이즈와 같고 2em은 요소에 지정된 사이즈의 2배
+-rem : 고정된 상대값. 지정할 때마다 중복되지 않고 디폴트 값에서 배수됨
+-% : 상대값. 요소에 지정된 사이즈(상속된 사이즈나 디폴트 사이즈)에 상대적인 사이즈를 설정
+브라우저의 폰트 사이즈 기본값은 16px, 1em, 100%이다.
+-viewport : 반응형 웹디자인은 화면의 크기에 동적으로 대응하기 위해 % 단위를 자주 사용한다. 하지만 % 단위는 em과 같이 상속에 의해 부모 요소에 상대적 영향을 받는다.
+vw, vh, vmin, vmax
+
+===========================오전4===========================
+색상 단위 - 예제 참고
+
+박스모델
+-Box는 콘텐트(Content), 패딩(Padding), 테두리(Border), 마진(Margin)로 구성
+
+width / height 프로퍼티
+
+box-sizing 프로퍼티
+content-box
+border-box : 마진을 제외한 박스 모델 전체를 width, height 프로퍼티의 대상 영역으로 지정할 수 있어서 CSS Layout을 직관적으로 사용할 수 있게 한다.
+
+
+display 프로퍼티
+block, inline, inline-block, none
+
+===========================오후1=========================== 
+
+python (pyserver)
+get 보안방식이 낮음
+post 보안 수준이 높음
+
+https://developer.mozilla.org/ko/docs/Web/HTTP/Status
+
+html에서 form 태그가 중요한 이유는 클라이언트와 서버가 데이터를 전송할 수있는 유일한 방법
+
+label tag 나 input tag 내에 placeholder를 사용해 입력 예시를 줄 수 있다.
+
+[[:valid]] or [[:invalid]] 형식 사용시 input 태그에서 pattern 속성을 사용해야 css 적용가능
+
+w3school 
+CSS navigation bar > horizontal Nav bar
+활용해서 메뉴바 가로로 만들기
+
+html css 노가다를 줄이기 위한
+https://emmet.io/
+
+===========================오후2===========================
+
+오후 수업
+
+befor_pyserver.zip - 수정 전
+after_pyserver.zip - 수정 후
+
+pyserver.py ----> 수정 전 과 후 코드 비교하시면 수정된 점이 있습니다.
+pyserver.py 파이참으로 run 하면, [[http://localhost:8080]] 포트가 열립니다.
+
+개인 서버 띄워서 홈페이지 접속
+
+formtest.html 을 만들어 post 방식으로 클라이언트가 데이터를 서버에 보내고 응답받는 과정이 브라우져에 텍스트로 표현이 되었습니다.
+
+css float 기능과 clear_fix, hover를 활용해 index.html 을 만들고 개인서버에 띄워서 브라우져로 
+접근하는 과정까지 수업하셨습니다.
+

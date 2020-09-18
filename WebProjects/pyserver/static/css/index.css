@@ -1,0 +1,30 @@
+nav ul {
+    background-color: #333;
+}
+nav li {
+    float: left;
+
+}
+nav li a {
+    display: block;
+    padding: 8px;
+    /*background-color: #ddd;*/
+    color: white;
+    text-decoration: none;
+
+}
+
+.clear_fix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+nav li a:hover {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+    /* R(4C)G(AF)B(50)*/
+}

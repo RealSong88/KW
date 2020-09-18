@@ -1,0 +1,17 @@
+* {
+    font-family: "Nanum Gothic";
+}
+
+
+ul li {
+    font-style: italic;
+}
+
+li.key {
+    color: orange;
+}
+
+li:hover {
+    background-color: darkslateblue;
+    color: white;
+}

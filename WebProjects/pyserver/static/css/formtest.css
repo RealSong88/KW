@@ -1,0 +1,6 @@
+#user_id:valid {
+    background-color: orange;
+}
+#user_id:invalid{
+    background-color: hotpink;
+}
