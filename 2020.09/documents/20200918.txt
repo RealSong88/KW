@@ -135,3 +135,56 @@ formtest.html 을 만들어 post 방식으로 클라이언트가 데이터를 �
 css float 기능과 clear_fix, hover를 활용해 index.html 을 만들고 개인서버에 띄워서 브라우져로 
 접근하는 과정까지 수업하셨습니다.
 
+=======
+Creation-Date: 2020-09-19T15:40:11+09:00
+
+
+===========================오후1=========================== 
+
+Flask 
+
+c:/venvs/myproject.cmd 를 만들어서 
+FLASK_APP --이라는 환경변수를 통해 플라스크앱을 지정(app.py로 파일명을 저장햇다면 FLASK_APP 환경 변수를 지정하지 않아도 도니다. 디폴트 앱으로 인식하기 때문
+FLASK_ENV — 실행환경을 운영이 아닌 개발
+@echo off
+@cd c:/projects/myproject
+@set FLASK_APP=pybo
+@set FLASK_ENV=development
+@c:/venvs/myproject/scripts/activate
+추가한다.
+
+
+데이터베이스 관리를 위해서 다음 두가지만 기억하면 된다.
+
+flask db migrate - 모델을 신규로 생성하거나 변경할때 사용
+flask db upgrade - 변경된 내용을 적용할때 사용
+
+
+===========================오후2===========================
+
+html ...
+===========================오후3===========================
+
+linux
+
+wsl2에서 ssh(원격제어) 서버나 클라이언트 사용하기 위해서는
+기본으로 설치되어있는 openssh-server(문제가 있어서 재설치해야함) 를 purge 한 후 재설치를 한다.
+
+ssh 서버 설정파일 [[/etc/ssh/sshd_config]] 에서 밑에있는 주석을 해제
+
+Port 22
+Protocol 2
+PermitRootLogin no
+AuthorizedKeysFile  .ssh/authorized_keys
+PasswordAuthentication yes
+PubkeyAuthentication yes
+ChallengeResponseAuthentication no
+X11Forwarding yes
+UseDNS no
+
+ssh 서버 완전히 재시작
+sudo service ssh --full-restart
+
+ssh 서버 접속 확인
+ssh localhost
+

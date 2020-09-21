@@ -1,0 +1,70 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-21T09:19:49+09:00
+
+===========================오전1===========================
+
+NCS  응용 SW기초 기술 활용(33p ~ 44p)
+
+DB에서 PK(Private Key-일련번호)를 사용해서 데이터 중복이 허용되지 않는다.
+나머지페이지는 다른수업으로 대체
+종료
+
+===========================오전2===========================
+
+CSS# Background
+
+background-image: url(<이미지주소>); === 배경 이미지 지정 
+
+background-repeat: 
+-설정된 이미지의 크기가 화면보다 작으면 자동으로 이미지가 반복 출력되어 화면을 채우게 된다. 이것은 background-repeat 프로퍼티의 기본값이 repeat이기 때문
+-x축으로만 배경 이미지를 반복할 경우, background-repeat 프로퍼티값에 repeat-x, y축으로만 배경 이미지를 반복할 경우, repeat-y를 설정
+
+background-size: 
+- 화면보다 이미지가 클 때 화면에 맞출지, 가로나 세로 이미지가 짤리게 나오는지 결정하는 속성
+
+background-attachement: fixed;
+- 배경이미지 위치를 고정
+- ex> 블로그에서 배경이미지는 고정이고 컨텐츠는 위아래로 스크롤 될 때
+
+
+width, margin === 같이 쓰며, 컨텐츠의 위치를 지정
+ex)
+width: 400px;
+margin: 50px auto; ==== 위아래 마진 50px 좌, 우 auto 이면 중앙 배치
+===========================오전3===========================
+
+CSS3 Font & Text
+tff === 트루폰트 확장자
+woff === 웹폰트 확장자
+
+웹폰트란? (참고: https://wit.nts-corp.com/2017/02/13/4258)
+
+구글폰트 api 활용해서 폰트사용(https://fonts.googleapis.com/earlyaccess/nanumgothic.css)
+
+https://blog.naver.com/ksseo63?Redirect=Log&logNo=221972693960
+
+===========================오전4===========================
+javascript
+[[about:blank]] === 브라우저 주소창에 빈페이지
+
+자바스크립트는 객체.
+
+===========================오후1=========================== 
+
+CSS3 POSITION
+
+
+상속과 적용 우선순위
+!important > 인라인 스타일 > 아이디 선택자 > 클래스/어트리뷰트/가상 선택자 > 태그 선택자 > 전체 선택자 > 상위 요소에 의해 상속된 속성
+===========================오후2===========================
+
+캡쳐프로그램 pickpick — 이미지 사이즈 측정
+===========================오후3===========================
+
+linux ssh
+로컬 pc에서 ssh-keygen으로 id_rsa.pub과 id_rsa를 생성
+$ ssh-copy-id <name>@<ip addr> === 를 입력하고 비번을 입력하면
+서버 pc 에 [[~/.ssh]] 에 authorized_keys 란 파일이 생성되면서 퍼블릭 키가 추가된다.
+
+그 후에 비밀번호 입력없이 로컬 pc로 서버pc를 원격제어하게된다.
