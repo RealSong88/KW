@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+펫시터 서비스 시스템
+https://wayopet.com/service
+
+
+채팅, 예약 기능.
+
+메인페이지, 서브페이지 2 ~ 3
+
+
+자바스크립트로 사이즈 측정
+29일까지는 웹페이지 틀 짜기
+
+BBC클론코딩 유튜브 따라하기 금요일까지

@@ -46,7 +46,7 @@ https://blog.naver.com/ksseo63?Redirect=Log&logNo=221972693960
 
 ===========================오전4===========================
 javascript
-[[about:blank]] === 브라우저 주소창에 빈페이지
+about:blank === 브라우저 주소창에 빈페이지
 
 자바스크립트는 객체.
 
