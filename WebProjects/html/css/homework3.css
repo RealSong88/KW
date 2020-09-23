@@ -1,37 +1,46 @@
-ul{
-  list-style-type: none;  
-}
-div {
-    border: 1px dotted;
-    width: 500px;
-    margin: 10px auto;
-    height: 500px;
-    padding: 10px;
-}
-.row_1, .row_2, .row_3 {
+.main-con{
+    border: 3px solid;
     display: flex;
-
 }
-.row_1 li, .row_2 li, .row_3 li{
-    border: 1px solid brown;
-    background-color: grey;    
+.main-column {
+    flex-grow: 1;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    flex: 1 1 auto;
 }
-
-/* .row_2 li{
-    margin: 5px;
-    background-color: grey;    
-    flex-direction: column;
-    justify-content: center;
-    flex: 1 1 auto;
+.con{
+    background-color: green;
+    height: 400px;
+    display: flex;
+    border:1px solid;
+   
 }
 
-.row_3 li{
-    margin: 5px;
-    background-color: grey;    
+.column {
+    flex: 1;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    flex: 1 1 auto;
-} */
+}
+.raw {
+    flex: 1;
+    display: flex;
+    
+}
+.item {
+    color: white;
+    flex-grow: 1;
+    background-color: violet;
+    margin: 1px;
+    
+}
+
+.item2{
+    background-color: white;
+    flex-grow: 1;
+    margin: 1px;
+    border: 1px solid;
+}
+
+.second{
+    border: 1px solid;
+    flex: 1;
+}

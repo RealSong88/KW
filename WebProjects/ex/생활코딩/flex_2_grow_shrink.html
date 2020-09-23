@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            background-color: powderblue;
+            display: flex;
+            height: 200px;         
+            flex-direction:row;
+            position: relative;
+        }
+        .item{           
+            background-color: tomato;
+            color: white;
+            border: 1px solid white;    
+            height: 50%;
+            flex-grow: 1;         
+        }
+        .item2 {
+          
+            background-color: orange;
+            color: white;
+            border: 1px solid white;
+            flex-grow: 1;            
+            
+        }
+        /* .item:nth-child(1){
+            flex-basis: 400px;
+            flex-shrink:1;
+        }
+        .item:nth-child(2){
+            flex-basis: 400px; 
+        } */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item2">1</div>
+        <div class="item2">2</div>
+        <div class="item2">3</div>
+        <div class="item2">4</div>
+        <div class="item2">5</div>
+    </div>
+</body>
+</html>

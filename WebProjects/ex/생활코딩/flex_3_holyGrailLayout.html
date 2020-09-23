@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>holyGrailLayout</title>
+    <style>
+        .main{
+            height:100vh;
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+            align-content: stretch;
+            background-color: teal;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 800px;
+            border: 1px solid gray;
+        
+        }
+        header {
+            border-bottom: 1px solid gray;
+            padding-left: 20px;
+            /* text-align: center; */
+        }
+        footer {
+            padding:20px;
+            text-align: center;
+            border-top: 1px solid gray;
+            
+        }
+        .content {
+            display: flex;
+        
+        }
+        .content nav{
+            border-right:1px solid gray;
+        }
+        .content aside {
+            border-left: 1px solid gray;
+        }
+        nav, aside {
+            flex-basis: 150px;
+            flex-shrink: 0;
+        }
+        footer a {
+            text-decoration: none;
+            font-size: 12;
+        }
+       nav{
+           order: -1;
+       }
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+    <div class="container">
+        <header>
+            <h1>헤딩1!</h1>
+        </header>
+        <section class="content">
+            <main>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias corporis amet facere vitae enim perspiciatis laudantium asperiores, quas minima quibusdam. Nesciunt natus maiores, eligendi officia ad magnam, eos debitis reiciendis ratione aliquid molestiae sed incidunt non nihil esse sit corporis porro amet sunt autem, pariatur assumenda? Incidunt error mollitia sint itaque illum, est optio unde corporis distinctio molestias voluptate repellat possimus molestiae ipsam ipsa neque voluptates nobis? Quod repellat quae cum eveniet distinctio modi inventore quia ipsum voluptates maxime officiis nostrum atque illum animi quidem provident at quibusdam, minima consectetur rem. Sunt fugiat voluptates nisi saepe. Rerum blanditiis debitis earum.    
+
+            </main>
+            <nav>
+                <ul>
+                    <li>html</li>
+                    <li>css</li>
+                    <li>javascript</li>
+                </ul>
+            </nav>
+          
+            <aside>
+                AD
+            </aside>
+        </section>
+        <footer>
+            <a href="http://bellsky.dothome.co.kr/profile.html">홈페이지</a>
+        </footer>
+    </div>
+    </div>
+</body>
+</html>

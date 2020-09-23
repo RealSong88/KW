@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-23T14:19:15+09:00
+
+자바스크립트 내장 함수 종류
+var number = new Number()
+undefined
+var string = new String()
+undefined
+var boolean = new Boolean()
+undefined
+var object = new Object()
+undefined
+var array= new Array()
+var func = new Function()
+undefined
+var date = new Date()
+undefined
+var re = new RegExp()
+undefined
+
+
