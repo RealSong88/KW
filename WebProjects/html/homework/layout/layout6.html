@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .main-con {
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+            border: 1px solid;
+        }
+        .column {
+            display: flex;
+            flex-grow: 1;
+        }
+        .column:nth-child(1) .item {
+            background-color: white;
+        }
+        .column:nth-child(2) {
+            flex-grow: 3;
+        }
+        .item {
+            margin: 10px;
+            flex-grow: 1;
+            background-color: grey;
+        }
+        .column2 {
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+        }
+        .column2:nth-child(1){
+            flex-grow: 3;
+        }
+        .column2:nth-child(2) .item:nth-child(1) {
+            background-color: silver;
+        }
+        .column2:nth-child(2) .item:nth-child(2) {
+            background-color: white;
+        } 
+    </style>
+</head>
+<body>
+    <div class="main-con">
+        <div class="column">
+            <div class="item"></div>
+        </div>
+        <div class="column">
+            <div class="column2">
+                <div class="item"></div>
+            </div>
+            <div class="column2">            
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main-con {
+            border: 1px solid;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .column{
+            display: flex;
+            flex-grow: 1;
+        }
+        .column:nth-child(2) {
+            flex-grow: 3;
+        }
+        .column:nth-child(2) .item {
+            background-color: silver;
+        }
+        .column .item:nth-child(1){
+            flex-grow: 3;
+        }
+        .item {
+            flex-grow: 1;
+            background-color: grey;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main-con">
+        <div class="column">
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div class="column">
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </div>
+</body>
+</html>

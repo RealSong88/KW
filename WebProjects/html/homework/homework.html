@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Homework</title>
+    <style>
+        #gnb{
+            position: absolute;
+            right: 0;
+            top: -1px;
+        }
+        .logout_block{
+            display: block;
+            font-family: 'Nanum Gothic', 'gulim', sans-serif;
+            font-size: 8px;
+        }
+        ul {
+            list-style: none;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;   
+            padding-inline-start: 40px;
+        }
+        #gnb > li.gnb_last{
+            padding-right: 100px;
+        }
+        #gnb > li {
+            float: left;
+            padding: 0 20px;
+            border-left: 1px dotted black;
+        }
+        
+        #nav {
+            float: right;
+            margin-top: 65px;
+        }
+        #nav > li {
+            float: left;
+            padding: 0 20px;
+            border-left: 1px dotted black;
+        }
+        #nav > li.last {
+            padding-right: 0;
+        }
+        .contain {
+            margin: 48px -2px;
+            padding-left: 0;
+            list-style: none;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            display: flex;
+        }
+        .contain li{
+            flex-basis: calc(100% / 3);
+            height: 200px;
+            display: flex;
+        }
+        .contain li div {
+            display: relative;
+            flex: 1;
+            margin: 1px;
+            text-align: center;
+            background-color: #C9F4FF;
+        }
+        .contain li:nth-child(4) div {
+            margin-right: calc((100% / 0) + 2px);
+        }
+        .contain li:nth-child(5) div,
+        .contain li:nth-child(6) div{
+            display: absolute;
+            
+        }   
+        
+        footer{            
+            padding: 10px;
+            text-align: center;            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Header</h1>
+        </div>
+        <p class="side_btn">menu</p>
+        <!-- 로그아웃 상태일때 -->
+        <ul id="gnb" class="logout_block">
+            <li>LOGIN</li>
+            <li>JOIN US</li>
+            <li>SITEMAP</li>
+            <li class="gnb_last"><small>KOREAN</small></li>
+            <!-- ::after -->
+        </ul>        
+        <!-- <ul id="nav">
+            <li class="first">Introduction center</li>
+            <li class="second">Training course</li>
+            <li class="third">Job information</li>
+            <li class="fouth">Notification</li>
+            <li class="last">Community</li>
+        </ul>     -->
+    </header>
+    <hr>
+    <section>
+        <ul class="contain">
+            <li><div>1</div></li>
+            <li><div>2</div></li>
+            <li><div>3</div></li>
+
+            <li><div>4</div></li>
+            <li><div>5</div></li>
+            <li><div>6</div></li>
+        </ul>
+    
+    </section>
+    <footer>
+        <div><small>000 N. Spring Street. Rm 000. Los Angeles. CA 0000000 | TEL:000-0000-0000 | FAX:000-0000-0000 | E-mail:Female@Female.com</small>
+        </div>
+        <div>
+            <small>Copyright Volunteer. All rights reserved</small>
+        </div>
+    </footer>
+</body>
+</html>

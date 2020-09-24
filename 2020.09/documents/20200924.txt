@@ -1,0 +1,151 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-24T08:53:22+09:00
+
+===========================오전1===========================
+NCS 화면구현(10 ~ 16p)
+
+
+
+
+===========================오전2===========================
+
+Wsl ubuntu20 에 apache2, maria db 설치
+https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-18-04-quickstart
+
+https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-ubuntu-18-04
+
+mariadb 명령어 관련
+  219  sudo service mariadb status
+  220  sudo service mysql status
+  221  sudo service mysql start
+  222  sudo mysql
+  223  sudo mysql_secure_installation
+  224  sudo service mysql stop
+
+===========================오전3===========================
+
+mariadb 설치 확인
+문서에서 3이후에는 사용자 설정이므로 mariaDB를 배우고나서 확인.
+
+
+===========================오전4===========================
+
+wsl 에서의 ip 는 요청하는건 가능하나 서버로 활용인 response는 가능하지않다.(방법은 있음) 같은 라우터를 사용하는 네트워크에서는 request & response가 가능하다.
+
+===========================오후1=========================== 
+
+https://en.wikipedia.org/wiki/Chmod
+
+
+sudo chown -R $USER:$USER [[/var/www/your_domain]] === 이 폴더의 권한을 root나 user 또는 그룹으로 변경이 가능
+chmod에서 7은 rwx, 4는 r--, 3은 -wx, 5는 r-x
+
+ex) chmod -R 755 [[/var/www/Song]] === Song 폴더의 권한은 오너,그룹,other로 권한을 주었음.
+
+아파치에서 기존에 conf 파일을 비활성화하고 나의 conf를 활성화 하는 방법
+
+$sudo a2ensite your_domain.conf === 나의 conf를 활성화
+
+$sudo a2dissite 000-default.conf === 기본 conf를 비활성화
+
+
+===========================오후2===========================
+
+javascript
+
+var object = {
+	myString: 'string',
+	myNumber: 10,
+	myBoolean: true,
+	myNull: null,
+	myUndefined: undefined
+}
+복합객체, 합성객체, 참조 자료형
+
+복합객체는 어떻게 저장, 복사 되는가?
+>var myObject = {};
+>var copyOfMyObject = myObject;
+>copyOfMyObject;
+<{}
+>myObject.foo = 'bar'
+<"bar"
+>myObject
+<{foo: "bar"}
+>copyOfMyObject
+<{foo: "bar"}
+
+복합객체는 참조를 비교한다
+>var obj1 = {same: 'same'}
+<undefined
+>var obj2 = {same: 'same'}
+<undefined
+>obj1 == obj2
+<false
+>obj1.same == obj2.same
+<true
+
+자바스크립트에서 '===' 는 참조주소(객체)와 값을 비교함 '==' 값만 비교
+
+>var objA = {foo: 'bar'}
+<undefined
+>var objB = objA
+<undefined
+>objA === objB
+<true
+
+>var objA = {property: 'value'}
+<undefined
+>var point1 = objA
+<undefined
+>var point2 = point1
+<undefined
+>objA.property = null
+<null
+>point1.property
+<null
+>point2.property
+<null
+
+생성자 인스턴스에는 자신의 생성자 함수를 가리키는 속성이 있다.
+var foo = {}
+undefined
+foo.constructor
+ƒ Object() { [native code] }
+
+>MyCon
+<ƒ MyCon(name) { 
+ this.name = name; return 'WoW'}
+>var instanceOfMyCon = new MyCon('Hong');
+<undefined
+>instanceOfMyCon
+<MyCon {name: "Hong"}
+>instanceOfMyCon.constructor
+<ƒ MyCon(name) { 
+this.name = name; return 'WoW'}
+===========================오후3===========================
+oracle cloud의 나의 인스턴스 컴퓨터에서 서버를 열기위해서는 방화벽 설정이 필요하다 일단 인스턴스에서 공용 서브넷 접속 후 보안목록에 들어가서
+수신 규칙을 추가한다. 웹서버로 이용할 시 80(http) 443(https) 4321(개발용)포트를 포트 범위에 입력하고 수신주소는 0.0.0.0/0  (모든IP)를 입력한다.
+그리고 로컬에서 ssh 로 접속후 instance 방화벽 설정을 변경한다.
+$ sudo iptables -I INPUT 5 -i ens3 -p tcp --dport 80 -m state --state NEW,ESTABLISHED -j ACCEPT​
+
+$ sudo iptables -I INPUT 5 -i ens3 -p tcp --dport 443 -m state --state NEW,ESTABLISHED -j ACCEPT​
+
+$ sudo iptables -I INPUT 5 -i ens3 -p tcp --dport 4321 -m state --state NEW,ESTABLISHED -j ACCEP
+
+$ sudo iptables --list 
+로 accept 가 되어있는지 확인한다. 우분투 20.04에서는 방화벽을 재실행하거나 재부팅하면 보안 정책이 적용되지않는다. 유지하기위해서는 패기지 설치를 하고 보안정책을 저장해야한다.
+
+① 패키지 설치: 
+
+$ sudo apt-get install iptables-persistent netfilter-persistent​​
+
+② 방화벽 정책을 저장: 
+
+$ netfilter-persistent save​​
+
+③ 방화벽 정책을  다시 로드: 
+
+$ netfilter-persistent start
+
+
