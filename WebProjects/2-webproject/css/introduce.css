@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Nanum Gothic';
+    height: 10000px;
+}
+ul,nav{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+
+/* header 구간 */
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: flex-end; 
+    top: 0;
+    left: 0;
+    z-index: 10;
+    color: white;
+    background-color: orange;
+    
+}
+
+header h2 {
+    position: absolute;
+    display: inline-block;
+    z-index: 3;
+    flex-basis: 0;
+    left: 25%;
+}
+.header-con{
+    /* position: ; */
+    display: flex;
+    justify-content: flex-end;    
+    padding: 51px;
+    border: 1px solid;
+}
+
+.item-head a{    
+    flex:1;
+    padding: 30px 45px;
+    text-align: center; 
+    border: 1px solid;   
+}
+
+
+/* mobile */
+@media(max-width:700px){
+    header{
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+    }
+    header h2{
+        margin-bottom: 15px;
+    }
+    .header-con{
+        flex-direction: column;
+        margin: 0 7px;
+        
+    }
+}
+
+/* section 구간 */
+.section-con {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    background: grey;
+    height: 80vh;    
+}
+.item-sec {
+    border: 1px solid;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.first-sec {
+    display: flex;
+}
+.second-sec  {
+    display: flex;
+    background-color: #75a478; 
+}
+.img-sec {
+    flex:1;
+}

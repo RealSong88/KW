@@ -1,0 +1,47 @@
+.header-con {
+    /* position: absolute; */
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+
+    background-color: #eeeeee;
+    height: 65px;
+    line-height: 65px;
+    /* justify-content: flex-end; */
+}
+
+.item-head {
+    /* justify-content: flex-end; */
+    flex: 1;    
+    height: 65px;
+    text-align: center;
+    border:1px solid;
+}
+.item:first-child {
+    flex: 4
+}
+/* header 구간 */
+
+/* section 구간 */
+.section-con {
+    display: flex;
+    flex-direction: column;
+    background: grey;
+    height: 80vh;    
+}
+.item-sec {
+    border: 1px solid;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.first-sec {
+    
+}
+.second-sec  {
+    color: white;
+}

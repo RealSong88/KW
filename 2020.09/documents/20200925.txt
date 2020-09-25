@@ -1,0 +1,113 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-25T08:46:09+09:00
+
+===========================오전1===========================
+CSS 드림코딩
+색깔 참고사이트
+https://material.io/resources/color/#!/?view.left=0&view.right=0
+flex-grow --- (기본값 0)컨테이너를 상속받은 아이템 태그들을 비율에 맞게 컨테이너에 채운다.
+flex-shrink --- (기본값 0)아이템들의 간격을 맞춘다.
+flex-basis --- (기본값 auto)각각의 아이템에 %값을 줘서 크기 비율을 맞춘다.
+
+NCS 화면구현( 28p ~ 52P)
+
+html css 의 화면구현 예시가 좋아서 한번 더 읽어본다.
+
+DOM(Documnet Object Model)과 자바스크립트의 관계
+
+-DOM은 자바스크립트에서 HTML페이지의 요소에 접근하거나 변경할 수 있도록 한다. 계층 구조를 갖는 형태이다. 
+
+Javascript
+
+객체가 특정 생성자 함수의 인스턴스인지 확인하기 (instance of 의 중요성)
+ex) <인스턴스> instance of <객체>
+
+>var CustCunst = function() { this.foo = 'bar'; };
+<undefined
+>var inst = new CustCunst()
+<undefined
+>inst
+<CustCunst {foo: "bar"}
+>inst instanceof CustCunst
+<true
+>if (inst instanceof CustCunst){
+ console.log("참입니다")}
+< 참입니다
+
+생성자를 통해 만든 인스턴스에 속성 추가
+>var myArray = new Array()
+<undefined
+>myArray.prop = 'test'
+<"test"
+>myArray.prop
+<"test"
+>myArray.age = 22
+<22
+>myArray
+<[prop: "test", age: 22]
+===========================오전2===========================
+Object() 객체
+Object() 생성자 함수가 생성한 빈 객체 컨테이너 Object() 객체라고 한다.
+
+자바스크립트 객체 —  모든 속성을 담을 수 있다. 유연하다.
+파이썬의 클래스개념과는 다르다. DOM하나에 객체를 생성하면 모든곳에서 사용 할 수 있기 때문에 환경변수(or 객체)를 생성해서 그곳에 필요한 객체들을 담아서 글로벌 변수(or 객체를) 최소화 한다. 자바스크립트는 복합 객체이기 때문에 가능하다.
+
+자바스크립트의 모든객체
+>var obj = new Object()
+>obj
+<{}
+
+복합객체에 다른 객체 포함
+>var obj = {
+	obj_1: {
+		obj_1_1:{ foo: 'bar' },
+		obj_1_2: {},
+	},
+	obj_2: {
+		obj_2_1: {},
+		obj_2_2: {},
+	}
+}
+>obj
+<{obj_1: {…}, obj_2: {…}}obj_1: {obj_1_1: {…}, obj_1_2: {…}}obj_2: {obj_2_1: {…}, obj_2_2: {…}}__proto__: Object
+
+점 표기법 각괄호 표기법을 사용한 객체 속성 접근 --- 둘 다 사용하지만 용도가 조금은 다르다.
+
+일반적인 코딩에서는 .을 활용하여 작성
+ex) cody.age=33; >cody.age  <33
+조건문이나 반복문에서의 JS는 각괄호를 활용하여하고
+ex) >cody['age'] <33
+
+속성 삭제 --- ex) delete cody.age; === age 속성이 제거된다.
+
+객체 속성의 참조를 찾는 법
+예를들어 배열 객체 myArray 를 만들었다. 그곳에서 myArray.abc라는 속성을 찾을 때 myArray.abc가 없으면 __proto__로 그 위의 객체 Array()에서 속성을 찾고 그곳에도 없을 때 __proto__로 Object()에서 속성을 찾고 그곳에도 없으면 undefined 인 속성이다. 그 속성에 값을 넣으면 myArray에 abc라는 속성이 만들어진다.
+===========================오전3===========================
+
+wsl - MySQL(mariaDB)
+$sudo apt update  === 설치전 업데이트를 한다.
+$sudo apt install mariadb-server === 마리아DB 서버 설치
+$sudo mysql_secure_installation === 보안스크립트를 실행하여 서버에 대한 액세스를 제한하는데 개발용으로는 굳이 설치하지 않는다.
+
+... 설치하고 비밀번호 입력하라고 계속 오류가 뜨는 경우 일단 서버를 실행시키면 root 비밀번호를 설정하거나 enter로 넘길 수 있다.
+$sudo mysql === 마리아디비 실행
+
+
+마리아디비 명령어
+- use mysql; === mysql로 체인지
+- describe user; === 정보를 본다.
+- select Host, User from user; ==
+
+===========================오전4===========================
+
+===========================오후1=========================== 
+
+HTML 페이지만들기..
+===========================오후2===========================
+HTML 페이지만들기..
+
+
+===========================오후3===========================
+반응형웹 헤더만들기
+https://fontawesome.com — 아이콘들을 제공받을수있음

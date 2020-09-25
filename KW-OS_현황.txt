@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-25T11:39:47+09:00
+
+====== KW-OS 현황 ======
+Created 금요일 25 9월 2020
+
+
+wsl_ubuntu_20 --- openssh-server, client  , mysql(mariadb), oraclecloud(bellsky1) ssh키 등록, 아파치2 Song.conf 등록
+
+vm_ubuntu_18 --- 파이썬에 mariadb 패키지 가져오기, mysql, openssh, python3 설치완료, 아파치2 realsong.conf 등록
+
+vm_ubuntu_18_server --- openssh-server 설치
+
+
+sudo chown -R $USER:$USER [[/var/www/your_domain]] === 이 폴더의 권한을 root나 user 또는 그룹으로 변경이 가능
+chmod에서 7은 rwx, 4는 r--, 3은 -wx, 5는 r-x
+
+ex) chmod -R 755 [[/var/www/Song]] === Song 폴더의 권한은 오너,그룹,other로 권한을 주었음.
+
+아파치에서 기존에 conf 파일을 비활성화하고 나의 conf를 활성화 하는 방법
+
+$sudo a2ensite your_domain.conf === 나의 conf를 활성화
+
+$sudo a2dissite 000-default.conf === 기본 conf를 비활성화

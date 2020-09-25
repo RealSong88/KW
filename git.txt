@@ -16,6 +16,10 @@ git config --list
 git init ----- 초기화, 새로운 저장소 
 git status
 
+깃 리모트 변경 하기
+https://gist.github.com/480/4681b67d2a906db8c6c1321cc678f05f
+git init > add> commit > remote origin add > git push --force --set-upstream origin master
+
 git add <file> ----- git에 file 추가
 git commit -m "<내용>" ------ 첫번째 commit에 <내용> 추가
 git log ----------- commit 내용 확인

@@ -1,0 +1,22 @@
+  <section class="section-con">
+        <div class="first-sec item-sec">
+            <!-- 백그라운드 이미지 사용해서 컨텐츠를 넣어도 좋을듯 -->
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore porro quia vitae ducimus natus, adipisci veritatis officiis recusandae consequuntur, error facere magni similique qui itaque iste minus deserunt tenetur reiciendis!
+            <!-- <div class="replace-img">div로 대체</div> -->
+        </div>
+        <div class="second-sec item-sec">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi commodi cupiditate aliquam repellendus ipsa totam officia a maxime voluptatibus ratione! Hic perferendis aut, culpa sunt officia 
+        </div>
+        <div class="third-sec item-sec">
+
+        </div>
+    </section>
+
+    <footer class="footer-con">
+        <div class="first-foo item-foo">
+
+        </div>
+        <div class="second-foo item-foo">
+
+        </div>
+    </footer>

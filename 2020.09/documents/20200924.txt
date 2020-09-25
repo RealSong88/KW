@@ -135,7 +135,7 @@ $ sudo iptables -I INPUT 5 -i ens3 -p tcp --dport 4321 -m state --state NEW,ESTA
 
 $ sudo iptables --list 
 로 accept 가 되어있는지 확인한다. 우분투 20.04에서는 방화벽을 재실행하거나 재부팅하면 보안 정책이 적용되지않는다. 유지하기위해서는 패기지 설치를 하고 보안정책을 저장해야한다.
-
+z
 ① 패키지 설치: 
 
 $ sudo apt-get install iptables-persistent netfilter-persistent​​

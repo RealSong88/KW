@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: popins;
+}
+ul,nav{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+
+/* header 구간 */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    background-color: #cfd8dc;
+    /* padding: 35px 100px 0; */
+}
+
+header h2 {
+    margin-right: 350px;
+}
+.header-con{
+    display: flex;
+    flex: 1 1 25%;
+    justify-content: flex-end;
+    /* border: 1px solid; */
+}
+
+.item-head{
+    flex:1 1 0;
+    padding: 15px;
+    /* border: 1px solid; */
+    text-align: center;
+    /* margin: 0 15px; */
+}
+
+
+/* mobile */
+@media(max-width:700px){
+    header{
+        flex-direction: column;
+    }
+    header h2{
+        margin-bottom: 15px;
+    }
+    header nav li{
+        margin: 0 7px;
+        font-size: 12px;
+    }

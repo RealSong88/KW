@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-25T11:52:42+09:00
+
+====== DATABASE ======
+Created 금요일 25 9월 2020
+
+
+[[MySQL]] - 무료이기 때문에 WEB 개발자들이 많은 파일들을 저장하기 위해 많이 사용하고 있다.
