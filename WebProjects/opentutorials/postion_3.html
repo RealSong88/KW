@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+       #parent, #other, #grand {
+           border: 5px solid tomato;
+       }
+       #grand {
+           position: relative;
+       }
+       #large {
+           background-color: aqua;
+           height: 10000px;
+       }
+        #me {
+            position: fixed;            
+            background-color: black;
+            color: white;
+            left: 0;
+            top:0;
+            text-align: center;
+        }
+        body {
+            padding-top:30px;
+        }
+            
+    </style>
+</head>
+<body>
+    <div id="other">other</div>
+    <div id="parent">parent
+        <div id="me">me</div>
+    </div>
+    <div id="large">large</div>
+</body>
+</html>

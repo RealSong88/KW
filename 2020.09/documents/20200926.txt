@@ -1,0 +1,42 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-26T15:22:39+09:00
+
+===========================오후1=========================== 
+Oracle cloud 블록스토리지 추가
+
+메뉴 -> 블록 스토리지 -> 블록 볼륨
+블록 볼륨 생성
+블록 볼륨 이름 입력
+블록 크기 지정
+블록 볼륨 생성
+
+블록 불륨 메뉴 -> 세부정보 -> 연결된 인스턴스
+
+인스턴스에 연결
+ISCSI 선택
+읽기/쓰기 선택
+장치 이름 선택
+연결 선택 === 시간 소요
+
+볼륨 상세보기에서 ISCSI명령 및 정보 확인 후 명령어 복사
+
+vm 인스턴스에서 lsblk 명령어로 현재 vm 파일 시스템을 확인
+
+===========================오후2===========================
+
+vscode 추천플러그인
+html to css autocompletion
+Material theme
+Material icon theme
+Prettier
+bracket pair colorizer
+Indent-rainbow
+Auto rename tag
+css peek
+html css support
+live server
+
+
+
+===========================오후3===========================

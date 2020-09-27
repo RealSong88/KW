@@ -8,6 +8,8 @@ Created 목요일 20 8월 2020
 첫 설치할 때 root 권한은 비활성화 되서
 접근할 수 있는 계정을 생성한다
 
+$ df -h === 파일 시스템현황
+
 scp <파일경로> <계정>@<ip주소> === 해당 계정의 아이피주소로 간단한 파일들(ex : ssh-keygen) 전송
 
 윈도우에서 vm 으로 웹서버 open시 윈도우 위의 가상머신에서 서버를 open한 것이므로 인터넷 미접속시에도 서로의 ip로 접속 할 수있다.
@@ -20,6 +22,28 @@ $ sudo ufw allow 8080 === 8080포트를 허용해줌
 
 wsl2 설치하면 윈도우 폴더를 제어할 수있다
 (기본적으로 서브 운영체제이기 때문에 c 와 e에 모든권한이있다.)
+
+$ lsblk === 현재 리눅스의 파일 시스템 확인
+
+# 블록 볼륨을 ext4로 포맷
+$ sudo mkfs.ext4 -m 0 -E lazy_itable_init=0,lazy_journal_init=0,discard /dev/sdb
+
+# Symlink 연결
+$ sudo mkdir -p /mnt/disks/sdb
+$ sudo mount -o discard,defaults /dev/sdb /mnt/disks/sdb
+$ sudo chmod a+w /mnt/disks/sdb
+
+# /etc/fstab 작성을 위한 HDD의 UUID 확인
+$ sudo blkid /dev/sdb
+
+$ vi vi /etc/fstab 
+
+# sudo vi /etc/fstab 에 아래 내용 추가 (재 부팅 시 마운트)
+
+UUID=UUID_VALUE /mnt/disks/sdb ext4 discard,defaults,nobootwait 0 2* _netdev
+UUID="90000-0000-0000-90000000000" /mnt/disks/sdb ext4 discard,defaults,noatime,_netdev 0 2
+
+$ sudo mount -all
 
 tmux - 리눅스 창 생성하기
 $ tmux
