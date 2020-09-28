@@ -48,7 +48,7 @@ ex) rotate(45deg) === 45도 회전
 
 transition 속성
 박스에 애니메이션 속성을 준다.
-[[introduce:hover]] {
+introduce:hover {
 	background-color: vilolet;
 	border-raidus: 50%;
 	transition: all 2s ease;

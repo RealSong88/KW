@@ -1,0 +1,144 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-28T09:12:18+09:00
+
+===========================오전1===========================
+
+웹서버 관리
+
+서버-데이터베이스 설계-관리자페이지가 우선 === 처음에 만들어놓으면 변경 할 일이 없음.
+그 후에 클라이언트 페이지 작업 === 변경이 자주 발생
+
+우분투 초기화 === 처음부터 시작 
+sudo apt list --installed === 설치된 패키지 확인
+sudo apt search mariadb-server === 저장소에 mariadb-server가 있는지 검색
+마리아DB 설치
+sudo service mysql start === 마리아DB 실행
+일반유저는 접속할 수없다. 소켓 방식으로 로그인을 해야기 때문
+리눅스 계정권한과 db의 권한은 다르기 때문에 mariadb의 권한은 따로 지정을 해야한다.
+sudo mysql_secure_installation === 보안스크립트 실행
+root 비밀번호 입력 === 우분투설치시의 비밀번호
+디폴트 Y === 루트에서 접근막는다. 비밀번호 추가, 데이터베이스 초기화
+
+sudo mariadb === 마리아 DB쉘 접속
+>>grant all on *.* to 'adminsong'@'localhost' identified by '000000'     with grant option; === 'adminsong'@'localhost' 에게 루트권한을 준다.
+
+>>flush privileges; === 권한을 플러시하여 현재 세션에서 저장되고 사용 가능한지 확인
+===========================오전2===========================
+
+우분투에 플라스크 애플리케이션 제공 방법
+참고) https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-18-04
+
+1단계
+sudo apt install python3-pip python3-dev build-essential libssl-dev libffi-dev python3-setuptools === python 환경을 구축할 수 있는 패키지 설치
+
+2단계
+sudo apt install python3-venv === 플라스크 앱을 시스템의 다른 python 파일에서 격리하기 위해 가상 환경을 설정
+
+mkdir [[~/flask_proj]]; cd [[~/flask_proj]] === 플라스크 프로젝트의 요구사항을 저장할 가상환경을 만든다
+
+python3 -m venv venv === flask_proj 에 venv라는 가상환경을 만든다.
+
+source [[~/flask_proj/venv/bin/activate]] === 가상환경 활성화
+
+3단계
+가상환경에서
+pip install wheel === 휠아카이브가 없어도 패키지가 설치되도록 wheel의 로컬 인스턴스로 설치한다.
+pip install gunicorn flask === flask와 gunicorn을 설치
+
+vscode로 wsl 우분투 접속해서 [[/home/song/flask_proj]] 로 위치를 잡아줌
+main.py 를 생성해서 flask를 임포트하는 코드를 작성
+
+다시 우분투 환경으로 들어와서 가상환경 상태에서
+$ python main.py === 실행하면 [[port:5000]] 이 열림 (플라스크는 기본적으로 5000번 포트 사용) === **__개발용 버전__** 
+
+브라우져에서 본인의 [[ip:5000]] 으로 접속하면 main.py에 작성된 내용을 서버에 띄운다.
+
+WSGI 진입 점 만들기
+[[~/flask_proj]] 에서 wsgi.py 파일 작성
+
+4단계 - Gunicorn 구성
+파이썬용 앱서버를 만들었다고 생각하면 됨. - **__production 버전__**
+네트워크에 앱을 연결했다는게 bind(ex. 냉장고에 220v 코드에 꼽혀있는 것 과 비슷)
+애플리케이션이 설정된 진입 점으로 작성. 구니콘 구성으로 이동 할 수 있다.
+구니콘이 앱에 올바르게 제공 할 수 있는지 확인. 진입점의 이름을 전달하기만 하면된다. 모듈이름(.py제외)과 응용프로그램내 호출 가능이름으로 구성.
+wsgi: app
+가상환경에서
+cd [[~/myproject]]
+**__gunicorn__ __--bind 0.0.0.0:5000 [[wsgi:app]]__**  === 개발버전이 아닌 안정적인 버전
+
+=== 정상작동하면 아래와 같은 문구 출력 ===
+[2018-07-13 19:35:13 +0000] [28217] [INFO] Starting gunicorn 19.9.0
+[2018-07-13 19:35:13 +0000] [28217] [INFO] Listening at: http://0.0.0.0:5000 (28217)
+[2018-07-13 19:35:13 +0000] [28217] [INFO] Using worker: sync
+[2018-07-13 19:35:13 +0000] [28220] [INFO] Booting worker with pid: 28220
+
+브라우져에서 본인의 [[ip:5000]] 으로 방문한다. 정상작동
+
+우분투에 가상환경에서
+sudo apt-get install libmariadbclient-dev -y === 마리아디비 패키지설치한다 (이것을 설치해서 마리아db서버에 접속할 수있다.
+===========================오전3===========================
+데몬을 띄운다(리눅스) = 서비스를 띄운다(윈도우)
+
+서비스로 데몬등록하는 방법?
+=====================================웹서버는 오늘 여기까지
+DBeaver === 많이 사용되는 데이터베이스툴
+https://dbeaver.io/
+
+localhost로 연결후
+
+데이터베이스에서  뉴데이터베이스 생성
+test_db로 만든후 그곳에 table 생성 
+column 생성 id or name
+constraints에서 PK KEY 생성
+해당 테이블 우클릭 generate sql -> insert 이후에 script 에 명령어를 추가하면 이름이 생성된다.
+
+
+
+===========================오전4===========================
+
+엑셀은 혼자서 데이터를 관리하지만
+데이터베이스는 다른 사용자들도 관리 할 수 있다. 데이터베이스 서버를 원격으로 값을 넣거나 수정하고 삭제하고 읽을 수 있다.
+
+파이썬에서 마리아디비를 읽는 방법 (파이썬 패키지를 설치해야한다>)
+
+프레임워크의 구조를 파악하면 다른 프레임워크도 활용 할 수 있다..
+점프투플라스크에서 models.py 가 데이터베이스를 연결해서 사용하는 역할
+views 가 데이터에베이스(modes.py)에서 가져온 값을 보여준다
+templates/ 는 html의 구성요소를 가지고있다. 
+
+스키마 데이터베이스에서 연관된 데이터들을 그룹핑해준다. 디렉토리와 비슷한 개념
+
+**__데이터베이스 서버 > 데이터베이스(스키마) > 표 (table)__**
+
+데이터베이스에서는 자체의 보안기능이 있어서 유저마다 다른 권한을 줄 수 있다.
+
+ 
+===========================오후1=========================== 
+
+mysql(마리아디비) 명령어
+
+SHOW DATABASES; === 데이타베이스 목록  확인
+USE test_db; === test_db 라는 데이터베이스 사용
+SHOW TABLES; === 테이블 목록 확인
+DESK member; === 테이블안에  파일 목록들을 보여줌
+SELECT * FROM member; === member로부터 몬든 데이터테이블을 출력
+SELECT name FROM member; === member에 name 데이터만 출력
+INSERT INTO member (name) value ("윤동주"); ==== member에 name 항목에 "윤동주"라는 데이터를 추가함
+
+SELECT * FROM member WHERE id = 1; === member에서 id가 1인 데이터를 보여줌
+
+UPDATE member set name="성산문" WHERE id = 1; === 위의 셀렉트를 실행 하면
+member에 id가 1인 곳에 name 값을 업데이트함
+
+DELETE FROM member WHERE id = 1; === member에서 id 1인 데이터목록의 값을 지움
+
+DBeaver에서도 데이터 삽입 수정 삭제가 가능하다!@
+
+데이터베이스 **__포트번호 3306이 기본__**
+
+===========================오후2===========================
+
+
+
+===========================오후3===========================
