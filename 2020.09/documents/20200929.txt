@@ -1,0 +1,142 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-09-29T08:45:14+09:00
+
+===========================오전1===========================
+어제 작업 다시 시작
+파이썬 플라스크 먼저 설치
+
+
+===========================오전2===========================
+4단계 데몬설정은 수업시간에 안하고 내가 한다.
+마리아디비 설치
+
+sudo mysql_secure_installation === 이것을 실행하려면 마리아디비 서버가 활성 상태여야 한다.
+
+문서 참조 ===
+https://docs.google.com/document/d/14Bh7r4Xn891i3LO-ALN5-uccP7n-dmTpERchDm6JIxk/edit
+===
+
+GRANT ALL ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'password' WITH GRANT OPTION
+- *.* (모든)데이터베이스.(모든)테이블
+- 대소문자 가리지않음
+- text_db*test_db.member 
+- admin은 디비 사용자로 추가할 아이디
+- localhost는 접근 장비 주소를 의미하며 같은 장비 내에서 사용이 가능하다는 의미
+- GRANT 옵션을 데이터베이스 명령어에 대한 권한을 지정
+
+**__웹서버에서 DB로 접속시에는 웹서버는 기본적으로 80이나 8000번 포트로 외부에서 접근하면 프록시를 5000번으로 변경해서 DB에서 접속을 할 수 있게 한다.__**
+
+===========================오전3===========================
+
+마리아 db안에 mysql에 user 정보가 담겨있다. user 확인해보기
+show databases;
+use mysql;
+show tables;
+desc user;
+
+type의 속성 int에서 unsigned 는 id나 게시판번호에서 음수를 쓰지 않기 때문에 unsigned 값을 주면 8비트값을 온전히 양수값에 쓸 수 있다. (signed 이면 음수 4비트 ~ 양수 4비트까지)
+
+form은 서버에게 클라이언트가 유일하게 데이터를 전송할 수 있는 방법이고 그 폼을 가공할 수 있는 언어가 자바스크립트이다.
+
+서버 프로그램(ex. flask) 사용 예 
+- 사용자가 로그인 하면 flask가 감시하여 로그인 권한을 관리한다.
+- 로그인을 하면 그 사용자의 데이터를 다시 입력할 필요가 없게끔 하는 flask
+===========================오전4===========================
+데이터베이스 ER-D 
+신문사 database(test_db) table만들기 
+reporter에 `r_id`에 post의 `reporter`을 관계형으로 해서 reporter가 삭제되면 그것과 관계된 post에서 데이터를 삭제하거나 수정 할 수 있게 할 수 있다.
+
+
+참조 테이블 동작
+1. CASCADE : 참조되는 테이블에서 데이터를 삭제하거나 수정하면, 참조하는 테이블에서도 삭제와 수정이 같이 이루어집니다.
+2. SET NULL : 참조되는 테이블에서 데이터를 삭제하거나 수정하면, 참조하는 테이블의 데이터는 NULL로 변경됩니다.
+3. NO ACTION : 참조되는 테이블에서 데이터를 삭제하거나 수정해도, 참조하는 테이블의 데이터는 변경되지 않습니다.
+4. SET DEFAULT : 참조되는 테이블에서 데이터를 삭제하거나 수정하면, 참조하는 테이블의 데이터는 필드의 기본값으로 설정됩니다.
+5. RESTRICT : 참조하는 테이블에 데이터가 남아 있으면, 참조되는 테이블의 데이터를 삭제하거나 수정할 수 없습니다.
+
+===========================오후1=========================== 
+ubunt에서 sudo그룹에 사용자 추가 방법
+https://phoenixnap.com/kb/how-to-create-sudo-user-on-ubuntu
+
+마리아디비 듀토리얼 
+https://www.guru99.com/mariadb-tutorial-install.html
+
+SQL문 예제
+desc reporter;
+INSERT INTO reporter (nick_name, phone) VALUES (“홍길동”, “01011112222”);
+참고. 컬럼이 일치하는 경우 VALUES만 작성할 수 있다.
+SELECT * FROM flask_db.reporter;
+
+추가 구문
+INSERT INTO tableName
+(column_1, column_2, ... )  
+VALUES  
+(value1, value2, ... ),  
+(value1, value2, ... ),  
+...; 
+
+ex)
+INSERT INTO reporter (nick_name, phone) VALUES (“홍길동”, “01011112222”);
+SELECT * FROM flask_db.reporter;
+
+__UPDATE 구문__
+
+select * from reporter r  when r.r_id = 2;
+
+update reporter r set nick_name="광개토대왕",phone="01056785678"
+where r.r_id =2 ;
+
+select * from reporter r;
+update reporter r set part="인사부" where r.r_id = 2;
+
+__DELETE 구문__
+
+select * from reporter;
+
+DELETE FROM reporter
+limit 2;                           
+
+select * from reporter r;
+
+===== 2개를 지운다. =====
+
+
+
+===========================오후2===========================
+
+select *
+from reporter r
+where r_id > 10 or r_id < 8;
+--- id 가 10초과이거나 8번 미만인 데이터를 보여주기
+
+__LIKE 구문__
+SELECT field_1, field_2,... FROM tableName1, tableName2,...  
+WHERE fieldName LIKE condition;
+
+# 메일 주소가 nate.com인 사람은?
+select nick_name, email from reporter r where r.email like '%nate.com';
+# 핸드폰 번호에 512가 포함된 사람은?
+select nick_name, phone from reporter r where r.phone like '%112%';
+# 이메일이 1<한개문자>@을 포함된 사람은?
+select nick_name, email from reporter r where r.email like '%1_@%';
+
+__정렬하기__
+SELECT expression(s)  
+FROM tables  
+[WHERE condition(s)]  
+ORDER BY exp [ ASC | DESC ];  
+
+ex)
+select * from reporter
+ORDER BY part,phone;
+
+===========================오후3===========================
+
+2-project introduce.html 공통 header, footer 적용
+
+
+점프투플라스크 2-10 진행중..
+
+
+기간에 해주시면 될 것 같습니다!

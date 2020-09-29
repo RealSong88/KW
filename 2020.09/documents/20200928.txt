@@ -121,8 +121,8 @@ mysql(마리아디비) 명령어
 SHOW DATABASES; === 데이타베이스 목록  확인
 USE test_db; === test_db 라는 데이터베이스 사용
 SHOW TABLES; === 테이블 목록 확인
-DESK member; === 테이블안에  파일 목록들을 보여줌
-SELECT * FROM member; === member로부터 몬든 데이터테이블을 출력
+DESC member; === 테이블안에  columns의 속성들을 보여줌
+SELECT * FROM member; === member로부터 만든 데이터테이블을 출력
 SELECT name FROM member; === member에 name 데이터만 출력
 INSERT INTO member (name) value ("윤동주"); ==== member에 name 항목에 "윤동주"라는 데이터를 추가함
 
@@ -139,6 +139,6 @@ DBeaver에서도 데이터 삽입 수정 삭제가 가능하다!@
 
 ===========================오후2===========================
 
-
+flask 예제
 
 ===========================오후3===========================
