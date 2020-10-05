@@ -17,7 +17,7 @@ sudo mysql_secure_installation === 이것을 실행하려면 마리아디비 서
 https://docs.google.com/document/d/14Bh7r4Xn891i3LO-ALN5-uccP7n-dmTpERchDm6JIxk/edit
 ===
 
-GRANT ALL ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'password' WITH GRANT OPTION
+	GRANT ALL ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'password' WITH GRANT OPTION
 - *.* (모든)데이터베이스.(모든)테이블
 - 대소문자 가리지않음
 - text_db*test_db.member 

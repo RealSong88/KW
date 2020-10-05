@@ -127,6 +127,27 @@ chmod o는 other
 ex) chmod o+r <해당파일이나 폴더> === other 사용자에게 해당파일이나 폴더에 read권한을 줌
 ex2) chomod u-w <해당파일이나 폴더> === owner 사용자에게 write 권한을 뺌
 
+리눅스 기본 참고문서)
+https://docs.google.com/presentation/d/1CrOcTTrRRHlredMRwie9WKSo7ChIF4bRylvUxhinRYU/edit#slide=id.g4834202c05_0_32
+adduser <user> === user명으로 계정과 home에 디렉토리 생성
+sudo -s  === root권한으로 로그인 (sudo 권한이있는 아이디어야만 명령이 동작)
+passwd <user명> === user의 비밀 번호를 변경한다.
+
+df === 하드 사용량.
+df -m === 메가바이트 단위로 표시
+du === 디렉토리 사용량
+du [[/home]]
+ps -ef ==== 실행되는 프로세스 목록
+
+chmod 755 <dir or file> === dir 또는 file 의 읽기, 쓰기, 실행 권한을 바꿔준다. 이진수로 구성되어있어서 7이면 rwx 5면 r-x, 4, -w- 등등으로 설정할 수있다.
+chown <user>:<user> <dir or file> === dir 또는 file의 소유주를 user 혹은 root로 설정 할 수 있다.
+
+
+cp -af tt.sh [[/home/july2day/]] === 복사할 파일이 있을경우 -af 를 붙여주면 덮어쓰기를 한다.
+
+ln -s 목적지 바로가기명 
+ln -s /home/july2day/ttt ttt === 심볼릭 링크.. 경로를 ttt로 줄여준다.(윈도우의 바로가기 개념)
+
 $ histroy ======== 사용된 명령어 리스트
 
 
