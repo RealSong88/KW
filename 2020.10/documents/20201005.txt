@@ -1,0 +1,146 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+===========================오전1===========================
+
+WSL2 - mariadb
+
+프로시져(Procedures)와 함수(function)의 차이
+
+
+===========================오전2===========================
+
+Advanced Tasks
+함수와 프로시저의 차이
+*** 프로시저 ⊂ 함수
+
+프로시저
+__(1)마리아디비의 프로그램으로 (2)파라미터를 전달할 수 있다.__
+__(3)리턴값이 없다.__
+
+디비버 SQL 에디터에서 아래 코드 입력
+CREATE PROCEDURE myProcedure()
+		BEGIN
+			SELECT nick_name FROM reporter;
+		END;
+
+CALL myProcedure()
+
+파라미터 사용
+# 프로시저 만들기 === __명령어가 안먹혀서 dbeaver로 프로시저, 함수 생성 === 명령줄을 모두 스크롤 하면 정상 작동__
+CREATE PROCEDURE myProcedure2(rep_id int)
+	BEGIN
+		SELECT nick_name FROM reporter 
+	   WHERE r_id = rep_id;
+	END;
+
+# 프로시저 사용하기 
+call myProcedure2(5);
+
+
+함수
+(1) 반드시 파라미터를 전달하고 (2)리턴값이 있다.
+디비버에서 아래 코드 입력
+
+함수 만들기
+CREATE FUNCTION sumFunc (x INT )
+RETURNS INT DETERMINISTIC
+
+BEGIN
+
+   DECLARE sum INT;
+   SET sum = 0;
+   label1: WHILE sum <= 3000 DO
+   SET sum = sum + x;
+   END WHILE label1;
+   RETURN sum;
+END;
+
+함수 사용하기
+SELECT sumFunc(1000);
+
+JOIN
+https://yoo-hyeok.tistory.com/98
+
+post 테이블에 데이터 추가
+INSERT INTO flask_db.post
+(title, content, reporter, reg_date, pub_date)
+VALUES('기사1', "오늘의 날씨", 5, current_timestamp(), NULL);
+
+INNER JOIN
+내부 조인은 on절의 조인 조건이 참인 테이블의 모든 행을 반환
+
+LEFT JOIN  === __left join을 많이 사용__
+조인 조건이 참인 모든 경우를 반환
+SELECT r.nick_name, p.title, p.content, p.reg_date 
+FROM post as p
+LEFT JOIN reporter as r
+ON p.reporter = r.r_id
+
+RIGHT JOIN
+오른쪽 테이블의 모든 행과 다른 테이블에 조건이 참인 행만 반환
+SELECT r.nick_name, p.title, p.content, p.reg_date 
+FROM post as p
+RIGHT JOIN reporter as r
+ON p.reporter = r.r_id
+
+
+
+===========================오전3===========================
+플라스크 앱에서 데이터베이스 연결
+
+우분투 20.04 파이썬 가상환경에 mariadb를 설치한다.
+https://blog.jiktong.kr/entry/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%97%90-mariadb-%ED%8C%A8%ED%82%A4%EC%A7%80-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0
+sudo apt update && sudo apt upgrade -y
+# 가상환경 실행
+pip3 install wheel
+pip3 install --upgrade pip setuptools wheel
+pip3 install mariadb
+sudo apt-get install libmariadbclient-dev -y
+
+
+__파이썬에서 마리아디비 연결__
+https://mariadb.com/ko/resources/blog/how-to-connect-python-programs-to-mariadb/
+
+python 콘솔에서
+import mariadb
+import sys
+try:
+	conn = mariadb.connect(
+		user="<디비아이디>",
+		password="<디비비밀번호>",
+		host="localhost",
+		port=3306,
+		database="employees"
+	)
+except mariadb.Error as e:
+	print("Err: {}".format(e))
+	sys.exit(1)
+cur = conn.cursor()
+cur.execute(
+	"SELECT * FROM reporter" # 리포터 정보를 가져온다.
+)
+for (nick_name) in cur:
+	print("닉네임: {}".format(nick_name))
+
+닉네임과 연락처 가져오기
+>>> cur.execute("select nick_name, phone from reporter")
+>>> for (nick_name, phone) in cur:
+...     print("닉네임:{}, 연락처:{}".format(nick_name, phone))
+…
+
+__데이터 입력하기 다시!__
+파이썬으로 데이터베이스 연결시 CRUD가 파이썬으로 가능하다.
+===========================오전4===========================
+
+===========================오후1=========================== 
+플라스크 GET POST
+https://tinyurl.com/y5kollwd
+
+ubuntu20_server 버전으로 위의 과정 실시
+===========================오후2===========================
+
+
+
+===========================오후3===========================
+
