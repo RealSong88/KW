@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-06T09:46:12+09:00
+
+===========================오전1===========================
+flask_proj 
+URL 설계
+참고)
+https://docs.google.com/document/d/14Bh7r4Xn891i3LO-ALN5-uccP7n-dmTpERchDm6JIxk/edit#
+
+===========================오전2===========================
+
+
+
+===========================오전3===========================
+web에서 redirect, forward 의 의미
+
+===========================오전4===========================
+flask_proj 
+main.py
+home.html
+===========================오후1=========================== 
+base.html 을 만들어서
+모든 페이지에 공통으로 들어가는 html 데이터를 만들어서 임포트하여 사용한다.
+
+flask앱이 디비에 쿼리를 해서 데이터를 변수에 담아 html에 데이터를 뿌린다.
+
+reporter_list.html, reporter, reporter.html  을 넣는다.
+
+===========================오후2===========================
+
+post.html, post_list.html
+
+===========================오후3===========================
+bellsky instance에 Project petland 환경 구축하기
