@@ -1,0 +1,122 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-07T09:33:55+09:00
+
+===========================오전1===========================
+
+DB
+
+클라이언트에서 서버로 데이터를 전송할 수 있는방법음 form태그 
+
+전화번호같은 데이터를 입력 받을 때 -를 쓸수도 있고 숫자를 잘 못 입력 받을수도 있는데 델리케이트로 유효성 검사를 한다.
+
+서버에 submit 전에 자바스크립트로 유효성 검사를 한다.
+
+사용자가 데이터를 입력할 때 관리자는 규칙을 제어해야한다.
+ex) id 입력시 id 최대길이 특수문자 유, 무 숫자로 시작하면 X 등..
+
+===========================오전2===========================
+
+Ajax
+웹 서버에서 데이터 읽기-페이지가로드 된 후
+페이지를 다시로드하지 않고 웹 페이지 업데이트
+웹 서버로 데이터 보내기-백그라운드에서
+
+자바스크립트를 html 문서에 맨 마지막에 두는 이유는 사용자가 html을 요청하기전에 dom을 요청하면 에러가 날 수 있기때문에 html을 요청받아야 DOM 객체를 이용할 수 있기 때문이다.`
+
+자바스크립트에서 this 는 자기자신의 객체를 말하는 것 뿐 아니라
+
+===========================오전3===========================
+
+AJAX 정리
+참고 주소: https://www.w3schools.com/js/js_ajax_http.asp
+
+html 요소의 속성
+onclick는 클릭 이벤트가 발생하는 경우 자바스크립트 함수를 실행
+자바스크립트 테스트는 브라우저의 콘솔창에서 한다.
+
+<button onclick="alert('hi')">경고창띄우기</button>
+
+자바스크립트 함수의 실행을 괄호가 있어야 한다.
+변수의 선언은 var을 사용(ES6에서는 const, let을 사용)
+자바스크립는 html dom이 생성된 후 실행하도록 구성해야 한다.
+보통 별도의 파일로 만들어 사용하고 가져와 사용할 때는 페이지 하단 또는 상단(onload)와 함께 사용
+
+XMLHttpRequest의 상태처리
+참고: https://www.w3schools.com/js/js_ajax_http.asp
+__객체 메서드(자주 쓰이는 것)__
+
+open(method, url, async(True or False))
+send()   === post 방식일경우 string을 전달
+
+HTML 양식과 같은 데이터를 POST하려면 setRequestHeader(). send()메소드 에서 보낼 데이터를 지정
+ex)
+xhttp.open("POST", "ajax_test.asp", true);
+xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhttp.send("fname=Henry&lname=Ford");
+
+__객체 속성__
+readyState
+Holds the status of the XMLHttpRequest.
+0: request not initialized		=== 요청이 초기화되지 않음
+1: server connection established	=== 서버 연결 설정
+2: request received			=== 요청 수신
+3: processing request			=== 요청 처리
+4: request finished and response is ready = 요청 완료 및 응답 준비
+
+status
+Returns the status-number of a request
+200: "OK"
+403: "Forbidden"
+404: "Not Found"
+For a complete list go to the Http Messages Reference
+
+
+Ajax 콜백함수사용 하는이유는 함수의 길이가 길어져서 따로 분리해 기능별 역할을 나누어 유지보수하기 좋게 만든다.
+
+json
+xml 마크업을 사용자가 지정해서 쓸 수 있다. 데이터형식이 정해져있는것
+https://www.w3schools.com/js/js_ajax_http_response.asp
+
+
+w3 스쿨에서 확인
+ajax XMLHttp, Request, Response, XML File 
+Ajax Database
+
+XMLHttpRequest()에서 open() 메소드
+서버에 요청은 반드시 비동기(async) true 해야한다.
+비동기 적으로 전송하면 JavaScript는 서버 응답을 기다릴 필요가 없지만 대신 다음을 수행 할 수 있습니다.
+서버 응답을 기다리는 동안 다른 스크립트 실행
+응답이 준비된 후 응답 처리
+
+===========================오전4===========================
+jquery ajax 간편하긴하나 대형사이트에선 감당하기 힘들다.
+css selector 를 기준으로 jquery에서 태그를 선택할 수 있다.
+간단한 사이트에서 jquery는 자바스크립트 코드의 양을 줄여준다.
+
+
+===========================오후1=========================== 
+digital ocean  우분투 설치 
+
+.0000000000000000000000000000000000000000000000000docker 설치
+
+===========================오후2===========================
+
+database 
+nick_name 으로 검색해서 r_id  를 찾는 query
+
+select r_id from reporter r2 where nick_name = 'faker';
+
+ajax로 id를 중복체크한다.
+
+자__바스크립트의 ajax는 responseText나 responseXML__로 데이터를 받지만 __jquery ajax는 data__로 데이터를 받는다.
+
+===========================오후3===========================
+jquery $ .get() 메서드
+내가 이해한부분은 .get()메서드의 파라미터는 url과, 함수가 들어가는데 data란 변수는 그 페이지의 return 값이 들어간다.
+$.get()메서드는 HTTP GET 요청으로 서버의 데이터를 요청합니다.
+$.get(URL,callback);
+필수 URL 매개 변수는 요청하려는 URL을 지정합니다.
+선택적 콜백 매개 변수는 요청이 성공할 경우 실행할 함수의 이름입니다.
+
+flask 서버에서 main.py에 [[/ajax,]] [[/jquery_ajax,]] [[/signup,]] [[/ajax/checkid,]] [[/ajax/test,]] [[/sample]] 을 추가
