@@ -7,6 +7,17 @@ Created 금요일 07 8월 2020
 
 추후에 커밋 할 때는 개발용 소스 정리 후 커밋
 
+특정파일 폴더 git에서 제외하기 https://dreamaz.tistory.com/540 
+sudo vi .gitignore
+
+#folder
+<folder name>
+...
+...
+#file
+*.apk    === 모든 apk 확장자 파일 제외
+
+
 github 가입
 
 git config --global --edit 
