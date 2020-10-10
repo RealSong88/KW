@@ -1,0 +1,59 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-09T14:41:03+09:00
+
+===========================오전1===========================
+
+docker - 사용
+
+
+
+===========================오후1=========================== 
+
+oracle-cloud instance song
+sudo 권한으로 song 계정 생성
+docker 밑의 버전으로 설치
+
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
+
+===========================오후2===========================
+
+
+oracle cloud ubuntu vi 테마 세팅
+
+https://starseeker711.tistory.com/183
+https://blog.leocat.kr/notes/2017/07/26/vi-vim-change-colour-scheme
+https://www.slant.co/topics/480/~best-vim-color-schemes#16
+
+[[/usr/share/vim/vim81/colors]] === 이곳에 빔테마 다운(ex. jellybeans)
+
+vi [[~/.vimrc]] ==== root 권한에서 이 경로로 적용하면 모든사용자가 빔 설정 적용
+
+필요한 설정
+
+" Syntax Highlighting
+if has(“syntax”)
+	syntax on
+endif
+
+set nu " 줄번호
+set autoindent " 자동 들여쓰기
+set shiftwidth=4 " 자동 들여쓰기 너비 설정
+set showmatch " 일치하는 괄호 하이라이팅
+set ts=4 "tag select 
+set sts=4 "st select
+
+set autowrite " 다른 파일로 넘어갈 때 자동 저장
+set autoread " 작업 중인 파일 외부에서 변경됬을 경우 자동으로 불러옴
+
+" 마지막으로 수정된 곳에 커서를 위치함
+au BufReadPost *
+\ if line("'\"") > 0 && line("'\"") <= line("$") |
+\ exe "norm g`\"" |
+\ endif
+
+set autowrite " 다른 파일로 넘어갈 때 자동 저장
+
+
+__vundle 플러그인 관리자 설치 및 유용한 플러그인__
+https://www.lesstif.com/system-admin/vundle-40436095.html

@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-10T17:32:34+09:00
+
+기본 colorscheme 내 눈 추천
+
+blue.vim, delek.vim, desert.vim, elflord.vim, industry.vim, murphy.vim, koehler.vim, 

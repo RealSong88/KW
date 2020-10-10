@@ -1,0 +1,93 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-10T10:37:38+09:00
+
+===========================오전1===========================
+docker - 시니어 코딩
+
+docker ps -a === 모든 컨테이너 상태를 보여줌
+docker ps -q === 실행중인 컨테이너 id를 보여줌
+docker stop `docker ps -q` === 실행중인 컨테이너를 스탑한다 (한 명령어에 두개의 명령 실행)
+
+for i in `docker ps -q`; do echo $i; done 
+- 리눅스 쉘에 프로그래밍 문법 사용, 실행중인 컨테이너를 echo 명령어로 보여준다.
+
+for i in `docker ps -q`; do echo $i; docker stop $i; done
+- 실행중인 컨테이너가 없을때까지 컨테이너id 출력하고 스탑한다.
+
+docker pull nginx === nginx 이미지를 다운로드
+docker image ls === 이미지 다운 목록
+docker container run --name webserver -p 80:80 nginx === webserver란 이름으로 80 포트를 열은 nginx를 실행
+
+docker container run -it --name "test1" centos [[/bin/cal]]  === centos  [[/bin/cal]] 에만 잇음 [[/bin/cal]] ( 캘린더를 보여줌)
+- it는 대화형으로 실행이 된다. i 옵션은 input, --name 은 container 이름설정(안하면 자동으로 이름생성) 이미지, 마지막엔 실행시킬 명렁
+
+docker container run -it --name ubuntush ubuntu bash === ubuntush 이름으로 bash 실행
+
+docker start ubuntush === exit된 컨테이너 ubuntush를 다시 시작한다
+
+__ctrl+p + q__ === 도커 컨테이너 실행중인 상태로 빠져나옴 (detach)
+ctrl+d === exit와 같다 컨테이너를 스톱하고 나옴
+
+docker container attach ubuntush === attach는 실행되고 있는 도커 컨테이너 ubuntush에 들어간다.
+
+ubuntu 배쉬쉘에서 ctrl+c 는 프로세스를 죽인다
+docker (container) stop (container 이름) === 컨터이너를 중지한다.
+
+docker 명령어에서 __container는 생략가능__
+
+docker container exec -it ubuntush cat [[/etc/hosts]] === 하나의 명령(cat [[/etc/hosts]])만 실행한다
+
+docker container rename ubuntush ub === ubuntush 컨테이너를 ub라고 리네임한다.
+
+[[/etc/hosts]] 에서 ip에 도메인네임을 지정하면 해당 컴퓨터에서 dns 설정을 할 수 있다.
+
+File Copy & share
+
+docker container cp <container-name>:<path> <client-path>  === 컨테이너의안의 경로를 복사
+ex) docker container cp nginxserver:/etc/nginx/nginx.conf === nginx.conf를 복사
+
+__# Share Directory__
+
+docker run -v <localpath>:<container-path> === -v 옵션,컨테이너에서 파일을 작성하면 localpath에도 작성된다.
+
+ex)오라클 컨테이너를 설치했을때 오라클 파일을 local 과 공유한다.
+
+컨테이너 삭제시 컨테이너 중지 후 삭제하고 이미지도 삭제한다.
+===========================오후1=========================== 
+Install Oracle
+
+cat [[/etc/issue]]
+- 어떤 리눅스os인지 확인 할 수 있다.__
+
+docker pull christophesurmont/oracle-xe-11g === 사용자가 수정한 오라클이미지 다운
+docker run -d -name ora -p 80:80 -p 3306:3306 christophesurmont/oracle-xe-11g === 위의 이미지로 orac이란 컨테이너 생성 (오라클은 포트를 두개 지정해야함)
+
+docker exec -it oracle bash === id가 oracle인 컨테이너에 bash를 실행
+
+lsnrctl === 위의 쉘상태에서 오라클 실행하는 명령어
+
+위의 이미지로 만든 컨테이너는 우분투16버전위에 오라클을 설치한 상태이다.
+
+Install [[MariaDB]]
+docker pull mariadb
+docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=000000 --name mariadb mariadb
+- mariadb는 포트를 하나만 사용. __-e 는 환경변수__
+
+docker exec -it mariadb bash
+- mariadb 쉘 실행
+
+mariadb -u root -p
+- 루트계정으로 로그인한다.
+
+which mysql === mysql의 위치를 보여줌
+===========================오후2===========================
+
+Flask - 시니어코딩
+
+pyweb의 전체가 web application 그 하위에 있는 폴더들을 context라고 한다
+flask는 작고 빠르며 기능 추가하기가 쉽다.
+flask앱은 메모리와 프로세스에 떠있는데 request 요청을 port를 통해 (기본 5000) 앱이 지켜보고있다. flask 기본앱 구성은 개발용 __init__.py 와 상품용 *.py를 만들어서 따로 사용한다.
+
+
+===========================오후3===========================

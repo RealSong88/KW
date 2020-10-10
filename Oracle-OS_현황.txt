@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-10T09:56:08+09:00
+
+====== Oracle-OS 현황 ======
+Created 토요일 10 10월 2020
+
+193.123.233.236
+
+-ubuntu 계정에 petland 프로젝트 관리중
+-docker 달소블로그버전으로 진행중 portainer(web ui)
+
+-포트 80, 5000, 3306, 4321, 23 번 열어둠
+
+
+
+
+193.123.247.23  
+
+- song 계정에서 Docker 얄코버전 실행
+- 시니어코딩 Docker 실행
+- root 로 colorscheme solarized 등록
+-포트 80, 5000, 3306, 4321, 23 번 열어둠

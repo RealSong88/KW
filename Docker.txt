@@ -8,6 +8,9 @@ Creation-Date: 2020-10-08T13:42:48+09:00
 ubuntu 20에 도커 설치
 https://blog.dalso.org/linux/ubuntu-20-04-lts/13118
 
+__window 10(wsl2)에 도커 설치__
+https://www.44bits.io/ko/post/wsl2-install-and-basic-usage
+
 portainer 구축 이유
 -portainer는 docker의 이미지,컨테이너,네트워크등을 쉽게 관리할 수 있게 도와주는 GUI Web 서비스를 사용하기 위해
 
@@ -22,3 +25,35 @@ KN-1-2zreis3s7r9ofbmeter5z7ej1mrb07lgxzud5cm3sgg5sjrgke-9pqxphrmww3t2mretn5v35xb
 
 Docker Swarm 이란?
 수많은 컨테이너 오케스트레이션 도구 중의 하나로, 여러 대의 Docker 호스트들을 마치 하나인 것처럼 만들어주는 Orchestration 도구입니다. Docker v1.12 이후부터 Docker Swarm Mode 로 별개의 Docker Swarm 엔진에서 Docker 엔진으로 통합되면서 좀 더 간편한 설치가 가능
+
+
+도커 버전 확인
+docker -v
+
+컴퓨터 내 도커 이미지들 보기
+docker images 
+
+ 이미지를 다운받아(없을 시에만) 바로 컨테이너 실행하여 진입하기
+docker run {이미지명}:{태그}
+# 예: docker -it run python:3
+
+(동작중인) 컨테이너들 보기
+docker ps 
+docker ps -a  (모든) 컨테이너 보기
+docker container ps -a === 위와 같다
+
+
+모든 컨테이너와 이미지 등 도커 요소 중지 및 삭제
+
+# 모든 컨테이너 중지
+docker stop $(docker ps -aq)
+# 사용되지 않는 모든 도커 요소(컨테이너, 이미지, 네트워크, 볼륨 등) 삭제
+docker system prune -a
+
+ 도커파일로 이미지 생성
+# Dockerfile 파일이 있는 디렉토리 기준.  마지막의 . 이 상대주소
+docker build -t {이미지명} .
+
+도커 컴포즈 실행
+# docker-compose 파일이 있는 디렉토리 기준
+docker-compose up
