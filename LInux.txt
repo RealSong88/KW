@@ -8,6 +8,9 @@ Created 목요일 20 8월 2020
 첫 설치할 때 root 권한은 비활성화 되서
 접근할 수 있는 계정을 생성한다
 
+하위폴더까지 적용하는 옵션 -R
+$ chown -R [owner name]:[group name] [filename or directory]
+
 vim 테마 지정 문서
 vi ~/.vimrc
 

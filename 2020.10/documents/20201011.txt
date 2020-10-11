@@ -1,0 +1,56 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-11T16:24:44+09:00
+
+===========================오전1===========================
+
+window 10 재설치, ubuntu 20.04 재설치
+
+ubuntu설치 후 세팅
+https://luckyyowu.tistory.com/409\
+
+ubuntu에서 내장그래픽을 못잡을 때(르누아르 cpu기준)
+https://askubuntu.com/questions/1244376/cant-get-internal-and-external-monitor-working-simultaneously-with-20-04-on-lap
+
+===========================오후1=========================== 
+
+.deb파일 설치 방법
+$sudo dpkg -i <package_name>.deb
+
+vim 설정시 유용 사이트
+https://medium.com/@pttlens/vim%EC%9D%84-%EC%97%90%EB%94%94%ED%84%B0%EB%A1%9C-%ED%99%9C%EC%9A%A9%ED%95%98%EA%B8%B0-1-%EC%84%A4%EC%A0%95-%EA%BE%B8%EB%AF%B8%EA%B8%B0-2490a13a2420
+
+새로 설치한 ubuntu 20에서 sudo apt install vim 설치후
+테마나 플러그인을 설정한다.
+
+===========================오후2=========================== 
+
+2차프로젝트 petland 진입점 만들기
+
+sudo nano /etc/systemd/system/myproject.service
+
+[Unit]
+Description=Gunicorn instance to serve myproject
+After=network.target
+
+[Service]
+User=song
+Group=www-data
+WorkingDirectory=/home/song/workspace/petland
+Environment="PATH=/home/song/workspace/venv/bin"
+ExecStart=/home/song/workspace/venv/bin/gunicorn --workers 3 --bind unix:myproject.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target
+
+=== 위의 내용 작성 ===
+
+sudo systemctl start myproject
+sudo systemctl enable myproject
+sudo systemctl status myproject === 상태 체크
+
+nginx 설치 및 세팅 후 다시 플라스크 5단계진행
+
+nginx를 사용해서 wsgi 진입 점을 만든 다음 기능을 제공하도록 gunicorn 앱서버를 구성했다.
+
+디지털오션 flask, nginx 완료
