@@ -5,7 +5,7 @@ Creation-Date: 2020-09-25T11:39:47+09:00
 ====== KW-OS 현황 ======
 Created 금요일 25 9월 2020
 
-[[MyNotebook]]
+MyNotebook
 wsl2_ubuntu_20 --- openssh-server, client  , mysql(mariadb), oraclecloud(bellsky1) ssh키 등록, [sudo apt install python3-venv, [[/myproject/myvenv]] 환경 설정, source myprojectenv/bin/activate, 가상환경 진입후 pip install wheel, pip install flask ]
 
 oracle cloud(bellsky1) --- apache2: [[/etc/apache2/apache2.conf]] 와 [[/etc/apache2/sites-enabled/000-default.conf]] 에 [[/home/ubuntu/web2_python]] 설정을 변경함 백업파일 존재
@@ -14,6 +14,9 @@ vm_ubuntu_16 --- apache2 설치, oraclecloud(bellsky1) ssh키 등록
 
 KW-PC 
 wsl_ubuntu_20 --- openssh-server, client  , mysql(mariadb), oraclecloud(bellsky1) ssh키 등록, ~~아파치2 Song.conf 등록삭제~~
+
+__KW-PC2__
+ubuntu_20.04
 
 vm_ubuntu_18 --- 파이썬에 mariadb 패키지 가져오기, mysql, openssh, python3 설치완료, 아파치2 realsong.conf 등록
 

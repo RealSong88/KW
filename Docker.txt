@@ -57,3 +57,11 @@ docker build -t {이미지명} .
 도커 컴포즈 실행
 # docker-compose 파일이 있는 디렉토리 기준
 docker-compose up
+
+사용중인 컨테이너 이미지 만들기
+
+docker stop ajaxtest
+docker commit ajaxtest myubuntu 
+- ajaxtest 컨테이너로 myubuntu라는 이미지 생성
+
+

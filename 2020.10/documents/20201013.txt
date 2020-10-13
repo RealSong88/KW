@@ -1,0 +1,98 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-13T08:34:55+09:00
+
+===========================오전1===========================
+
+비주얼 스튜디오 코드를 실행해 "Ctrl + Shift + P"를 눌러 "Command Palette"에서 다음의 명령어를 선택한 다음,
+
+Remote-SSH: Connect to Host...
+
+
+instance 서버 vs code로 원격 접속 하는 방법
+https://www.sysnet.pe.kr/2/0/11942
+
+원격 VS ssh에 prettier, python for VScode, indent-rainbow 설치
+
+__project git에 flask 브런치 생성__ 
+
+내 커밋 히스토리 alias
+alias를 설정하기 위해서는 ~/.gitconfig 파일에 아래와 같이 입력한다. 다음은 내가 설정한 alias다.
+
+[alias]
+	g = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+
+
+
+
+===========================오전2===========================
+
+2차 프로젝트 ..
+
+
+===========================오전3===========================
+
+form데이터 post방식으로 json 파일받는거 확인
+
+===========================오전4===========================
+
+2차 프로젝트 ...
+
+===========================오후1=========================== 
+
+docker pull ubuntu:18.04 ===> __18 에 python 및 기본앱이 설치 안되서 20.04 로 설치(얘도 없다)__ 
+학원컴에 
+docker create --name ajaxtest -it ubuntu:18.04 
+- 우분투 18.04 설치  
+
+docker start ajaxtest
+- ajaxtest란 컨테이너 가동 (start상태여야 exec나 attach명령어 작동)
+
+docker exec -it ajaxtest bash (= docker attach ajaxtest)-컨테이너가 실행중일 때 가능하다
+- ajaxtest의 bash쉘 환경을 접속한다.
+- __attach 실행되고 있는 컨테이너에 접속__할 때
+- __exec 컨테이너에 새로운 프로세스를 실행__시킬 때
+
+
+visual studio code에서 도커의 컨테이너에 원격접근 후 작업을 하려면
+플러그인이 필요함.
+Docker
+Remote - Containers
+
+비주얼코드에서 __ctrl + shift+p (command Palette)__
+remote - container attach to docker container 를 실행하면 실행 되고잇는 컨테이너에 vs code로 접근이 가능하다.
+===========================오후2===========================
+
+__심볼릭 링크__ 걸기 
+
+(기존 python 실행 파일 위치인) /usr/bin/python은 지워준다. 
+
+* 기존 python 실행 파일 위치 대로 지워준다. 
+
+$ rm /usr/bin/python
+아래와 같이 심볼릭 링크를 걸어준다. 
+
+$ ln -s /usr/bin/python3.5 /usr/bin/python
+
+
+컨테이너 만들기
+	docker create --name ajaxtest -it ubuntu
+	docker create --name ajaxtest -p 5000:5000 -it ubuntu
+
+__처음에 컨테이너를 생성할때 포트포워딩(외부포트와 내부포트)을 하지않으면 컨테이너의 서버에 접속을 할 수가 없다.__ 컨테이너 설치 후에는 포트 설정X 
+
+pip3가 없는 경우 (docker로 플라스크 구성할 경우 컨테이너에선 플라스크만 사용하기 때문에 가상환경(venv)만들 필요없이 python3 자체에 pip를 설치한다.)
+apt install python3-pip
+
+
+윈도우에서 wsl 커널과 ubuntu에서 커널은 기능이 다르기때문에 wsl에서는
+systemctl을 사용하지 못한다.
+
+도커 커스텀한 컨테이너 이미지 만들기 (local 기준)
+docker stop ajaxtest
+docker commit ajaxtest myubuntu
+- 컨테이너 작동을 멈추고 commit 컨테이너이름 이미지이름 을 하면 컨테이너의 내용이 들어간 이미지를 만든다.
+
+docker create --name ajaxtest2 -p 5000:5000 -it myubuntu
+
+===========================오후3===========================

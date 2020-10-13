@@ -42,7 +42,7 @@ docker container rename ubuntush ub === ubuntush 컨테이너를 ub라고 리네
 
 [[/etc/hosts]] 에서 ip에 도메인네임을 지정하면 해당 컴퓨터에서 dns 설정을 할 수 있다.
 
-File Copy & share
+__File Copy & share__
 
 docker container cp <container-name>:<path> <client-path>  === 컨테이너의안의 경로를 복사
 ex) docker container cp nginxserver:/etc/nginx/nginx.conf === nginx.conf를 복사

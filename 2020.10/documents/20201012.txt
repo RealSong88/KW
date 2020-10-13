@@ -1,0 +1,54 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-12T10:45:41+09:00
+
+===========================오전1===========================
+2차프로젝트
+
+
+
+===========================오전2===========================
+
+instance - bellsky1에 ngix환경 구성
+서비스 만들어 지속적인 실행
+
+github 잘못 올라간 파일 삭제하는법
+// 원격 저장소와 로컬 저장소에 있는 파일을 삭제
+$ git rm <file or dir name> === 디렉토리는 -r 을 추가
+// 원격 저장소에 있는 파일을 삭제(로컬은 X)
+$ git rm --cached <file or dir name>
+
+파이썬 pip 마리아디비 우분투20에 설치법
+https://stackoverflow.com/questions/64308703/mariadb-connector-python-installation-issue-on-ubuntu-20-04
+===========================오후1=========================== 
+
+docker for window 10
+
+docker pull nginx
+docker run --name myweb2 -p 8080:80 -v /some/content:/usr/share/nginx/html:ro -d nginx
+
+-host pc의 [[/some/content에]] 있는 html을 myweb2컨테이너를 마운트시키고 호스트의 8080포트에 컨테이너 80포트를 연결한다. -d 는 daemon 형식으로 컨테이너가 작동하면 nginx가 동작하고 있다는 것
+===========================오후2===========================
+
+2차프로젝트..
+bellsky1 에 nginx - flask 앱 연동
+
+https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04
+
+https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-20-04
+
+우분투 20의 파이썬에서 pip mariadb 설치가 안될 때
+https://stackoverflow.com/questions/64308703/mariadb-connector-python-installation-issue-on-ubuntu-20-04
+
+$ curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
+
+$ sudo apt-get update
+$ sudo apt-get install libmariadb3
+
+
+연동완료
+
+docker 컨테이너를 종료하지 않고 쉘 나오는 방법
+Ctrl+P, Ctrl+Q로 컨테이너를 정지시키지 않고 쉘을 빠져나올 수 있음
+===========================오후3===========================
+__ex.zip 의 소스코드 확인__

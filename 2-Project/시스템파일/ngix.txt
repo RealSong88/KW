@@ -1,0 +1,11 @@
+#/ etc / nginx / sites-available / myproject
+
+server {
+    listen 80;
+    server_name petland www.petland;
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/ubuntu/projects/petland/petland.sock;
+    }
+}

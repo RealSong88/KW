@@ -25,7 +25,7 @@ https://medium.com/@pttlens/vim%EC%9D%84-%EC%97%90%EB%94%94%ED%84%B0%EB%A1%9C-%E
 
 ===========================오후2=========================== 
 
-2차프로젝트 petland 진입점 만들기
+2차프로젝트 petland 진입점 만들기(노트북 기준)
 
 sudo nano /etc/systemd/system/myproject.service
 

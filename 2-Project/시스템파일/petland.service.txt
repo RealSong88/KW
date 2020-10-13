@@ -1,0 +1,15 @@
+#/etc/systemd/system/petland.service
+
+[Unit]
+Description=Gunicorn instance to serve petland
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/projects/petland
+Environment="PATH=/home/ubuntu/venv/bin"
+ExecStart=/home/ubuntu/venv/bin/gunicorn --workers 3 --bind unix:petland.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target

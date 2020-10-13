@@ -1,0 +1,28 @@
+﻿-- 테이블 순서는 관계를 고려하여 한 번에 실행해도 에러가 발생하지 않게 정렬되었습니다.
+
+-- pet_sitter Table Create SQL
+	
+
+ALTER TABLE p	et_sitter COMMENT '펫시터';	
+
+
+-- pet_sitter Table Create SQL
+CREATE TABLE reservation
+(
+    `c_id`     INT            NOT NULL    AUTO_INCREMENT COMMENT '아이디', 
+    `name`     VARCHAR(20)    NULL        COMMENT '이름', 
+    `phone`    int(11)        NULL        COMMENT '연락처', 
+    `service`  INT            NULL        COMMENT '서비스(dog or cat)', 
+    `p_date`   DATE           NULL        COMMENT '예약날짜(요일 X)', 
+    `r_time`   INT            NULL        COMMENT '예약시간(1시간 단위)', 
+    `r_p_id`   INT            NULL        COMMENT '예약펫시터', 
+    PRIMARY KEY (c_id)
+);
+
+ALTER TABLE reservation COMMENT '예약 매칭이 성공한 경우';
+
+ALTER TABLE reservation
+    ADD CONSTRAINT FK_reservation_r_p_id_pet_sitter_p_id FOREIGN KEY (r_p_id)
+        REFERENCES pet_sitter (p_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+
