@@ -26,3 +26,15 @@ ALTER TABLE reservation
         REFERENCES pet_sitter (p_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 
+CREATE TABLE reservation
+(
+    `c_id`     INT            NOT NULL    AUTO_INCREMENT COMMENT '아이디', 
+    `name`     VARCHAR(20)    NOT NULL        COMMENT '이름', 
+    `phone`    int(11)        NOT NULL        COMMENT '연락처', 
+    `pet`  INT            NOT NULL        COMMENT '펫 종류(dog or cat)',
+    `sevice` int	 		NOT NULL 		COMMENT '서비스종류(1,2,3)',
+    `p_date`   DATE           NOT NULL        COMMENT '예약날짜(요일 X)', 
+    `r_time`   INT            NOT NULL        COMMENT '예약시간(1시간 단위)', 
+    `r_p_id`   INT            NULL        COMMENT '예약펫시터', 
+    PRIMARY KEY (c_id)
+);

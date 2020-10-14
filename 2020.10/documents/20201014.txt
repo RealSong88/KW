@@ -1,0 +1,79 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-14T08:42:34+09:00
+
+===========================오전1===========================
+2차 프로젝트
+
+~~파이썬에서 마리아디비 문법을 사용할때 __따옴표나 쌍따옴표__ 구별해야하고
+__\"__ 이걸 활용하는게 오류가 적게나는거 같음.~~
+
+파이썬에서 마리아디비 문법 사용시 변수에는 항상 쌍따옴표 세개를 쓰고 안에 내용을 쓴다.
+ex)
+sql = """
+	__insert into userinfo (username, hashed_password, email) values ("{}","{}","{}")__
+		""".format(username, hashed_password, email)
+sql = """__SELECT * FROM userinfo WHERE username="{}"__
+		""".format(username2)
+
+그리고 __중괄호에 값을 넣을때는 쌍따옴표 한개__로 감싼다.
+
+cur.excute(sql)은 리턴값이 None이나 올바른 쿼리문일 경우 데이터가 들어간 상태이기 때문에 0과 값을 비교하면 True or False를 구분 할 수있다. 
+
+===========================오전2===========================
+
+
+
+===========================오전3===========================
+
+
+
+===========================오전4===========================
+
+===========================오후1=========================== 
+docker 
+kw-pc에 우분투이미지로 만든 ajaxtest를 mariadb와 파이썬을 설치하여
+컨테이너를 커밋해서 이미지로 만듬
+(오피셜 우분투이미지로 우분투 컨테이너를 만들면 기본 앱(vi, curl)같은게 없기 때문에 다운받아 사용했다.
+
+docker create 할 때 포트연결을 해야한다.
+===========================오후2===========================
+ajaxtest 컨테이너에 파이썬이 설치되있고 컨테이너 자체가 가상 vevn와 유사하기때문에 venv를 만들지 않고 파이썬 자체에 pip3 설치를 한다.
+
+필요 pip3 - gunicorn flask, mariadb, wheel
+
+ajaxtest에는 [[/var/www/flask_proj]] 에 플라스크 앱이 있는데 그곳에 main.py 를 수정한다.
+
+@app.route("/newuser")
+def user_insert():
+	# [[http://localhost:5000/user?name=f]]
+	new_name = request.args.get('name') #f
+	print(new_name)
+	__conn = get_conn()__
+__    sql ="""__
+__    INSERT INTO mytest (name) VALUES ("{}")__
+__    """.format(new_name)  #중요..__
+
+	cur = conn.cursor()
+	cur.execute(sql)
+	conn.commit()
+	if conn:
+		conn.close()
+	return "입력성공"
+
+첫 우분투 설치시 저장소변경 ***
+
+오늘의 도커 ----
+
+1.도커로 오피셜 우분투(20.04) 이미지 pull
+2.container 생성, (생성시 포트 지정)
+3.도커 컨테이너에 설치된 우분투에 파이썬, 마리아디비 설치 
+4.플라스크에 필요한 라이브러리 pip3 다운 - gunicorn flask, mariadb, wheel
+5.마리아디비 외부접속을 위한 root 비밀번호 mysql_secure_installation
+설정
+6.파이썬에서 디비 제어가능한지 확인
+7.정상 작동시 도커 스탑 후 컨테이너 이미지만들기(docker commit ajaxtest myub)
+8.컨테이너 재생성해서 사용확인
+
+
+===========================오후3===========================

@@ -90,7 +90,7 @@ systemctl을 사용하지 못한다.
 
 도커 커스텀한 컨테이너 이미지 만들기 (local 기준)
 docker stop ajaxtest
-docker commit ajaxtest myubuntu
+docker commit ajaxtest myub
 - 컨테이너 작동을 멈추고 commit 컨테이너이름 이미지이름 을 하면 컨테이너의 내용이 들어간 이미지를 만든다.
 
 docker create --name ajaxtest2 -p 5000:5000 -it myubuntu
