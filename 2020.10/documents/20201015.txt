@@ -1,0 +1,43 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-15T10:40:15+09:00
+
+===========================오전1===========================
+
+2차프로젝트 회의..
+vs code로 원격서버에서 작업하는데 파일 수정이 안될 경우
+해당 서버에 작업하는 공간을 root가 아닌 사용자로 지정한다.
+https://medium.com/@keyhyuk.kim/wsl2-vscode-remote-wsl-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-%EA%B6%8C%ED%95%9C-%EB%AC%B8%EC%A0%9C%EB%A1%9C-%ED%8C%8C%EC%9D%BC-write-operation%EC%9D%B4-%EC%95%88-%EB%90%98%EB%8A%94-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0-b0ac70d22054
+
+===========================오전2===========================
+
+오늘 해야할 작업
+
+1. 입력 form에서 데이터 전달시 체크박스 값들은 한가지만 들어오는 문제
+2. form 에 입력된 데이터 유효성 검사를 js를 통해 완료하고 그 데이터를 db의 pet_sitter에 지역구와 비교해서 true 일 경우 db의 reservation에 예약자 정보를 insert 시키는 작업.
+
+
+===========================오후1=========================== 
+
+Docker
+
+목록
+http://localhost:5000/user?cmd=list
+http://localhost:5000/adduser?name=apple 
+http://localhost:5000/user?cmd=insert&name=apple
+http://localhost:5000/user?cmd=delete&id=4
+http://localhost:5000/user?cmd=update
+
+python에 마리아디비 사이트
+https://mariadb.com/ko/resources/blog/how-to-connect-python-programs-to-mariadb/
+
+
+===========================오후2===========================
+javascript
+
+var form = document.getElementsByTagName('form')
+- 페이지에 있는 폼태그를 form 객체로 담는다.
+
+var input = document.create
+
+===========================오후3===========================
