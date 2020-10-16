@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-16T14:24:09+09:00
+
+====== 20201016 ======
+Created 금요일 16 10월 2020
+
+
+subnet mask - 네트워크 내의 컴퓨터의 수를 제어한다.
+
+255.0.0.0 - 회사같은곳에서 24비트수의 컴퓨터 네트워크를 구성할 수 있다.
+
+255.255.255.0 - 일반집의 서브넷마스크 256개까지 구성이 가능
+
+
+
+flask data 매칭 후 reservation2.html로 response
+(select p_id, name from pet_sitter where p_local=" "
