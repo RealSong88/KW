@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-17T17:18:58+09:00
+
+1번 해결 reservation.html.bak, main.py, test.html, 
+
+
+두번째 작업 

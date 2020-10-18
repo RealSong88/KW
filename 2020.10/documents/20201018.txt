@@ -1,0 +1,63 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-18T14:43:47+09:00
+
+window 노트북
+
+putty 설치 - 2222포트 개방 wsl2 ip 포트포워딩
+(외부접속가능)
+
+wsl2 우분투20.04
+docker 설치 
+ubuntu 설치
+vim 설치
+저장소변경
+python3 설치 - 심볼릭 python 연결 필요
+python3-pip 설치
+
+xnetd 설치 - 설정필요
+telnet 설치 - 설정필요
+start_telnet.sh - 텔넷을 실행할 수 있는 쉘을 만듬
+
+root 비밀번호설정
+passwd
+
+song으로 로그인해서 git 정보입력
+git 설치
+git config --list
+git config --global user.name RealSong88
+git config --glboal user.email july2day@gmail.com
+
+git clone - hello 프로젝트다운
+
+우분투 한글 적용
+$> locale                 # 현재 언어 설정
+$> locale -a              # 적용 가능한 언어만 보기
+$> apt-get update
+$> apt-get install locales
+$> cat /usr/share/i18n/SUPPORTED
+$> localedef -f UTF-8 -i ko_KR ko_KR.UTF-8 - ko_kr 설치
+$> locale -a
+
+# ~/.profile에 추가 (root이면 모든 계정에 적용, 계정의 .profile 적용시 계정에서만 한글 사용)
+LC_ALL=ko_KR.UTF-8 bash
+export LANGUAGE=ko
+
+ubt container에서 /bin/docker_bash 쉘 스크립트 작성
+#!/bin/sh
+/etc/init.d/xinetd restart
+export LANGUAGE=ko
+LC_ALL=ko_KR.UTF-8 bash
+#> chmod +x [[/bin/docker_bash]] - 모든 사용자에게 실행 권한을 준다.
+
+container 밖으로 나와서, Image 생성
+$> docker commit ubt ubx
+ubx 이미지를 이용하여 신규 컨테이너 생성 및 구동
+$> docker run -itd --restart=always --name ubx -p 23:23 ubx /bin/docker_bash
+이제부터 ubx 사용!
+$> docker attach ubx
+ubx가 정상이면, 기존 ubt container 삭제
+$> docker stop utb; docker rm ubt
+
+포트포워딩 개념
+듀얼부팅 ubuntu20.04 에서 docker-compose 사용 포트연결에는 ufw 보다 ip와 docker container 생성시 포트를 정확하게 지정해줘야함
