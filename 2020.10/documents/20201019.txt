@@ -1,0 +1,50 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-19T10:14:50+09:00
+
+===========================오전1===========================
+
+2차프로젝트..
+
+
+===========================오전2===========================
+
+예외처리 에러 처리
+
+===========================오전3===========================
+
+main.py 메소드
+
+def check_add(search_local) 
+- 사용자의 지역을 입력받아 DB에서 펫시터들의 지역 정보와 비교해서 p_id와 p_name 을 추출하여 r_id로 return한다.
+
+def check_phone(user_phone, user_name)  
+- 사용자의 번호와 이름을 받아 reservation 테이블에서 검색하여 참일 경우 user_info에 리스트형식으로 값을 집어넣고 없을 경우 비어있는 리스트값을 리턴한다.
+
+def check_submit()
+- 예약 조회버튼에서 이름과, 번호를 입력하면 reservation 테이블에서 이름, 번호 조회후 있으면, 예약자 정보를 user_info 리스트에 담아서
+render_template로 데이터를 보내줌
+
+
+def payment_save()
+제작중
+
+
+===========================오후1=========================== 
+
+ajaxtest main2.py 제대로 에러발생이안됨..
+
+ajax
+
+
+마리아디비에서 select 문을 쓰면 컬렉터문으로 반환됨
+===========================오후2===========================
+
+ALTER TABLE petland.reservation MODIFY COLUMN pet varchar(10) DEFAULT NULL NULL COMMENT '펫 종류(dog or cat)';
+ALTER TABLE petland.reservation MODIFY COLUMN sevice varchar(20) DEFAULT NULL NULL COMMENT '서비스종류(1,2,3)';
+ALTER TABLE petland.reservation MODIFY COLUMN r_time varchar(45) DEFAULT NULL NULL COMMENT '예약시간(1시간 단위)';
+
+INSERT INTO reservation (name, phone, pet, service,p_date, r_time)
+VALUES ("야전삽","01045691234", "dog", "walk, home", now(), "16,17")
+
+===========================오후3===========================
