@@ -36,8 +36,10 @@ $> locale -a              # 적용 가능한 언어만 보기
 $> apt-get update
 $> apt-get install locales
 $> cat /usr/share/i18n/SUPPORTED
-$> localedef -f UTF-8 -i ko_KR ko_KR.UTF-8 - ko_kr 설치
+$> localedef -f UTF-8 -i ko_KR ko_KR.UTF-8 
+- ko_kr 설치
 $> locale -a
+참고영상 - 시니어코딩 리눅스02 ==10분경
 
 # ~/.profile에 추가 (root이면 모든 계정에 적용, 계정의 .profile 적용시 계정에서만 한글 사용)
 LC_ALL=ko_KR.UTF-8 bash

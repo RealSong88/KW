@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-21T15:57:07+09:00
+
+프로젝트마무리에서 재시작.
+
+
+vscode로 wsl 접근하여 파이썬 디버깅할 수있는 문서
+https://code.visualstudio.com/docs/python/tutorial-flask
+- wsl2 에서 python3 가상환경을 만든다.
+- 가상환경을 실행한다 
+- pip 설치한다
+- 배쉬쉘에서 code . 입력한다
+- vscode-server 설치후
+- code . 을 다시 입력하면 wsl 을 연결한 vs code가 실행한다.
+- 기본코드작성 혹은 위의 사이트에서 예시코드 복사
+- vs code 에서 디버그모드를 들어가서 setting.json 을 클릭하여
+flask를 선택하고 작업폴더에 launch.json 파일 생성
+-디버깅 포인트 지정후  디버그모드를 스타트하면 원하는 위치에서 멈춘다.
+- 원하는 변수를 지속적으로 관찰하고싶으면 변수 드래그 후 오른쪽 클릭
+add to watch 실행
