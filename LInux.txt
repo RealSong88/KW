@@ -5,6 +5,8 @@ Creation-Date: 2020-08-20T11:41:43+09:00
 ====== Linux ======
 Created 목요일 20 8월 2020
 
+Nginx에서 플라스크 연동시 [[/etc/nginx/sites-enabled]] 에서 __default 링크를 제거__해야 내가 원하는 flask 앱서버를 연동시킬 수있다.
+
 첫 설치할 때 root 권한은 비활성화 되서
 접근할 수 있는 계정을 생성한다
 

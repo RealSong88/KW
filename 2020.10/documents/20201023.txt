@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-23T09:54:54+09:00
+
+===========================오전1===========================
+예시)
+
+sql_user_select = """
+		SELECT u.u_id, u.u_name, u.u_phone, r.pet, r.service,
+		r.r_date, r.r_time, p.p_name 
+		FROM user_info u
+		LEFT JOIN reservation r ON u.u_id = r.r_u_id
+		LEFT JOIN pet_sitter p ON p.p_id = r.r_p_id 
+		WHERE u.u_phone = "{}" AND u.u_name ="{}"
+	""".format(user_phone, user_name)
+
+python에서 쿼리  execute 후 값을 뽑아올 때 세가지 경우
+
+- for 문 사용해서 추출할 경우 select한 컬럼들을 전부 사용하지 않으면 [[ValueError]] 발생한다. (가장 최신의 방법)
+- for 문은 db 의 컬럼 데이타 형식 그대로 가져온다 
+ex) u_id - int형식, u_name - str형식 등...
+
+- cur.fetchone() 한개의 행만 데이터를 추출한다.
+ex) temp = cur.fetchone()
+	 <class 'tuple'>
+	(1, '송종천', '01066681002', 'dog', 'walk', datetime.date(2020, 10, 31), '16,17,18', '김구름')
+	
+- cur.fetchall() 모든 행의 데이터를 추출한다. 2차원 배열형태로 저장
+<class 'list'>
+[(10, '김승환', '01042571234', 'dog', 'training', datetime.date(2020, 10, 27), '14,15', '상정혁')]
+(10, '김승환', '01042571234', 'dog', 'training', datetime.date(2020, 10, 27), '14,15', '상정혁')
+
+reservation_check2.html 에서 테이블태그에 번호 테이블헤드를
+회원번호로 변경
+
+
+__관리자 페이지 제작으로 백엔드도 수정__
+
+===========================오후3===========================

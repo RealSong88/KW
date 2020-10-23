@@ -1,17 +1,14 @@
 Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.6
-Creation-Date: 2020-10-22T09:41:16+09:00
+Creation-Date: 2020-10-23T15:41:24+09:00
 
-2차 프로젝트 백엔드 보안사항
+====== 작업 진행상황 ======
+Created 금요일 23 10월 2020
 
+__201013에 oracle-cloud에 nginx 연동하여 플라스크앱 - 마리아DB연동작업 완료__
 
-디비 구성이 부족하다
+추후 관리자 페이지 백엔드 작업 시작
 
-디비에 insert 후 id값 얻는 소스
-__conn.commit()__
-__u_id = //cur.**l**//**astrowid**   ====> id값을 리턴__
-https://qastack.kr/programming/2548493/how-do-i-get-the-id-after-insert-into-mysql-database-with-python 참조사이트
---------------------
 pet_sitter에서 지역 비교
 
 reservation에서 날짜 검색 시간 검색, 후 없으면 예약
@@ -43,4 +40,3 @@ payment_save(info)
 check_phone(user_phone, user_name)
 - 사용자가 예약조회를 원할시 체크하는 메서드
 - 사용자 이름, 번호를  조건으로 검색하여 결과값이 있으면 result에 저장하고 없으면 ""을 리턴한다.
-
