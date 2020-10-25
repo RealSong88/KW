@@ -10,5 +10,10 @@ flask #1 강좌 48분 - hosts 파일 수정
 
 1시간 1분 - request 요청 방식
 
+get 요청이 post 요청보다 속도가 훨씬 빠르다.
+request.args.get('q')
+큰데이타는 form으로 전송
+request.form.get('p', 123)
 
-집가서 ㄱㄱ
+request.get_json() 
+-제이슨 요청시 서버에서 다룬다.

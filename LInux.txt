@@ -7,6 +7,15 @@ Created 목요일 20 8월 2020
 
 Nginx에서 플라스크 연동시 [[/etc/nginx/sites-enabled]] 에서 __default 링크를 제거__해야 내가 원하는 flask 앱서버를 연동시킬 수있다.
 
+버추얼박스로 데스크탑 버전 혹은 서버버전 우분투 설치시 __ssh를 설치__하여 putty로 접속을 할 수 있다
+버추얼박스 설정 > 네트워크 > 고급 > 포트포워딩 
+22번 80번 등을 열어두어야 putty 접속 가능!
+
+
+sudo timedatectl set-timezone "Asia/Seoul"
+- 도커나 서버 리눅스 설치시 타임존 설정이 usa기준이여서
+한국시간으로 맞춰준다.
+
 첫 설치할 때 root 권한은 비활성화 되서
 접근할 수 있는 계정을 생성한다
 
