@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T09:49:48+09:00
+
+====== sql.py ======
+Created 화요일 27 10월 2020
+

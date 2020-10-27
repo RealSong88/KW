@@ -1,0 +1,49 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T10:02:31+09:00
+
+====== sql.py ======
+Created 화요일 27 10월 2020
+
+보안할 점 
+
+- 예약현황과 해당 펫시터의 예약 건수 등을 통계로 메인 페이지를 뿌리는게 관리자 페이지 취지에 맞다.
+- 삭제 및 검색 기능만 넣어서 실제 관리자가 제어할 수 있는 방법이 많지않다.
+- 예약 테이블에 서비스 대기상태와 완료상태를 구분 할 수가 없어서 문제점이 발생한다.
+- reservation 테이블에서 p_id, 와 u_id 를 참조하는데 펫시터나 고객테이블에서 수정할 일이 생길 때 reservation에서 예약이 되어있을 시에는 수정을 할 수 없게 restrict로 걸어두었다. (set null설정시 예약관리 페이지에 null 값이 들어가 쿼리시 에러발생.)
+
+
+petland_admin.py의 모듈
+
+사용된 pip - flask, mariadb
+
+사용된 메서드
+
+get_conn()
+- 마리아DB의 커넥트 정보를 return 하는 메서드
+
+show_res()
+- reservation 테이블과 user_info 테이블을 join 하여 예약현황을 보여준다. 
+- get_sql_form() 메서드를 실행하여 cmd == 'delete' 일 경우 쿼리를 실행한 후 커밋하여데이터를 삭제하고 sql에 삭제된 후 업데이트된 정보를 저장하여 result에 return한다.
+- cmd가 search나 None일 경우 해당 쿼리로 실행해서 result에 return한다.
+
+	get_sql_form()
+	- 해당 실행된 페이지에서 get방식으로 cmd 값을 cmd 에 넣는다.
+	- cmd=delete 일 경우 r_num 값을 저장하여 sql에 DELETE 쿼리를 완성해서 리턴한다.
+	- cmd=search 일 경우 'name'값을 저장하여 sql에 SELECT JOIN 쿼리를 완성해서 리턴한다.
+	- 그 밖의 경우와, cmd 값이 없을 경우 sql에 SELECT JOIN ORDER 쿼리를 완성해서 리턴한다.
+	
+show_cus()
+- 위의 메서드와 같은 로직인데, user_info 테이블을 사용하여 고객 관리상태를 보여준다.
+	
+	get_sql_customer()
+	- 위와 같음
+	
+show_staff()
+- 위의 메서드와 같은 로직이고, pet_sitter 테이블을 사용하여 펫시터 관리상태를 보여준다.
+
+	get_sql_staff()
+
+
+
+

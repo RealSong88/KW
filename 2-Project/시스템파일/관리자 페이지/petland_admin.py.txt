@@ -1,0 +1,45 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T09:06:12+09:00
+
+====== petland admin.py ======
+Created 화요일 27 10월 2020
+
+
+사용된 pip - flask, mariadb
+
+사용된 모듈
+
+sql.py
+
+사용된 메서드
+
+def user():
+- 로그인 페이지에서 아이디와 패스워드 입력 값을 DB의 admin 테이블에 비교하여 정상적인 쿼리일 경우 해당 컬럼의 데이터값을 리턴하고 없으면 None 값을 리턴한다.
+
+def base():
+- 관리자 페이지 초기 로그인 화면으로 redirect된다.
+
+def login():
+- GET 방식일 때, 로그인이 되었으면 form 메서드를 실행하고, 로그인이 안됬을시 login.html을 render_template 한다.
+
+- POST 방식일 때, id와 pw를 저장하여 user()메소드를 실행해서 데이터값을 받아 None값이 아닐시 alert으로 id를 출력하고, [[/form]] 페이지로 이동을한다.
+- 데이터가 None 값이면 웹페이지에 alert를 띄우고 [[/login으로]] 이동한다.
+
+def logout()
+- session을 clear()하여 쿠키값을 지우고 form 메서드를 redirect한다.
+
+def form()
+- GET 방식이고 session값이 있을 경우 sql 모듈에 show_res()를 실행하여 return값을 content에 저장해서 base.html에
+return값을 뿌려준다.
+- session값이 없을 경우 login메서드를 redirect한다.
+
+def customer()
+- GET 방식이고 session값이 있을 경우 sql 모듈에서 show_cus()를 실행하여 return값을 content에 저장하여customer_management.htmldp return값을 뿌려준다.
+- 없을 경우 login 메서드를 redirect한다.
+
+def staff()
+- 위의 메서드와 기능이 유사하고 content에 show_staff()의 리턴값을 준다.
+- 위와 동일
+
+

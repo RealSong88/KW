@@ -1,0 +1,56 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T10:31:18+09:00
+
+====== main.py ======
+만든 날: 화요일 27 10월 2020
+
+보안할 점
+- redirect를 사용하지않아 url과 페이지가 맞지 않는 점 발생
+- json을 사용하지 않아 데이터 핸들링시 불필요한 코드작성이 많아짐
+- 같은 url에서 get방식과 post방식 두가지를 만들어 불필요한 코드작성
+
+
+
+사용된 pip - flask, mariadb
+
+사용된 모듈 - check_mod
+
+사용된 메서드
+
+user_info = [] 
+- 사용자가 입력한 정보를 전역변수로 저장.
+
+main()
+- main.html 을 render_template 함
+
+receive_form()
+- [[/reservation]] 에서 post 방식으로 요청이 올 경우 해당 데이터들을 request.form 으로 받아 formData에 append한다.(json 형식으로 받았으면 소스가 깔끔해질듯)
+- 전역변수인 user_info를 global 선언해서 formData를 대입한다.
+- p_id에 check_mod의 check_local메서드 리턴값을 대입하여 첫번째검증인 0일 경우 alert로 해당 지역이 마감되었다고 출력하고 다시 reservation.html을 render_template한다. 
+- p_id가 0일 경우 possible_sitter 에 check_date리턴값을 대입하여 두번째 검증을 시작한다.
+- possible_sitter 값이 0일 경우 alert로 해당 날짜가 마감되었다고 출력하고 다시 reservation.html을 render_template한다. 
+- possible_sitter 값이 0이 아닐 경우 user_info에 possible_sitter의 값을 append하고 결제하기 페이지인 reservation.html로 render_template한다.(redirect를 썼으면 더 깔끔 했을듯)
+
+reservation2()
+- check_mod의 payment_save 메서드에 사용자가 입력한 정보인 user_info값을 넣어 최종 DB에 정보를 입력하고 조회하기인 reservation_check.html로 render_template한다.(redirect를 썼으면 해당 url로 이동이 된다.)
+
+reservation_check():
+- 조회하기 화면인 reservation_check.html을 render_template한다.
+(해당 메서드에 데코레이터로 get과 post를 넣었으면 코드를 줄일 수 있었다.)
+
+check_submit()
+- [[/reservaiton.check에서]] post 방식으로 요청이 왔을 경우 이름과 휴대폰번호를 받아 check_mod의 check_phone메서드를 실행하여 user_info에 return값을 넣는다. (전역변수와 같은이름으로 변수를 만드는 실수..)
+- user_info가 0이면 예약정보가 없다는 내용을 전달하고, reservation_check.html을 render_template한다.
+- user_info가 0이 아니면 조회하기 결과인 reservation_check2.html을 render_template하고, user_info 페이지에 뿌려준다.
+
+intro()
+- 소개페이지인 introduce.html을 render_template한다.
+
+
+
+
+
+
+
+

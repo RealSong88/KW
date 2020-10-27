@@ -1,0 +1,52 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-10-27T10:31:25+09:00
+
+====== check mod.py ======
+만든 날: 화요일 27 10월 2020
+
+보안할 점
+- DB 설계 부족으로 해당 지역과, 해당 날짜까지만 검증 할 수 있다. (시간까지도 고려해야함)
+- 중복되는 코드들, 불필요한 코드작성이 많다.
+- 불확실한 예외처리
+- 메인페이지에 비해 부족한 백엔드 시스템
+
+
+main.py를 위한 모듈
+
+사용된 pip - mariadb
+
+사용된 메서드
+
+get_conn()
+- 마리아DB의 커넥트 정보를 return 하는 메서드
+
+
+
+~~check_data(search_local, search_date) 메서드~~
+~~- 펫시터id와 예약펫시터id가 일치하고, 주소와 날짜가 맞는 경우를 데이터를 리턴, 일치하지않으면 None값 리턴~~
+check_data()와 check_user()로 분리
+
+check_local(search_local):
+- 사용자가 지역 입력시 db 검색해서 있으면 p_id 리턴 없으면
+0을 리턴한다
+- p_id가 여러가지일 경우 random()메서드로 리스트에 있는 p_id를 뽑아낸다.
+
+check_date(p_id, input_date):
+- 지역 확인 후, p_id와 사용자가 입력한 날짜를 db에 쿼리하여
+None일시 p_id 리턴하고, 날짜가 검색 됐을시 0을 리턴한다.
+- 지역 비교 후, 이중 검증을 위해 사용
+
+check_user(name, phone)
+- userinfo 테이블에서 u_id, u_name, u_phone 을 쿼리하여 그 값이 None이면 0을 반환
+값이 존재하면 u_id만 리턴
+- payment_save(info) 에서 u_id값을 전달하기 위해 사용
+
+payment_save(info)
+- 결제하기 눌렀을시 user_info에 없는 사용자일 경우 user_info와 reservation에 데이터 insert
+- 서비스를 이용했던 사용자일 경우 reservation에 데이터 insert 
+--- 아쉬운 점. 기존 사용자는 사용자의 주소가 처음에 입력된 것으로 fix가 됨 (로그인 기능이 있으면 해결 될 듯?)
+
+check_phone(user_phone, user_name)
+- 사용자가 예약조회를 원할시 체크하는 메서드
+- 사용자 이름, 번호를  조건으로 검색하여 결과값이 있으면 result에 저장하고 없으면 ""을 리턴한다
