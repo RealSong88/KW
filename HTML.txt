@@ -5,6 +5,10 @@ Creation-Date: 2020-09-14T15:00:40+09:00
 ====== Html ======
 Created 월요일 14 9월 2020
 
+프론트엔드 면접질문
+https://h5bp.org/Front-end-Developer-Interview-Questions/translations/korean/
+
+
 HTTP의 특징
 - 연결을 유지하지 않는 프로토콜
 - 많은 요청을 처리하기 위해서 연결 상태를 유지하지 않는 비연결성 프로토콜
