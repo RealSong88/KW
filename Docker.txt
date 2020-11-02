@@ -5,6 +5,88 @@ Creation-Date: 2020-10-08T13:42:48+09:00
 ====== Docker ======
 만든 날: 목요일 08 10월 2020
 
+docker - microsoft 문서 정리
+https://docs.microsoft.com/ko-kr/visualstudio/docker/tutorials/multi-container-apps
+
+docker formatting
+https://docs.docker.com/engine/reference/commandline/ps/#formatting
+
+__앱 업데이트__
+
+소스 코드 업데이트
+- 기존 컨테이너를 정지시키고 삭제한다. 해당 작업폴더에 소스를 업데이트한다
+docker build -t myflask .
+- 소스 코드가 업데이트 될 때는 업데이트 후에 해당 이미지로 다시 build해서 img를 업데이트 시킨다.
+
+docker run -dp 5000:5000 --name myf myflask
+- 새로운 컨테이너를 띄우면 소스가 업데이트된 img가 실행된다.
+
+__앱 공유__
+
+myflask를 july2day/myflask:test로 push 하려면 로컬에 있는 이미지에 태그 이름으로 변경해야한다.
+
+docker tag [[myflask:latest]] july2day/myflask:test
+
+docker push july2day/myflask:test
+- dockerhub에 푸쉬한다.
+
+
+__데이터베이스 유지__
+
+docker volume create myflask_db
+- 디비를 연결한 볼륨을 만든다.
+
+docker run -dp 3306:3306 -e MYSQL_ROOT_PASSWORD=000000 \
+-e MYSQL_DATABSE=myflask \
+-v myflask_db:/var/lib/mysql \
+--name myflask_db [[mariadb:latest]]
+
+--- myflask_db란 호스트 볼륨에 도커의 [[/var/lib/mysql로]] 연결한다.
+--- myflask란 db에 member란 테이블을 만들고 데이터 인서트
+
+docker stop myflask_db
+docker rm myflask_db
+docker run -dp 3306:3306 -e MYSQL_ROOT_PASSWORD=000000 \
+-e MYSQL_DATABASE=myflask \
+-v myflask_db:/var/lib/mysql \
+--name myflask_db [[mariadb:latest]]
+
+컨테이너 삭제하고 다시 같은 -v 를 주면 docker volume인 myflask_db에
+데이터가 저장되어있기 때문에 삭제 된 컨테이너에서 입력한 데이터들이 
+남아있다.
+
+__다중 컨테이너 앱__
+
+docker network create myflask-net
+- myflask-net 이라는 네트워크를 생성한다.
+
+docker run -d \
+	--network <네트워크> --network-alias mariadb \
+	-v <db 볼륨>:/var/lib/mysql \
+	-e MYSQL_ROOT_PASSWORD=<비번> \
+	-e MYSQL_DATABASE=<db 이름> \
+	mariadb:latest
+
+===> 네트워크명, db볼륨명, 비번, db 이름 입력 ===>
+
+docker run -d \
+	--network myflask-net --network-alias mariadb \
+	-v myflask_db:/var/lib/mysql \
+	-e MYSQL_ROOT_PASSWORD=000000 \
+	-e MYSQL_DATABASE=myflask \
+	--name myflask_db [[mariadb:latest]]
+- myflask-net 이라는 도커 네트워크에 myflask_db라는 컨테이너를 연결한다.
+
+__pip 설치 오류시 필요한 패키지__
+sudo apt install python3-pip python3-dev build-essential libssl-dev libffi-dev python3-setuptools
+
+app.ini
+- 해당 db의 접속할 수있는 내용이 담겨있다.
+
+
+=================================================================
+
+
 ubuntu 20에 도커 설치
 https://blog.dalso.org/linux/ubuntu-20-04-lts/13118
 
@@ -65,3 +147,4 @@ docker commit ajaxtest myubuntu
 - ajaxtest 컨테이너로 myubuntu라는 이미지 생성
 
 
+[[2020.10:documents:20201019]]

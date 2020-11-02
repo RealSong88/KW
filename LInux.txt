@@ -5,6 +5,8 @@ Creation-Date: 2020-08-20T11:41:43+09:00
 ====== Linux ======
 Created 목요일 20 8월 2020
 
+__window나 ubuntu 의 hosts 파일에서 127.0.0.1을 다른 dns로 사용을 하게되면 localhost로 접근시 문제가 생길 수 있다.__
+
 Nginx에서 플라스크 연동시 [[/etc/nginx/sites-enabled]] 에서 __default 링크를 제거__해야 내가 원하는 flask 앱서버를 연동시킬 수있다.
 
 버추얼박스로 데스크탑 버전 혹은 서버버전 우분투 설치시 __ssh를 설치__하여 putty로 접속을 할 수 있다
