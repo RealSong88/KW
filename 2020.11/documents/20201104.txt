@@ -1,0 +1,72 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-04T10:15:25+09:00
+
+===========================오전1===========================
+
+파이썬에서 비밀번호를 암호화 할때 bcrypt 모듈을 사용하여 form형식으로 비밀번호를 받을 경우 문자로 받기때문에 바이너리 코드로 인코딩한후 bcrypt로 암호화한다.
+sql에 데이터 insert할시 decode()형식으로 값을 입력해야 typeError가 발생하지않는다. 
+
+- 마리아디비에서 password는 타입을 blob타입으로 한다. 
+
+
+
+
+
+===========================오후1=========================== 
+
+
+python 내장 함수
+
+iter()
+
+l = [1,2,3]
+it = iter(l)
+-이터레이터 객체
+next(it) # 1
+next(it) # 2
+next(it) # 3
+next(it) # error발생 
+
+it = iter(l)
+next(it, None) # 1
+next(it, None) # 2
+next(it, None) # 3
+next(it, None) # None
+
+--- 리스트 자체는 메모리에 항상 존재하지만 iter로 선언 하는 경우에는 값을 표출하고 메모리에 삭제한다.
+--- 데이터가 많을때 메모리가 부족하고 하나씩 실행하고 지울 때 유용하다.
+
+zip()
+>>>l1 = [1,2,3]
+>>>l2 = [4,5,6]
+>>>z = zip(l1, l2)
+>>>list(z) # [(1, 4), (2, 5), (3, 6)]
+
+--- 두개의 x값 y값을 표현하고 싶을 때
+
+filter()
+# filter(fiter_fn, iter) : fiter object
+
+int_numbers = range(-5, 6)
+print(list(int_numbers))
+
+negatives = filter(lambda x : x < 0, int_numbers)
+print(list(negatives)) # [-5,-4,-3,-2,-1]
+
+def fn(x):
+	return x > 0
+xx = filter(fn, int_numbers)
+print(list(xx)) # [1,2,3,4,5] 
+
+--- 함수를 만들어사용하거나 람다식으로 조건을 만들어서 원하는 값을 필터링한다.
+--- 값들이 true일 경우만 출력
+map() 
+--- 값들이 대해서 처리한 결과를 출력 
+
+
+점프 투 플라스크
+3-1
+3-2
+3-3
+3-4

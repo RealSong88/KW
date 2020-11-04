@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-04T10:32:42+09:00
+
+====== Flask ======
+만든 날: 수요일 04 11월 2020
+
+https://flask-docs-kr.readthedocs.io/ko/latest/foreword.html
+
+플라스크 한글 공식문서
