@@ -23,12 +23,12 @@ https://docs.google.com/document/d/1HYcpZ001qyaVXglc1ku7UWrzMjTBFpp8Iy-2oTZoXuQ/
 
 ===========================오전3===========================
 
-pip freeze
-- 이 내용을 txt로 만듬
-pip freeze > requirements.txt
-- txt로 pip 설치가능
-pip install -r requirements.txt
-- 목록대로 설치
+__pip freeze__
+__- 이 내용을 txt로 만듬__
+__pip freeze > requirements.txt__
+__- txt로 pip 설치가능__
+__pip install -r requirements.txt__
+__- 목록대로 설치__
 
 [[~/workspace/mydocker/myflask]]
 - Dockerfile 을 작성하여 원하는 프로그램과 실행할 명령어들을 
