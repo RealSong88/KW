@@ -2,6 +2,17 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.6
 
 파이썬은 모든 것이 객체이다.
+파이썬에서 snake 방식은 __function__
+파이썬에서 카멜 방식은 __Class__
+function 을 len으로 감싸면 return 값의 갯수를 알 수 있다.
+Variable(변수)
+
+- literal - (Int, float, char)
+
+- Container - (String, List, Tuple, set, dictionary)
+
+- Function(함수), Class(객체)
+
 
 문자열에 시작점이나 끝지점에 문자, true or false 를 반환
 문자열.startswith('문자') ===

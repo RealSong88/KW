@@ -1,0 +1,72 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-09T09:18:22+09:00
+
+===========================오전1===========================
+박종섭 선생님
+010-5298-2583
+james.park@makermomics.net
+Python
+
+Variable(변수)
+
+__- literal - (Int, float, char)__
+
+__- Container - (String, List, Tuple, set, dictionary)__
+
+__- Function(함수), Class(객체)__
+
+
+자격증
+
+===========================오전2===========================
+
+4차 산업 VICBAM
+
+- IOT : 미분시장 , 웨어러블 디바이스, (ex. smart 홈 >smart 주방> 스마트 식탁...)대기업 보다 중소기업들이 많이 진입한다.  
+BIG DATA : visualization(시각화) 가 중요하다. 통계
+CLOUD
+AI : 인공지능에 3대 원동력(알고리즘, Computing Power, Big Data Power)
+MOBILE, - visualization(시각화)
+
+린 스타트업 관련용어
+
+-MVP(Minimum Viable Product) 최소 존속 제품
+-Pivot(피봇)
+
+수학(미적분, 통계, 행렬, 원리를 생가하는 힘)
+
+===========================오후1=========================== 
+클래스의 네가지 요소
+
+캡슐화
+추상화
+다형성
+상속성(inheritance)
+
+Python
+키워드 확인시
+import keyword
+dir(keyword)
+keyword.kwlist
+- 사용할 수있는 kwlist
+
+del <변수 or 함수 or 클래스>
+해당 프로그램에서 변수 or  함수 or 클래스 삭제한다.
+
+# 변수를 맞교환 해보시오
+a = 7
+b = 3
+a, b = b, a           ------ 다른언어 말고 파이썬에서만 가능하다
+
+리스트 컴프리핸션 람다를 사용하면 사용 된 뒤 메모리에 남지 않기 때문에 속도가 빠르다.
+
+Google 에서 anaconda download 검색후 아나콘다 다운로드
+설치 후 jupyter notebook 실행
+
+새로 파이썬파일 만들고
+쉘에서 a를 누르면 above(해당 쉘 위에 빈 쉘 생성)
+쉘에서 b를 누르면 below(해당 쉘 아래 빈 쉘 생성)
+
+now.strftime('%Y{} %m{} %d{} %H{} %M{}'.format(*'년월일시분'))
+- str앞에 *를 붙이면 리스트형식으로 단어하나하나 쪼개져서 들어간다.
