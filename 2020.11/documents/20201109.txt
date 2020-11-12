@@ -10,11 +10,13 @@ Python
 
 Variable(변수)
 
-__- literal - (Int, float, char)__
+__- literal - (Int, float, char) 값 그 자체__
 
 __- Container - (String, List, Tuple, set, dictionary)__
 
-__- Function(함수), Class(객체)__
+__- Function(함수)__
+
+__-Class(객체)__
 
 
 자격증
@@ -70,3 +72,6 @@ Google 에서 anaconda download 검색후 아나콘다 다운로드
 
 now.strftime('%Y{} %m{} %d{} %H{} %M{}'.format(*'년월일시분'))
 - str앞에 *를 붙이면 리스트형식으로 단어하나하나 쪼개져서 들어간다.
+
+점프 투 플라스크
+3-12

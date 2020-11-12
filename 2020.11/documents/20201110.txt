@@ -1,0 +1,127 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-10T09:48:07+09:00
+
+===========================오전1===========================
+
+Python
+슬라이싱 뒤에서부터 하기
+
+
+__중앙값 구하기 median__
+
+get_ median(data)함수를 만들고 중앙 값을 return 하는 함수를 만드세요
+
+- ex) b = [1,2,3,4,5]
+
+- 출력 ex) get_median(b) 호출하면 3.0이 출력
+
+- 입력 b= [1,2,3,4,5,6]
+- 출력 get_median(b) 호출하면 3.5 출력
+
+인공지능에 있어
+
+- 평균(mean), 중앙값(median), 이상치(outlier), 최빈값(mode)의 의미를 파악
+
+
+__sort()와  sorted() 의 차이__
+x.sort() 는 x의 값을 정렬해서 x에 저장
+sorted(x) 는 x의 값을 정렬해서 return 값을 다른 변수에 담아야 된다.
+
+__set으로 받을경우 자동으로 정렬__이되어서 값이 들어간다.
+ex)
+a, b, c, d = {3, 4, 2, 6}
+a = 2, b = 3, c = 4, d = 6
+
+*a, b = 1,2,3,4
+a = [1,2,3]
+b = 4
+
+어떤 언어이건 파일의 입출력을 할 수 있어야 한다.
+python) with open('a.csv', 'r', encoding="utf-8") as f
+				data = f.read()
+===========================오전2===========================
+
+Java
+
+실행환경(JRE) + 개발도구(JDK) + 라이브러리(API)
+
+Java SE 11 버전으로 한다.
+
+Java 설치 ------------------------
+	Java SE Development Kit 11 다운
+	
+	C:\JDK11 
+	-경로에 설치
+	
+	cmd 에서 java --version 으로 확인
+	
+	java api download 검색
+	
+	Java SE Development Kit 8 Documentation 다운로드
+   C:\JDK11\docs 압축 해제
+	doc/api/index.html
+	- 바로가기 만들기
+	- 바탕화면에 복사후 rename JAVA_API.html
+	
+	eclipse download -> 첫번째 설치
+	
+	
+
+
+===========================오전3===========================
+이클립스
+
+
+CTRL + shitf + L : 단축키 전체 목록
+Ctrl + '+', '-' : 프로그램창 폰트 키우고 줄이기
+Ctrl + '/' 키를 누르면 주석이 토글된다 (toggle) 
+Ctrl + alt + 방향키 아래 :한 줄 복사 (윈도우 화면전환과 중복시 바탕화면 우측클릭 > 그래픽옵션 > 바로가기 사용안함
+ctrl + i : 자동 들여쓰기 기능을 수행한다.
+alt + shift + A 멀티 컬럼 편집 할 수 있다, 이 때 화면 자동으로 축소된다. shitf 선택후 원하는 단어 입력(한글 사용시 문제 발생)
+alt + shift + y  --- 자동 줄바꿈
+
+window > preferences > java > content assist > auto activation triggers for java
+- .abcdefghijklmnopqrstuvwxyz
+- 위의 알파벳 명령어와 비슷한 것 자동완성
+
+===========================오후1=========================== 
+
+변수의 기본값과 초기화
+- 지역 변수는 사용되기 전에 반드시 초기화해주어야 한다.
+- 에러발생시 문제 찾기 힘듬
+
+문자와 문자열
+String s1 = "A" + "B"; // "AB"
+
+char ch = ""; // 에러 
+
+형식화된 출력 - printf()
+	println()의 단점 - 출력형식 지정불가
+	
+	int age = 14;
+	printf("age:%d", age) //출력 후 줄바꿈을 하지 않음
+	--- __%g: 반올림해서 출력__
+	
+	printf()의 지시자
+	String url = "www.codechobo.com"
+	System.out.printf("[%.8s]") // [www.code]
+	
+XOR(Exclusive Or)
+===========================오후2===========================
+비트 연산자 예)
+Char x = 00001110 = 14  
+	   = 00011100 = 28  (<< 1 --- 2^1)
+	   = 00111000 = 56 	(<< 2 --- 2^2)
+	   = 01110000 = 112 (<< 3 --- 2^3)
+
+===========================오후3===========================
+이항연산자의 특징
+Math.round()
+-실수 계산시 정수를 해당 자리수만큼 곱해준 다음에 연산 후 나눔
+0.34554 * 10000 = 3455.4
+round(3455.4) = 3455 / 10000 = 0.3455 
+
+점프 투 플라스크
+3-13
+3-14

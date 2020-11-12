@@ -9,6 +9,17 @@ https://blog.jiktong.kr/
 ******면접단골질문객체지향, 싱글톤********
 final static *********
 
+기본형(Primitive type)
+- 8 개
+	값- 문자 : char (1byte)
+	  - 숫자 : 정수 - byte(1byte), short(2byte), int(4byte), long(8byte)
+				: 실수 - float(4byte), double(8byte)
+	  - 논리 : boolean (true, false)(1byte)
+참조형(Reference type)
+	- 기본형을 제외한 나머지(String, System 등)
+	- 객체의 주소를 저장(4 byte)
+	64bit JVM의 경우, 참조형의 크기는 8byte
+
 byte
 byte형은 정수 자료형 중에서도 가장 작은 범위를 가진 자료형이다. byte에는 8비트의 공간이 할당되며 256개의 숫자를 저장 할 수 있다. 이 256개의 숫자는 반으로 나뉘어 반은 음수를 나머지 반은 양수와 0을 표현한다.
 범위는 -128 ~ 127
