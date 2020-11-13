@@ -36,7 +36,7 @@ Java
  클래스내에 static 메서드 생성시 클래스 메서드 인스턴스가 클래스 메서드를 부를수있다.
  클래스내에 static 메서드는 인스턴스 변수나 메서드를 참조 할 수 없다.
  iv = Instance value ( 인스턴스 변수, 인스턴스 메서드)
- static cs = class value (클래스 변수, 클래스 메서드)
+ static cv = class value (클래스 변수, 클래스 메서드)
  lv = Local value (로컬 변수)
 	
 	__인스턴스 메서드는 인스턴스 변수 클래스변수를 사용 할  수 있지만__
