@@ -2,7 +2,7 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.6
 Creation-Date: 2020-11-05T11:09:55+09:00
 
-===========================오전1===========================
+	===========================오전1===========================
 
 __Git - Docker 자동배포 (Git Hooking)__
 
@@ -43,6 +43,7 @@ __개발자 pc__
 - cd exampleapp
 - rm -rf .git === 선생님 깃을 삭제한다
 - git init === 내 깃으로 init
+- git commit
 
 __서버 pc__
 - docker image가 없는 기본상태인 경우로 세팅

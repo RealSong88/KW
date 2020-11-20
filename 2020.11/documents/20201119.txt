@@ -1,0 +1,74 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-19T11:10:45+09:00
+
+===========================오전1===========================
+
+python
+
+이차원 배열에서 원하는 column 기준으로 정렬하기
+많이 쓰임
+
+timetable = [(2, 3), (6, 9), (1, 2), (7, 9), (10, 12), (4, 6), (5, 9), (2, 11), (3, 17)]
+timetable.sort(key=lambda x: (x[1], x[0])) # -를 붙이면 내림차순으로 정렬된다.
+
+
+===========================오전2===========================
+
+Java
+
+Object 클래스 (자바의 정석.pdf 274p)
+	- 모든 클래스의 최고 조상. 오직 11개의 메서드만을 가지고 있다.
+	- notify(), wait() 등은 쓰레드와 관련된 메서드이다
+	- __equals(), hashCode(), toString()은 적절히 오버라이딩__한다.
+	
+	equals(Object obj)
+	- 객체 자신과 주어진 객체(obj)를 비교한다. 같으면 true, 다르면 false
+	- 만드는 클래스의 경우 equals(), hashCode()는 오버라이딩 해야한다.
+	
+	hashCode()
+	- 객체의 해시코드(int타입의 정수)를 반환하는 메서드(해시함수)
+	다량의 데이터를 저장&검색하는 해싱기법에 사용된다.
+	- __Object클래스의 hashCode()는 객체의 내부주소를 반환__한다.
+	
+	**__- equals()를 오버라이딩하면, hashCode()도 같이 오버라이딩 해야한다__**.
+	equals()의 결과가 true인 두 객체의 hash code는 같아야하기 때문;
+	
+String은 참조변수 타입이기 때문에 값이아닌 주소를 참조
+__형변환시 부모 ---> 자식 (자식클래스 형변환표시))__
+__         자식 ---> 부모 (생략 가능)             __
+
+===========================오후1=========================== 
+
+	toString()
+	- 객체의 정보를 문자열(String)로 제공할 목적으로 정의된 메서드
+	
+	String 클래스
+		생성자와 메서드
+		- String(String s)
+		- String(char[] value)
+		- String(StringBuffer buf)
+		
+		__- compareTo : System.out.println(str1.compareTo(str3)); __
+		__// 왼쪽이 클시 1 같으면 0 작으면 -1 return__
+===========================오후2===========================
+	문자열과 기본형간의 변환
+	- 기본형 값을 문자열로 바꾸는 두 가지 방법(방법2가 더 빠름)
+	int i = 100;
+	String str1 = i + ""; // 100을 '100'으로 변환하는 방법
+	String str2 = String.valueof(i) // 방법 2
+	
+	- 문자열을 기본형 값으로 변환하는 방법
+	int i = Integer.parseInt("100");
+	int i2 = Integer.valueof("100"); // JDK1.5 이후
+	char c = "A".charAt(0); // 문자열 "A"를 문자 'A'로  변환 
+
+	StringBuffer클래스의 특징
+		- String처럼 문자형 배열(char[])을 내부적으로 가지고 있다.
+		- 그러나 , String 클래스와 달리 내용을 변경할 수 있다.
+		- equals()를 오버라이딩 하지 않았다는 점 주의!!
+
+	Math클래스
+	round, rint 차이
+    
+

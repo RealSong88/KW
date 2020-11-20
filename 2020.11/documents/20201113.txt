@@ -30,7 +30,7 @@ Java
 		{ iv = 2;}	  __// 인스턴스 초기화블럭__
 		InitTest() { iv = 3;} __//제일마지막실행__
 	}
-	[[InitTest]] it = new InitTest();
+	InitTest it = new InitTest();
 	// cv = 2, iv = 3;
 
 	캡슐화 - 처음 클래스시작부터 위의 클래스까지
