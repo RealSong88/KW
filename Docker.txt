@@ -25,7 +25,7 @@ __앱 공유__
 
 myflask를 july2day/myflask:test로 push 하려면 로컬에 있는 이미지에 태그 이름으로 변경해야한다.
 
-docker tag [[myflask:latest]] july2day/myflask:test
+docker tag myflask:latest july2day/myflask:test
 
 docker push july2day/myflask:test
 - dockerhub에 푸쉬한다.
@@ -39,7 +39,7 @@ docker volume create myflask_db
 docker run -dp 3306:3306 -e MYSQL_ROOT_PASSWORD=000000 \
 -e MYSQL_DATABASE=myflask \
 -v myflask_db:/var/lib/mysql \
---name myflask_db [[mariadb:latest]]
+--name myflask_db mariadb:latest
 
 --- myflask_db란 호스트 볼륨에 도커의 [[/var/lib/mysql로]] 연결한다.
 --- myflask란 db에 member란 테이블을 만들고 데이터 인서트
@@ -49,7 +49,7 @@ docker rm myflask_db
 docker run -dp 3306:3306 -e MYSQL_ROOT_PASSWORD=000000 \
 -e MYSQL_DATABASE=myflask \
 -v myflask_db:/var/lib/mysql \
---name myflask_db [[mariadb:latest]]
+--name myflask_db mariadb:latest
 
 컨테이너 삭제하고 다시 같은 -v 를 주면 docker volume인 myflask_db에
 데이터가 저장되어있기 때문에 삭제 된 컨테이너에서 입력한 데이터들이 
@@ -74,7 +74,7 @@ docker run -d \
 	-v myflask_db:/var/lib/mysql \
 	-e MYSQL_ROOT_PASSWORD=000000 \
 	-e MYSQL_DATABASE=myflask \
-	--name myflask_db [[mariadb:latest]]
+	--name myflask_db mariadb:latest
 - myflask-net 이라는 도커 네트워크에 myflask_db라는 컨테이너를 연결한다.
 
 __pip 설치 오류시 필요한 패키지__

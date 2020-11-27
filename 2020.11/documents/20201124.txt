@@ -1,0 +1,50 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-24T11:04:36+09:00
+
+===========================오전1===========================
+
+Python
+	큐정렬 데큐정렬
+	트리
+	바이너리 
+
+
+===========================오전2===========================
+
+Java
+Collection
+	Enumeration, Iterator, ListIterator 
+		- 컬렉션에 저장된 데이터를 접근하는데 사용되는 인터페이스
+		- Enumeration은 Iterator의 구버전
+		- ListIterator는 Iterator의 접근성을 향상 시킴
+	
+	Arrays
+	
+	__Comparator와 Comparable__
+		- 객체를 정렬하는데 필요한 메서드를 정의한 인터페이스(정렬기준을 제공)
+			__Comparable - 기본 정렬기준을 구현하는데 사용.__
+			Comparator - 기본 정렬기준 외에 다른 기준으로 정렬하고자할 때 사용
+		
+		- compare()와 compareTo()는 두 객체의 비교결과를 반환하도록 작성
+		같으면 0, 오른쪽이 크면 음수(-), 작으면 양수(+)
+		
+	HashSet
+	- Set인터페이스를 구현한 대표적인 컬렉션 클래스
+	- 순서를 유지하려면, LinkedHashSet 클래스를 사용하면 된다.
+	__- 중복을 허락하지않는다. (set 집합이기때문에)__
+	- __equals()로 비교해서 true를 얻은 두 객체의 hashCode()값은 일치__해야한다.
+	
+	TreeSet
+	- 범위 검색과 정렬에 유리한 컬렉션 클래스
+	- HashSet보다 데이터 추가, 삭제에 시간이 더 걸림
+	- 이진 검색 트리(binary search tree)로 구현
+
+	TreeSet - 트리 순회(전위, 중위, 후위) traverse(=순회)
+	- 이진 트리의 모든 노드를 한번씩 읽는 것을 트리 순회라고 한다.
+	- 전위, 중위  후위 순회법이 있으며, 중위 순회하면 오름차순으로 정렬된다.
+		전위 순회  root - left - right
+		중위 순회 left - root - right
+		후위 순회 left - right - root
+ 
+

@@ -1,0 +1,53 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-11-26T12:18:57+09:00
+
+===========================오전1===========================
+
+Python
+
+
+===========================오전2===========================
+
+Java
+
+열거형
+	java.lang.Enum - 모든 열겨형의 조상
+	- 모든 열겨형은 Enum의 자손이며, 아래의 메서드를 상속받는다.
+		Class<E> getDeclarirngClass()
+		String name()
+		__int ordinal() - 지정된 열겨형에서 name과 일치하는 열거형 상수를 반환한다.__
+		T valueOf (Class<T> enumType, String name)\
+	
+	열거형에 멤버 추가
+	- 불연속적인 열거형 상수의 경우, 원하는 값을 괄호()안에 적는다.
+		enum Direction { EAST(1), SOUTH(5), WEST(-1), NORTH(10) }
+		
+	- 괄호()를 사용하려면, 인스턴스 변수와 생성자를 새로 추가해줘야한다.
+	- 열거형의 생성자는 묵시적으로 private, 외부에서 객체생성 불가 
+
+
+===========================오후1=========================== 
+
+애너테이션(Annotation)
+	- 주석처럼 프로그래밍 언어에 영향을 미치지 않으며, 유용한 정보 제공
+	
+	많이 쓰이는 애너테이션
+	@Override 
+	- 컴파일러에게 오버라이딩하는 메서드라는 것을 알림
+	- 오버라이딩을 올바르게 했는지 컴파일러가 체크
+	- 오버라이딩할 때 메서드이름을 잘못적는 실수를 하는 경우가 많다.
+	@Deprecated - 앞으로 사용하지 않을 것을 권장하는 대상에 붙임
+	@SuppressWarnings - 컴파일러의 특정 경고 메시지가 나타타지않음
+===========================오후2===========================
+
+thread - 쓰레드
+
+multi processing vs single - processing
+multi threading vs single threading
+
+deadlock(교착상태)
+Context - switching
+Scheduler - OS소속
+
+===========================오후3===========================

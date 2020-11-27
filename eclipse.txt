@@ -10,6 +10,8 @@ Java
 
 Java SE 11 버전으로 한다.
 
+window > preferences > workspace > text file encoding > UTF-8
+
 Java 설치 ------------------------
 	Java SE Development Kit 11 다운
 	

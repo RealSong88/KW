@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+12월 24일 수업 종료...
+
+12월 28일 착수보고회 팀당 20분
+- 계획표
+- (15분, QNA 5분)
+- PPT
+
+1월 11일 중간 보고회
+- 스케쥴 관리차원
+- 결과물 예측 : Interface 설계도
+
+1월 26일 수료  Project 완료보고회 
+- 팀당 20분
+- 결과물
+- Demo
+- 향후 해결 방향
