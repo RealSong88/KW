@@ -32,7 +32,7 @@ Java 설치 ------------------------
 					-> 두번째 설치시 VRAPPer plugin 설치가능
 					   필수 패키지( pydev, theme, vrapper)
 	
-
+Ctrl + shift + f : 코드 줄 정렬
 CTRL + shitf + L : 단축키 전체 목록
 Ctrl + '+', '-' : 프로그램창 폰트 키우고 줄이기
 Ctrl + '/' 키를 누르면 주석이 토글된다 (toggle) 

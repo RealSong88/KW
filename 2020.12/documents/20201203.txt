@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-03T08:57:08+09:00
+
+===========================오전1===========================
+
+Python
+DFS, BFS, 
+
+
+
+===========================오후1=========================== 
+
+Java 
+
+Stream
+
+Optional
