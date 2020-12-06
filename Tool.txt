@@ -6,3 +6,6 @@ Creation-Date: 2020-11-12T17:16:03+09:00
 Created 목요일 12 11월 2020
 
 [[eclipse]]
+vscode
+jupyter notebook
+vim

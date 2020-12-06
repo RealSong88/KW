@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-06T20:19:03+09:00
+
+====== Raspberry Pi ======
+Created 일요일 06 12월 2020
+
+ncloud 의 /upload 폴더 nfs(network file system) 실행중...
