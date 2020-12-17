@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-10T14:56:42+09:00
+
+Intelli j
+
+- CTRL + P : 파라미터 정보
+- CTRL + ALT + 방향키 좌우 : 스플릿 된 탭 이동
+- CTRL + B : definition 정보로 이동
+- alt + insert : Code를 generate (setter, getter, constructor...)
+- ctrl + shif + enter : 코드작성완료후 ; 대신 입력후 줄이동
+- ctrl + alt + v : 무슨 함수 또는 메서드 사용해서 결과 값을 받는 typer을 알고싶을때 함수 또는 메서드 완성후 단축키 사용해서 확인
+- ctrl + shift + 위,아래 :   줄 이동
+

@@ -43,7 +43,7 @@ root > usermod -aG wheel <user>
 __- tar cvfz xxx.tar.gz *.log__
 -> 현재 폴더안에 있는 .log 파일들을 xxx.tar.gz 로 압축
 __- tar xvfz xxx.tar.gz__
--> 압축 해제
+-> 압축 해제	
 
 ftp: 21 port
 sftp: 22 port ( ssh )

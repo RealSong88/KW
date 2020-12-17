@@ -1,0 +1,55 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-17T11:30:36+09:00
+
+===========================오전1===========================
+
+Python DFS.......m,.dm.,m.,mas.,
+
+
+Python
+인공지능 시스템 아키텍쳐
+
+데이터사이언스 & AI
+- 수학의 기초가 중요한 분야가 인공지능
+- 인공지능 분야의 범위는 끝이 없다.
+- 인공지능은 미래에 기본이 된다.
+- 도메인 지식에 융합
+
+지도학습, 비지도학습, 준지도 학습, 강화학습
+1. 지도(supervised learning) 학습
+	- 분류(Classfication)가 전형적인 지도학습
+	- 예측변수(Predicator Variable), 특성(Feature) -> Target 수치 예측 -> 회귀(Regression)
+	
+	- 대표적인 지도학습 알고리즘
+		- K-최근접 이웃(k-Nearest Neighbor : kNN)
+		- 선형 회귀(Linear Regression)
+		- 로지스틱 회귀(Logistic Regression)
+		- 서포트 벡터 머신 (Support Vector Machines: SVM)
+		- 결정트리(Desicion Tree) 와 랜덤포레스트(Random Forests)
+		- 신경망(Neural Networks)
+		- 앙상블(Ensemble) 기법
+
+2. 비지도 학습
+	a. 군집(Clustering)
+		1. k-평균(k-Means)
+		2. 계층군집분석(Hierarchical Cluster Analysis)
+		3. 기댓값 최대화(Expectation Maximization)
+	b. 시각화(visualization)와 차원 축소(dimensionality reduction)
+		1. 주성분분석(Principal Component Analysis:PCA)
+		2. 커널 PCA
+		3. 지역적 선형 임베딩 (Locally-Linear Embedding: LLE)
+		4. t-SNE (t-distributed Stochastic Neighbor Embeding)
+	c. 연관 규칙학습(Association rule learning)
+		1. 어프라이어 (Apriori)
+		2. 이클렛(Eclat)
+Python Numpy
+
+- 숫자로만 이루어져있다.
+- 속도가 엄청나다.
+- 행렬에서 사용하기 좋다. 숫자포매팅이 가독성 좋다..
+
+자주쓰는 속성
+shape, reshape, T, dot, argmin(가장 작은 값의 index), argmax
+
+

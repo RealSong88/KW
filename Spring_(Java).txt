@@ -5,3 +5,8 @@ Creation-Date: 2020-12-07T11:33:27+09:00
 ====== Spring (Java) ======
 Created 월요일 07 12월 2020
 
+MVC란?
+
+Model ==>
+View ==>
+Controller ==>

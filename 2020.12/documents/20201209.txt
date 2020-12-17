@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-09T12:23:55+09:00
+
+===========================오전1===========================
+
+Python DFS... 10진수 2진수 변경
+
+
+===========================오전2===========================
+
+Java 
+Spring
+
+intellij
+
+spring에서 maven보다 최근에는 gradle을 많이 쓴다.
+
+mvc란?

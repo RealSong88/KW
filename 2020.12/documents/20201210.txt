@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-10T10:09:54+09:00
+
+===========================오전1===========================
+
+Python 
+매칭안되는 단어찾기 - dict 활용
+DFS로 이진트리를 만들고 순회하기
+엑셀로 완전 탐색법 연습
+
+
+===========================오전2===========================
+
+Java
+Spring
+스프링 웹 개발 사용하는 방법
+	- 정적 컨텐츠 :확인 
+	- MVC와 템플릿 엔진 : 확인
+	- API: JSON 데이터 구조체
+	
+__- get 방식, Post 방식 차이__
+- 
+	
+- @ResponseBody를 사용하면 뷰 리졸버(view resolver)사요하지 않음
+- JSON {key : value}, {key : {key : value}....}
+- NoSQL (Mongo DB, MYSQL8) : Not Only SQL만 있는건 아니다.
+
+intelli j
+- CTRL + P : 파라미터 정보
+- CTRL + ALT + 방향키 좌우 : 스플릿 된 탭 이동
+- CTRL + B : definition 정보로 이동
+- alt + insert : Code를 generate (setter, getter, constructor...)
+- ctrl + shif + enter : 코드작성완료후 ; 대신 입력후 줄이동
+- ctrl + alt + v : 무슨 함수 또는 메서드 사용해서 결과 값을 받는 typer을 알고싶을때 함수 또는 메서드 완성후 단축키 사용해서 확인
+- ctrl + shift + 위,아래 :   줄 이동

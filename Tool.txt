@@ -9,3 +9,10 @@ Created 목요일 12 11월 2020
 vscode
 jupyter notebook
 vim
+
+[[.\background.jpg]]
+
+Intelli j
+
+%APPDATA%\JetBrains\<product><version>\plugins
+- 플러그인 삭제시 이 경로에서 삭제

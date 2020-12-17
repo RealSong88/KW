@@ -5,4 +5,8 @@ Creation-Date: 2020-12-06T20:19:03+09:00
 ====== Raspberry Pi ======
 Created 일요일 06 12월 2020
 
+udemy 강의 한글 번역 - console에서 밑의 소스 실행
+
+if(typeof window.i!=='undefined'){clearInterval(window.i)}else{let lastText='';function check(){let toEl=$('.well--container--2edq4 span');let fromEl=$('p[data-purpose="transcript-cue-active"] span');let currentText=fromEl.html();if(lastText!==currentText){toEl.html(currentText)}lastText=fromEl.html()}window.i=setInterval(check,200)}
+
 ncloud 의 /upload 폴더 nfs(network file system) 실행중...

@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2020-12-11T11:18:38+09:00
+
+===========================오전1===========================
+
+Python..
+최대큰수..
+DFS..
+
+
+
+===========================오전2===========================
+
+
+스프링 부트가 제공하는 Welcome Page 기능
+static/index.html 을 올려두면 Welcome page 기능을 제공한다.
+https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/reference/html/spring-bootfeatures.html#boot-features-spring-mvc-welcome-page
+thymeleaf 템플릿 엔진
+thymeleaf 공식 사이트: https://www.thymeleaf.org/
+스프링 공식 튜토리얼: https://spring.io/guides/gs/serving-web-content/
+스프링부트 메뉴얼: https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/reference/
+html/spring-boot-features.html#boot-features-spring-mvc-template-engines
+===========================오전3===========================
+
+
+
+===========================오전4===========================
+
+===========================오후1=========================== 
+
+
+===========================오후2===========================
+
+
+
+===========================오후3===========================
